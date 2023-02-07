@@ -173,8 +173,7 @@ getPlayer():setCanSeeAll(true)
 getPlayer():setNetworkTeleportEnabled(true)
 ISFastTeleportMove.cheat = true
 
-BrushToolManager.openPanel(getPlayer())
-BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
+
 --getPlayer():setShowMPInfos(true)
 
 	for i=0,TraitFactory.getTraits():size()-1 do
@@ -226,10 +225,11 @@ end
     elseif button.internal == opTitle5 then print(opTitle5); getPlayer():Say(opTitle5) 
 --start----------------------         ---------------------------start
 --BrushToolManager.openPanel(getPlayer())
- BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
+-- BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
  
  
- 
+ BrushToolManager.openPanel(getPlayer())
+BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
 -- local car = nil
     -- if getPlayer():getVehicle() then car = getPlayer():getVehicle() 
     -- elseif getPlayer():getNearVehicle() then car = getPlayer():getNearVehicle()

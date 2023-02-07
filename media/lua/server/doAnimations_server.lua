@@ -27,6 +27,15 @@ Commands.GlytchAnimations.isAct5 = function(player, args)
     sendServerCommand('GlytchAnimations', 'isAct5', {id = playerId, isAct5 =  args.isAct5})    
 end      
 
+
+
+function TOC_OnInitGlobalModData()
+    ModData.getOrCreate("TOC_PLAYER_DATA")
+end
+
+Events.OnInitGlobalModData.Add(TOC_OnInitGlobalModData)
+
+
 Events.OnClientCommand.Add(function(module, command, player, args)
 	if Commands[module] and Commands[module][command] then
 	    Commands[module][command](player, args)
