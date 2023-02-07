@@ -2,30 +2,39 @@
 
 if isClient() then return; end
 
-local Commands = {};
-Commands.GlytchAnimations = {};
-local playerId = player:getOnlineID();
-    
-Commands.GlytchAnimations.isAct1 = function(player, args)
-    sendServerCommand('GlytchAnimations', 'isAct1', {id = playerId, isAct1 =  args.isAct1})    
-    
+local Commands = {}
+Commands.GlytchAnimations = {}
+
+Commands.GlytchAnimations.NotifyAnimation = function(player, args)
+
+    -- To every player... so?
+    local online_players = getOnlinePlayers()
+
+    if player ~= nil then print("Player exists here") end
+
+    local original_player = getPlayerByOnlineID(args[1])
+
+
+    print("PRINTING PLAYERS")
+    for i = 0, online_players:size() - 1 do
+        print(i)
+        local other_player = online_players:get(i)
+        
+        if other_player == nil then
+            print(" is nil")
+        end
+
+        if other_player ~= original_player then
+            sendServerCommand(other_player, "GlytchAnimations", "AcceptNewAnimation", {args[1], args[2]})
+
+        end
+    end
+
+
+
 end
 
-Commands.GlytchAnimations.isAct2 = function(player, args)
-    sendServerCommand('GlytchAnimations', 'isAct2', {id = playerId, isAct2 =  args.isAct2})    
-end
 
-Commands.GlytchAnimations.isAct3 = function(player, args)
-    sendServerCommand('GlytchAnimations', 'isAct3', {id = playerId, isAct3 =  args.isAct3})    
-end      
-
-Commands.GlytchAnimations.isAct4 = function(player, args)
-    sendServerCommand('GlytchAnimations', 'isAct4', {id = playerId, isAct4 =  args.isAct4})    
-end      
-
-Commands.GlytchAnimations.isAct5 = function(player, args)
-    sendServerCommand('GlytchAnimations', 'isAct5', {id = playerId, isAct5 =  args.isAct5})    
-end      
 
 
 
