@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="looped.xml">
+	<m_Name>_idleLoop2</m_Name>
+	<m_AnimName>Bob_Idle_BarbellCurl02</m_AnimName>
+	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_Conditions>
+	<m_StringValue>_idleLoop2</m_StringValue>
+	</m_Conditions>
+		<m_SubStateBoneWeights>
+		<boneName>Bip01</boneName>
+	</m_SubStateBoneWeights>
+</animNode>
