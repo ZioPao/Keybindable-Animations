@@ -1,6 +1,4 @@
---/////////////////////////////////////////////////////////////////////////
---//////////////////////////// Matías N. Salas ////////////////////////////
---///////////////////////////////////////////////////////////////////////// 
+--written by Pao
 
 local Commands = {};
 Commands.GlytchAnimations = {};
@@ -20,7 +18,6 @@ Commands.GlytchAnimations.AcceptNewAnimation = function(args)
         local title = titles[i]
         original_player:setVariable(title, 'false')
     end
-
 
     original_player:setVariable(action_id, 'true')
     print("Start new anim!")

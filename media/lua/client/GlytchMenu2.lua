@@ -163,6 +163,7 @@ end
 function AnimMenu.press(key)
 
 	if (key==207) then --END
+	if not (getCore():getDebug() or isAdmin()) then return; end 
 	AnimMenu.openPanel()
 	return key
 	end

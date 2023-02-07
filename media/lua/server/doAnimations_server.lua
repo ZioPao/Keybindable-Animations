@@ -1,3 +1,4 @@
+--written by Pao
 
 
 if isClient() then return; end
@@ -34,15 +35,11 @@ Commands.GlytchAnimations.NotifyAnimation = function(player, args)
 
 end
 
-
-
-
-
-function TOC_OnInitGlobalModData()
-    ModData.getOrCreate("TOC_PLAYER_DATA")
+function Anim_OnInitGlobalModData()
+    ModData.getOrCreate("Anim_PLAYER_DATA")
 end
 
-Events.OnInitGlobalModData.Add(TOC_OnInitGlobalModData)
+Events.OnInitGlobalModData.Add(Anim_OnInitGlobalModData)
 
 
 Events.OnClientCommand.Add(function(module, command, player, args)
