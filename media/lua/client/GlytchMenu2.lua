@@ -41,114 +41,60 @@ end ]]
 --							     header**
 --**************************            	   **************************
 
-
+    -- TODO allign this
 	local opTitle1 = "Normal"
-	local opTitle2 = "act1"
-	local opTitle3 = "act2"
-	local opTitle4 = "act3"
-	local opTitle5 = "act4"
-    local opTitle6 = "act5"
+	local opTitle2 = "Act1"
+	local opTitle3 = "Act2"
+	local opTitle4 = "Act3"
+	local opTitle5 = "Act4"
+    local opTitle6 = "Act5"
 
 --**************************            	   **************************
 --								 body***
 --**************************            	   **************************
 function AnimMenu:onClick(button)
 
-    if button.internal == opTitle1 then print(opTitle1); getPlayer():Say(opTitle1) 
---start----------------------               ---------------------------start
-    local player = getPlayer(); local playerId = player:getOnlineID()
-	
-player:getModData()['act1'] = nil
-player:getModData()['act2'] = nil
-player:getModData()['act3'] = nil
-player:getModData()['act4'] = nil
-player:getModData()['act5'] = nil
-player:setVariable('isAct1', 'false');
-player:setVariable('isAct2', 'false');
-player:setVariable('isAct3', 'false');       
-player:setVariable('isAct4', 'false');
-player:setVariable('isAct5', 'false');
+    local player = getPlayer()
+    local playerId = player:getOnlineID()
+    local mod_data = player:getModData()
 
---end----------------------               ---------------------------end
+    local titles = {opTitle1, opTitle2, opTitle3, opTitle4, opTitle5, opTitle6}
 
-	elseif button.internal == opTitle2 then -- print(opTitle2); getPlayer():Say(opTitle2) 
---start----------------------            ---------------------------start
 
-    local player = getPlayer(); local playerId = player:getOnlineID()
-        player:getModData()['act1'] = true
-player:getModData()['act2'] = nil
-player:getModData()['act3'] = nil
-player:getModData()['act4'] = nil
-player:getModData()['act5'] = nil
-player:setVariable('isAct2', 'false');
-player:setVariable('isAct3', 'false');       
-player:setVariable('isAct4', 'false');
-player:setVariable('isAct5', 'false');
-        player:setVariable('isAct1', 'true');
---[[ if isClient() then sendServerCommand('GlytchAnimations', 'isAct1', {id = playerId, isAct1 =  args.isAct1})  end      ]]
---end----------------------            ---------------------------end
 
-    elseif button.internal == opTitle3 then --print(opTitle3); getPlayer():Say(opTitle3) 
---start----------------------           ---------------------------start
-    local player = getPlayer(); local playerId = player:getOnlineID()
-player:getModData()['act1'] = nil
-        player:getModData()['act2'] = true
-player:getModData()['act3'] = nil
-player:getModData()['act4'] = nil
-player:getModData()['act5'] = nil
-player:setVariable('isAct1', 'false');
-        player:setVariable('isAct2', 'true');
-player:setVariable('isAct3', 'false');       
-player:setVariable('isAct4', 'false');
-player:setVariable('isAct5', 'false');
---[[ if isClient() then sendServerCommand('GlytchAnimations', 'isAct2', {id = playerId, isAct2 =  args.isAct2})  end      ]]
---end----------------------            ---------------------------end
-    elseif button.internal == opTitle4 then print(opTitle4); getPlayer():Say(opTitle4) 
---start----------------------         ---------------------------start
-    local player = getPlayer(); local playerId = player:getOnlineID()
-player:getModData()['act1'] = nil
-player:getModData()['act2'] = nil
-        player:getModData()['act3'] = true
-player:getModData()['act4'] = nil
-player:getModData()['act5'] = nil
-player:setVariable('isAct1', 'false');
-player:setVariable('isAct2', 'false');    
-        player:setVariable('isAct3', 'true');
-player:setVariable('isAct4', 'false');
-player:setVariable('isAct5', 'false');
---[[ if isClient() then sendServerCommand('GlytchAnimations', 'isAct3', {id = playerId, isAct3 =  args.isAct3})  end    ]]  
---end----------------------            ---------------------------end
-    elseif button.internal == opTitle5 then print(opTitle5); getPlayer():Say(opTitle5) 
---start----------------------         ---------------------------start
-    local player = getPlayer(); local playerId = player:getOnlineID()
-player:getModData()['act1'] = nil
-player:getModData()['act2'] = nil
-player:getModData()['act3'] = nil
-        player:getModData()['act4'] = true
-player:getModData()['act5'] = nil
-player:setVariable('isAct1', 'false');
-player:setVariable('isAct2', 'false');
-player:setVariable('isAct3', 'false');
-        player:setVariable('isAct4', 'true');
-player:setVariable('isAct5', 'false');
---[[ if isClient() then sendServerCommand('GlytchAnimations', 'isAct4', {id = playerId, isAct4 =  args.isAct4})  end     ]] 
---end----------------------            ---------------------------end
-    elseif button.internal == opTitle6 then print(opTitle6); getPlayer():Say('Not Available') 
---start----------------------         ---------------------------start
-    local player = getPlayer(); local playerId = player:getOnlineID()
-player:getModData()['act1'] = nil
-player:getModData()['act2'] = nil
-player:getModData()['act3'] = nil
-player:getModData()['act4'] = nil
-        player:getModData()['act5'] = true
-player:setVariable('isAct1', 'false');
-player:setVariable('isAct2', 'false');
-player:setVariable('isAct3', 'false');       
-player:setVariable('isAct4', 'false');
-        player:setVariable('isAct5', 'true');
+    if mod_data.GlytchAnimations == nil then
+        mod_data.GlytchAnimations = {
+            action = "Normal"
+        }
+
+    end
+
+
+    local size_titles = #titles
+    print("Test")
+    -- Reset other animations
+    for i = 1, size_titles do
+        local tmp = "is" .. titles[i]    -- TODO this is awful so don't keep this please
+        player:setVariable(tmp, 'false')
+
+    end
+
+    local op_title_fix = "is" .. button.internal
+    player:setVariable(op_title_fix, 'true')
+    mod_data.GlytchAnimations["action"] = op_title_fix
+
+
+    -- Notify server
+    if not isServer() and not isClient() then
+        print("This is SP, so no server stuff for you")
+    else
+        print("why ")
+        sendClientCommand(player, "GlytchAnimations", "NotifyAnimation", {player:getOnlineID(), op_title_fix})
+    end
+
 	
 --[[ if isClient() then sendServerCommand('GlytchAnimations', 'isAct5', {id = playerId, isAct5 =  args.isAct5})  end   ]]  
-end
+
 end
     
 function AnimMenu:createChildren()
@@ -216,7 +162,7 @@ end
 
 function AnimMenu.press(key)
 
-	if (key==207) then --home
+	if (key==207) then --END
 	AnimMenu.openPanel()
 	return key
 	end
