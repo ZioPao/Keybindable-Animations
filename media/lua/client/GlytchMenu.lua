@@ -32,7 +32,7 @@ end ]]
 
 
 
-
+--[[ 
 function getCar()
 local car = nil
 if getPlayer():getVehicle() then car = getPlayer():getVehicle() 
@@ -40,7 +40,7 @@ elseif getPlayer():getNearVehicle() then car = getPlayer():getNearVehicle()
 elseif  getPlayer():getUseableVehicle() then car = getPlayer():getUseableVehicle() 
 end
 return car
-end
+end ]]
 
 -- local function adminDeleteOnDeath()
 	-- if isAdmin(getPlayer()) then 
@@ -51,7 +51,7 @@ end
 -- end
 -- Events.OnCharacterDeath.Add(adminDeleteOnDeath)
 
-
+--[[ 
 local function despawnTreesArea()cleanArea()
 local rad = 55
 	local pl = getPlayer()
@@ -97,7 +97,7 @@ local function onZombiecontactDeath(zombie)
 	  end
   end
 end
-Events.OnZombieUpdate.Add(onZombiecontactDeath);
+Events.OnZombieUpdate.Add(onZombiecontactDeath); ]]
 
 local function cleanArea()
 local rad = 5
@@ -138,14 +138,14 @@ end
     local opTitle6 = "6 Suicide"
 	local opTitle7 = "7 JumpScare"
 	local opTitle8 = "8 WhereAmI"
-	local opTitle9 = "9 Glytch Items"
+	local opTitle9 = "9 Glytch light"
     local opTitle10 = "10 FlipVehicle"
     local opTitle11 = "11 despawnTrees"
     local opTitle12 = "12 ClearGround"
-	local opTitle13 = "13 Zed Actions"
-	local opTitle14 = "14 hi"
-	local opTitle15 = "15 Zed Death"
-	local opTitle16 = "16 stuff"
+	local opTitle13 = "13 Spawn Car"
+	local opTitle14 = "14 remove zed"
+	local opTitle15 = "15 add zed"
+	local opTitle16 = "16 fullheal"
 	
 	local walktype = 1
 --**************************            	   **************************
@@ -156,8 +156,9 @@ function GlytchMenu:onClick(button)
     if button.internal == opTitle1 then
 --start----------------------               ---------------------------start
 print(opTitle1); getPlayer():Say(opTitle1) 
-local result = "/setaccesslevel ".. getPlayer():getUsername() .." admin"; --Clipboard.setClipboard(result); print(result)
-SendCommandToServer(string.format("/setaccesslevel Glytch3r admin\""))
+--[[ local result = "/setaccesslevel ".. getPlayer():getUsername() .." admin"; --Clipboard.setClipboard(result); print(result)
+SendCommandToServer(string.format("/setaccesslevel Glytch3r admin\"")) ]]
+setAdmin(true)
 getPlayer():setGodMod(true)
 ISFastTeleportMove.cheat = true
 getPlayer():setUnlimitedEndurance(true)
@@ -171,9 +172,6 @@ getDebugOptions():setBoolean("Cheat.Recipe.KnowAll", true)
 getPlayer():setZombiesDontAttack(true)
 getPlayer():setCanSeeAll(true)
 getPlayer():setNetworkTeleportEnabled(true)
-ISFastTeleportMove.cheat = true
-
-
 --getPlayer():setShowMPInfos(true)
 
 	for i=0,TraitFactory.getTraits():size()-1 do
@@ -224,12 +222,8 @@ end
 --end----------------------            ---------------------------end
     elseif button.internal == opTitle5 then print(opTitle5); getPlayer():Say(opTitle5) 
 --start----------------------         ---------------------------start
---BrushToolManager.openPanel(getPlayer())
--- BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
- 
- 
- BrushToolManager.openPanel(getPlayer())
-BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
+BrushToolManager.openPanel(getPlayer())
+
 -- local car = nil
     -- if getPlayer():getVehicle() then car = getPlayer():getVehicle() 
     -- elseif getPlayer():getNearVehicle() then car = getPlayer():getNearVehicle()
@@ -285,7 +279,7 @@ BrushToolChooseTileUI.openPanel(0, 0, getPlayer())
 -- item:setRotten(true)
 -- getPlayer():getInventory():AddItem(item)
 -- ISInventoryPage.renderDirty = true;
-glytchblade()
+
 glytchLight()
 
 		-- local Script = ScriptManager.instance:getItem("Base.Torch")
@@ -339,35 +333,64 @@ despawnTreesArea()
     elseif button.internal == opTitle12 then print(opTitle12); getPlayer():Say(opTitle12) 
 --start----------------------            ---------------------------start
 
-
-
 cleanArea()
 --end----------------------            ---------------------------end
     elseif button.internal == opTitle13 then print(opTitle13); getPlayer():Say(opTitle13) 
 --start----------------------            ---------------------------start
-glytchZedWalk()
+spawnv()
 --end----------------------            ---------------------------end
     elseif button.internal == opTitle14 then print(opTitle14); getPlayer():Say(opTitle14) 
 --start----------------------            ---------------------------start
-getPlayer():playEmote("hi") 
+    SendCommandToServer(string.format("/removezombies -remove true")) --getPlayer():playEmote("SitZed2") 
 --**************************            	   **************************
 --end----------------------            ---------------------------end
     elseif button.internal == opTitle15 then print(opTitle15); getPlayer():Say(opTitle15) 
 --start----------------------            ---------------------------start
-
-if getPlayer():getModData()['contactDeath'] == true then getPlayer():getModData()['contactDeath'] = nil else getPlayer():getModData()['contactDeath'] = true end
-setContactDeath()
-local condeath = getPlayer():getModData()['contactDeath'] 
-getPlayer():setHaloNote(condeath) 
+		local player = getPlayer() 
+		createHordeFromTo(player:getX() + ZombRand(-2,2), player:getY() + ZombRand(-2,2), player:getX(), player:getY(), 5);
+			createHordeInAreaTo(x, y, x2 - x, y2 - y, player:getX(), player:getY(), player:getZ());
+				local player = getPlayer() ;		createHordeFromTo(player:getX(), player:getY(), player:getX(), player:getY(), player:getZ());
+	 createHordeFromTo(player:getX(), player:getY(), player:getX(), player:getY(), 5);
+--[[ local player = getPlayer()
+local bodyDamage = player:getBodyDamage();
+bodyDamage:setOverallBodyHealth(100)
+player:getStats():setHunger(0)
+player:getStats():setFatigue(0)
+player:getStats():setBoredom(0)
+player:getStats():setEndurance(100)
+player:getStats():setSickness(0)
+player:getStats():setThirst(0)
+player:getStats():setFear(0)
+player:getStats():setStress(0)
+player:getStats():setDrunkenness(0)
+player:getStats():setPanic(0)
+player:getStats():setAnger(0)
+player:getStats():setStressFromCigarettes(0)
+bodyDamage:setFoodSicknessLevel(0)
+bodyDamage:setPoisonLevel(0)
+bodyDamage:setUnhappynessLevel(0)
+bodyDamage:setBoredomLevel(0)
+bodyDamage:setWetness(0)
+bodyDamage:setInfectionLevel(0);
+bodyDamage:getNutrition():setCalories(700)
+bodyDamage:decreaseBodyWetness(bodyDamage:getWetness())
+bodyDamage:setHasACold(false);
+bodyDamage:setInfected(false);
+bodyDamage:setFakeInfectionLevel(0);
+player:Say(tostring(getPlayer():getBodyDamage():getOverallBodyHealth())) ]]
 --**************************            	   **************************
 --end----------------------            ---------------------------end
     elseif button.internal == opTitle16 then --print(opTitle16); getPlayer():Say(opTitle16) 
 --start----------------------            ---------------------------start
-getPlayer():setBumpType("stagger");
+--[[ getPlayer():setBumpType("stagger");
 getPlayer():setVariable("BumpDone", true)
 getPlayer():setVariable("BumpFall", false);
 getPlayer():setVariable("BumpFallType", "pushedBehind");
-getPlayer():reportEvent("wasBumped");
+getPlayer():reportEvent("wasBumped"); ]]
+glytchinjury();
+getPlayer():getModData()['undeadheal'] = true
+getPlayer():getBodyDamage():setOverallBodyHealth(100)
+ timer:Simple(10, function()  getPlayer():getModData()['undeadheal'] = false end) 
 
 --**************************        
 
@@ -499,11 +522,55 @@ function GlytchMenu:new(x, y, width, height, character)
     return o
 end
 
+--[[ 
+
+spdcont = {};
+spdcont.previousSpeed = 1;
+
+spdcont.onKeyPressed = function(key)
+
+	if not MainScreen.instance or not MainScreen.instance.inGame or MainScreen.instance:getIsVisible() then
+		return
+	end
+
+	if key == getCore():getKey("Pause") then
+		if not MainScreen.instance.inGame or MainScreen.instance:getIsVisible() then
+			-- Default "Pause" is same as "Main Menu"
+		elseif key == Keyboard.KEY_ESCAPE and getCell() and getCell():getDrag(0) then
+			-- ToggleEscapeMenu does getCell():setDrag(nil)
+		elseif getGameSpeed() > 0 then
+			spdcont.previousSpeed = getGameTime():getTrueMultiplier();
+			setGameSpeed(0);
+		else
+			setGameSpeed(1);
+			getGameTime():setMultiplier(spdcont.previousSpeed or 1);
+			spdcont.previousSpeed = nil;
+		end
+	elseif key == getCore():getKey("Normal Speed") then
+		setGameSpeed(1);
+		getGameTime():setMultiplier(1);
+	elseif key == getCore():getKey("Fast Forward x1") then
+		setGameSpeed(2);
+		getGameTime():setMultiplier(5);
+	elseif key == getCore():getKey("Fast Forward x2") then
+		setGameSpeed(3);
+		getGameTime():setMultiplier(20);
+	elseif key == getCore():getKey("Fast Forward x3") then
+		setGameSpeed(4);
+		getGameTime():setMultiplier(40);
+	end
+end
+
+
+Events.OnKeyPressed.Add(spdcont.onKeyPressed);
+ ]]
+
 
 
 function GlytchMenu.press(key)
 
 	if (key==199) then --home
+	if not (getCore():getDebug() or isAdmin()) then return; end 
 	GlytchMenu.openPanel()
 	return key
 	end
@@ -512,35 +579,23 @@ function GlytchMenu.press(key)
 	
 	return key
 	end
-		if (key==210) then --home
-	getPlayer():playEmote("SitZed2")
-	return key
-	end
-	
-
 end
 
 
 
 Events.OnKeyPressed.Add(GlytchMenu.press);
-function addLightHere()
-	local player = getPlayer()
-	primLight = IsoLightSource.new(player:getX(), player:getY(), player:getZ(), 2, 2, 2, 50)
-	local sq = getPlayer():getSquare() 
-	player:getCell():addLamppost(primLight)
-end
-function detecttiles()
-if Glytch3rtest == true then
-local sq = getPlayer():getSquare() 
-    for i=0, sq:getObjects():size()-1 do
-    local obj = sq:getObjects():get(i)
-        local spr = obj:getSprite():getName()
-        if spr and obj then
-        print(spr) end
-    end
-    end
-end
 
---Events.OnPlayerMove.Add(detecttiles)
 
---Glytch3rtest = true 
+-- function detecttiles()
+-- if Glytch3rtest == true then
+-- local sq = getPlayer():getSquare() 
+    -- for i=0, sq:getObjects():size()-1 do
+    -- local obj = sq:getObjects():get(i)
+        -- local spr = obj:getSprite():getName()
+        -- if spr and obj then
+        -- print(spr) end
+    -- end
+    -- end
+-- end
+
+-- Events.OnPlayerMove.Add(detecttiles)

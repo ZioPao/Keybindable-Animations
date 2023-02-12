@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>_act3_Walk</m_Name>
-	<m_AnimName>Zombie_Walk3</m_AnimName>
+	<m_AnimName>Zombie_Walk5</m_AnimName>
 <!-- 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName> -->
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>true</m_Looped>
-	<m_SpeedScale>1.5</m_SpeedScale>
+	<m_SpeedScale>2</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
     <m_Conditions>
 		<m_Name>isAct3</m_Name>

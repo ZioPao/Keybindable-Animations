@@ -14,7 +14,7 @@ Commands.GlytchAnimations = {};
  
 function AnimMenu.openPanel(playerObj)
     if AnimMenu.instance == nil then
-        local window = AnimMenu:new(1920-400, 1080-600-40, 155, 380, playerObj)
+        local window = AnimMenu:new(1920-400, 1080-450-40, 155, 380, playerObj)
         window:initialise()
         window:addToUIManager()
       
@@ -48,7 +48,7 @@ end ]]
 	local opTitle4 = "Act3"
 	local opTitle5 = "Act4"
     local opTitle6 = "Act5"
-
+    local opTitle7 = "isUndead"
 --**************************            	   **************************
 --								 body***
 --**************************            	   **************************
@@ -58,7 +58,7 @@ function AnimMenu:onClick(button)
     local playerId = player:getOnlineID()
     local mod_data = player:getModData()
 
-    local titles = {opTitle1, opTitle2, opTitle3, opTitle4, opTitle5, opTitle6}
+    local titles = {opTitle1, opTitle2, opTitle3, opTitle4, opTitle5, opTitle6, opTitle7}
 
 
 
@@ -141,6 +141,12 @@ function AnimMenu:createChildren()
     self.opt6:initialise();
     self.opt6:instantiate();
     self:addChild(self.opt6);
+    
+        self.opt7 = ISButton:new(self:getWidth()/2 - buttonWid/2-15, self.opt6:getBottom() + 10, buttonWid, buttonHgt, opTitle7, self, AnimMenu.onClick);
+    self.opt7.internal = opTitle7;
+    self.opt7:initialise();
+    self.opt7:instantiate();
+    self:addChild(self.opt7);
 
 end
 --**************************            	   **************************

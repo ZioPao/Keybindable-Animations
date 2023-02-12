@@ -1,0 +1,18 @@
+module Skin {
+    imports { Base }
+	
+	item Bones
+	{
+       DisplayCategory = Clothing,		
+		Type = Clothing,
+		DisplayName = Bones,
+		ClothingItem = Bones_clo,
+		BodyLocation = Torso1Legs1, 
+		IconsForTexture = Bones_ico,		
+		WorldStaticModel = WorldItems/Bones_ground,		
+	}		
+
+
+
+
+}

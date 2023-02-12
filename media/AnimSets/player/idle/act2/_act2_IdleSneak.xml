@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>_act2_IdleSneak</m_Name>
-	<m_AnimName>Bob_EmoteSway</m_AnimName><!-- Zombie_IdleAgainstWall -->
+	<m_AnimName>Zombie_IdleAgainstWall</m_AnimName><!-- Zombie_IdleAgainstWall -->
 	<m_Looped>true</m_Looped>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
