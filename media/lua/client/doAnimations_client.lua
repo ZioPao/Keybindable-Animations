@@ -13,7 +13,7 @@ Commands.GlytchAnimations.AcceptNewAnimation = function(args)
 
 
     -- TODO make this a function so we can run it from wherever we are in the code
-    local titles = { "Normal", "isAct1", "isAct2", "isAct3", "isAct4", "isAct5"}
+    local titles = { "Normal", "isAct1", "isAct2", "isAct3", "isAct4", "isAct5", "isUndead"}
     for i = 0, #titles do
         local title = titles[i]
         original_player:setVariable(title, 'false')

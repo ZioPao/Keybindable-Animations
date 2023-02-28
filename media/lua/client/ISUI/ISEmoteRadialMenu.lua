@@ -5,7 +5,7 @@
 require "ISUI/ISRadialMenu"
 
 ISEmoteRadialMenu = ISBaseObject:derive("ISEmoteRadialMenu")
-if not (getCore():getDebug() or isAdmin()) then return; end 
+
 function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.defaultMenu = {};
 	ISEmoteRadialMenu.defaultMenu["AuthenticAnimations"] = {};

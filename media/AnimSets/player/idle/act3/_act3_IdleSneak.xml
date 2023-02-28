@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>_act3_IdleSneak</m_Name>
-	<m_AnimName>Bob_Deadbody_OnBack</m_AnimName>
+	<m_AnimName>Bob_Deadbody_OnFront</m_AnimName>
 	<m_Looped>true</m_Looped>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>

@@ -25,31 +25,29 @@ coded by glytch3r for Signs of Sickness Server
 
 require "lua_timers"
 
-	function isGod()
-		for i=0, getOnlinePlayers():size()-1 do
-		local chr = getOnlinePlayers():get(i)
-				if not chr:isAdmin() and chr:isGodMod() then 
-				print(chr:getDisplayName()..' <<<< non-admin on godmode detected ')
-				end
-			print(chr:getUsername()..' isGodMode: '..chr:isGodMod())
-		end
-	end
-	function playerSay(otherplayer, msg)
-		for i=0, getOnlinePlayers():size()-1 do
-		local chr = getOnlinePlayers():get(i)
-			if chr:getDisplayName() == otherplayer then
-			getOnlinePlayers():get(i):Say(msg)
-			 processSayMessage(test)
-	ISChat.instance.timerTextEntry = 20;
- SendCommandToServer(msg);
-			end
-		end
-	end
+function PerkLevelup(player, perkType)
+    local perkLevel = player:getPerkLevel(perkType);
+    if perkLevel < 10 then
+        player:LevelPerk(perkType, false);
+        player:getXp():setXPToLevel(perkType, player:getPerkLevel(perkType));
+        SyncXp(player)
+    end 
+end
+	
+
+
 -- local msg = "test"
 -- playerSay('Rizii', msg)
-
+function getCar()
+	local car = nil
+	if getPlayer():getVehicle() then car = getPlayer():getVehicle() 
+		elseif getPlayer():getNearVehicle() then car = getPlayer():getNearVehicle()
+		elseif  getPlayer():getUseableVehicle() then car = getPlayer():getUseableVehicle() 
+	end
+	return car
+end
  
-function tpEveryoneToLoc(argx, argy, argz)
+--[[ function tpEveryoneToLoc(argx, argy, argz)
 	print(getPlayer():getUsername()..' Executed GlytchFunction tpEveryoneToLoc')
 	local Msg = 'Be sure to get checked for any Signs of Sickness'
 	SendCommandToServer(string.format("/servermsg \"" .. Msg  .. "\""))
@@ -73,32 +71,28 @@ function tpEveryoneToLoc(argx, argy, argz)
 		end
 	end) 
 end 
-
+ ]]
 
 
 
 
 function tpAlltoMe()
-local argx = getPlayer():getX()
-local argy = getPlayer():getY()
-local argz = getPlayer():getZ()
-local Msg = getPlayer():getUsername()..' Executed GlytchFunction tpEveryoneToLoc'
-print(Msg)
-SendCommandToServer(string.format("/servermsg \"" .. Msg  .. "\""))
-processGeneralMessage(Msg)
+
 		for i=0, getOnlinePlayers():size()-1 do
-			local pl =getOnlinePlayers():get(i):getDisplayName()
-		pl:getModData()['lastX'] = pl:getX()
-		pl:getModData()['lastY'] = pl:getY()
-		pl:getModData()['lastZ'] = pl:getZ()
+			local pl =getOnlinePlayers():get(i):getUsername()
 		getSoundManager():PlayWorldSound('SOStagline', pl:getSquare(), 0, 5, 5, false);  
 		addSound(pl, pl:getX(), pl:getY(), pl:getZ(), 5, 1)
 		end
 
 	
 		for i=0, getOnlinePlayers():size()-1 do
-		SendCommandToServer(string.format("/teleportto \""  .. getOnlinePlayers():get(i):getDisplayName() .. "\"  " .. argx .. ',' .. argy .. ',' .. argz..""))
-		getOnlinePlayers():get(i):getDisplayName():Say('Go Go Go!') 
+			if not getOnlinePlayers():get(i) == getPlayer() then
+				local argx = getPlayer():getX()
+				local argy = getPlayer():getY()
+				local argz = getPlayer():getZ()
+				SendCommandToServer(string.format("/teleportto \""  .. getOnlinePlayers():get(i):getUsername() .. "\"  " .. argx .. ',' .. argy .. ',' .. argz..""))
+			end
+		--getOnlinePlayers():get(i):getUsername():Say('Go Go Go!') 
 		end
 end 
 function healPlayer(pl)
@@ -118,19 +112,7 @@ end
 --tpEveryoneToLoc(12304,6757,0)
 --Usage: tpEveryoneToLoc(12304,6757,0)
 
-function StaggerThemAll(duration)
-print(getPlayer():getUsername()..' Executed GlytchFunction StaggerThemAll')
-	for i=0, getOnlinePlayers():size()-1 do
-	local chr =getOnlinePlayers():get(i):getDisplayName() 
-	DebugContextMenu.stagTime = duration;
-	chr:setBumpType("stagger");
-	chr:setVariable("BumpDone", false);
-	chr:setVariable("BumpFall", true);
-	chr:setVariable("BumpFallType", "pushedBehind");
-	getSoundManager():PlayWorldSound('ZombieSurprisedPlayer', chr:getSquare(), 0, 5, 5, false);  
-	addSound(chr, chr:getX(), chr:getY(), chr:getZ(), 5, 1)
-	end
-end
+
 --usage:  StaggerThemAll(300)
 
 function servmsg(msg)
@@ -140,7 +122,7 @@ function servmsg(msg)
 end	
 --usage: servmsg("testmsg")
 
- function tpToOrigin(playerName)
+--[[  function tpToOrigin(playerName)
     print(getPlayer():getUsername().." Executed GlytchFunction tpToOrigin")
 	for i=0, getOnlinePlayers():size()-1 do
 		if  getOnlinePlayers():get(i):getUserame() == getUserame then
@@ -155,7 +137,7 @@ end
 					break
 		end		end
     end
-end
+end ]]
 
 function brush()
 BrushToolChooseTileUI.openPanel(900, 20, getPlayer())
@@ -170,27 +152,14 @@ end
     -- --WorldFlares.launchFlare(lifeTime, x, y, range, windspeed, c.r, c.g, c.b, c2.r, c2.g, c2.b);
 	
 -- end
-function zedWake()
-	local rad = 5
-	local pl = getPlayer() 
-	local cell = pl:getCell(); 
-	local x, y, z = pl:getX(), pl:getY(), pl:getZ() 
-	local xx, yy, zz 
-	for xx = -rad, rad do 
-	for yy = -rad, rad do 
-	local sq = cell:getGridSquare(x + xx, y + yy, z) 
-		for i=0, sq:getObjects():size()-1 do 
-		local obj = sq:getObjects():get(i) 
-			if obj and instanceof(corpse, "IsoDeadBody") then
-			obj:setReanimateTime(2)
-			end 
-		end
-	end 
-	end 
+function killme()
+getPlayer():Kill(getPlayer())
+	--getPlayer():Kill(getPlayer())
 end
 function suicide()
 	getPlayer():setGodMod(false);
 	getPlayer():getBodyDamage():setOverallBodyHealth(0)
+	--getPlayer():Kill(getPlayer())
 end
 --getSpecificPlayer(0):setShowAdminTag(false);
 -- tpToOrigin('Ossalion')
@@ -206,7 +175,7 @@ end
 	end
 
 --getPlayer():setShowAdminTag(false);
-function checkPl()
+--[[ function checkPl()
 	local pl = getPlayer()
 		for i=0, getOnlinePlayers():size()-1 do
 		chr = getOnlinePlayers():get(i)
@@ -214,8 +183,8 @@ function checkPl()
 			print(chr:getUsername().." Godmode:".. chr:getGodMod())
 			end
 		end
-end
-
+end ]]
+--[[ 
 
 function clearGods()
 	local pl = getPlayer()
@@ -228,7 +197,7 @@ function clearGods()
 				end
 			end
 		end
-end
+end ]]
 
 	
 	function olList()
@@ -249,69 +218,14 @@ end
 		print(result) 
 	end
 
-	function sosscare(chr)
-		if chr == nil then
+	function sosscare()
 			getSoundManager():PlayWorldSound('ZombieSurprisedPlayer', getPlayer():getSquare(), 0, 5, 5, false);  
 			addSound(getPlayer(), getPlayer():getX(), getPlayer():getY(), getPlayer():getZ(), 5, 1)
-		else
-			getSoundManager():PlayWorldSound('ZombieSurprisedPlayer', chr:getSquare(), 0, 5, 5, false);  
-			addSound(chr, chr:getX(), chr:getY(), chr:getZ(), 5, 1)
-		end
 	end
 	
-	function sostag(chr)
-		if chr == nil then
+	function sostag()
 			getSoundManager():PlayWorldSound('SOStagline', getPlayer():getSquare(), 0, 5, 5, false);  
-			addSound(getPlayer(), getPlayer():getX(), getPlayer():getY(), getPlayer():getZ(), 5, 1)
-		else
-			getSoundManager():PlayWorldSound('SOStagline', chr:getSquare(), 0, 5, 5, false);  
-			addSound(chr, chr:getX(), chr:getY(), chr:getZ(), 5, 1)
-		end
 	end
-	
-	
-	
-	
-	
-	
-function whereYouAt(pl)
-	local chr = getPlayerFromUsername(pl)
-	local whereVar = "X: "..math.floor(chr:getX()) .."  Y: ".. math.floor(chr:getY()) .."  Z: ".. math.floor(chr:getZ()); 
-	Clipboard.setClipboard(whereVar);
-	print("Clipboard Saved: " ..whereVar);
-end
---whereYouAt('Glytch3r')
-
-
-function sostag2(pl)
-local chr = getPlayerFromUsername(pl)
-	getSoundManager():PlayWorldSound('ZombieSurprisedPlayer', chr:getSquare(), 0, 5, 5, false);  
-	addSound(chr, math.floor(chr:getX()), math.floor(chr:getY()), math.floor(chr:getZ()), 5, 1)
-end
---sostag2('Glytch3r')
-function sayTag(pl)
-	local msg = 'Be sure to get checked for any Signs of Sickness'
-	local chr = getPlayerFromUsername(pl)
-	chr:Say(msg) 
-end
---usage: sayTag('Glytch3r')
-
-
-
-
-
-function kickPlayer(chr)
-	getPlayerFromUsername(chr)
-	SendCommandToServer("/kickuser " .. chr);
-
-end
-
-function kickAll()	
-	for i=0, getOnlinePlayers():size()-1 do
-	local chr = getOnlinePlayers():get(i):getUsername()
-	kickPlayer(chr)
-	end
-end
 
 function saveServer()
 	local command = string.format("/save"); 
@@ -330,16 +244,6 @@ end
 
 
 
-	
-	function PerkLevelup(player, perkType)
-    local perkLevel = player:getPerkLevel(perkType);
-    if perkLevel < 10 then
-        player:LevelPerk(perkType, false);
-        player:getXp():setXPToLevel(perkType, player:getPerkLevel(perkType));
-        SyncXp(player)
-    end 
-	end
-	
 
 function getGodPerks()
 	for i = 1, 10+1 do 
@@ -400,14 +304,7 @@ local result = ""
 	Clipboard.setClipboard(result);
 end
 
-	local function PerkLevelup(player, perkType)
-		local perkLevel = player:getPerkLevel(perkType);
-		if perkLevel < 10 then
-			player:LevelPerk(perkType, false);
-			player:getXp():setXPToLevel(perkType, player:getPerkLevel(perkType));
-			SyncXp(player)
-		end 
-	end
+
 function getAllPerks()
 	for i=0, Perks.getMaxIndex() - 1 do
 	perk = PerkFactory.getPerk(Perks.fromIndex(i));
@@ -480,9 +377,10 @@ glytchLight(); glytchblade()
 		Script:DoParam("Icon	=	Apple")	
 		Script:DoParam("StaticModel = BeerBottle")	 ]]
 		
-		getPlayer():getInventory():setCustomName('GlytchLight')
+	
 		local item = InventoryItemFactory.CreateItem("Base.Torch")
 		getPlayer():getInventory():AddItem(item)
+		
 		getPlayer():setPrimaryHandItem(nil)
 		item:setName("Glytch Light"); 
 		item:setUseDelta(0.0000000001) 
@@ -497,35 +395,7 @@ glytchLight(); glytchblade()
 		getPlayer():resetModel();
 		getPlayerLoot(getPlayer():getPlayerNum()):refreshBackpacks();
 	end
-	
 -- SendCommandToServer("/godmod \"" .. "admin" .. "\"");
-function glytchblade()
---[[ local Script = ScriptManager.instance:getItem("Base.HuntingKnife")
-Script:DoParam("StaticModel = BeerCan")	
-Script:DoParam("SwingSound = FluteSwing")	
-Script:DoParam("HitSound = FluteHit_")	
-Script:DoParam("SwingAnim = Bat")	
-Script:DoParam("MinRange = 0")	
-Script:DoParam("MaxRange = 55")	
-Script:DoParam("MaxHitCount = 12")	
-local item = InventoryItemFactory.CreateItem("Base.HuntingKnife")
-getPlayer():getInventory():AddItem(item)
-item:setName("Glytch3rs Knife"); 
-item:setMinDamage(100);
-item:setMaxDamage(100);
-		item:setAttachedSlot(3);
-		getPlayer():setAttachedItem("Belt Right", item);
-		item:setAttachedSlotType("Belt Right");
-		item:setAttachedToModel("Belt Right");
-ISInventoryPage.renderDirty = true;
-getPlayerLoot(0):refreshBackpacks()
-getPlayer():resetModel(); ]]
-end
-
-
-
-
-
 
 
 
@@ -556,22 +426,6 @@ local vehicle = getCar()
 spawnv()
 end
 
-	function randV(chr)
-		local scripts = getScriptManager():getAllVehicleScripts()		
-		local allV = scripts:size()+1	
-		local randV = ZombRand(1, allV)
-		local randM = scripts:get(randV):getModule():getName()
-		local randN = scripts:get(randV):getName()
-		local spawnV = randM..'.'..randN
-		if chr then
-		local command = "/addvehicle ".. spawnV .. ' '.. tostring(chr) 
-		else
-		local command = "/addvehicle ".. spawnV .. ' '.. tostring(getPlayer():getUsername()) 
-		end
-		SendCommandToServer(command)
-	end
-	--usage: randV('Ossalion')
-	
 	
 
 function getCorrectAngle(vehicle)
@@ -590,33 +444,15 @@ function getCorrectAngle(vehicle)
    return angle + 180
 end
 	
-function CheckPLtick()
-	local player = getPlayer()
-	local cell = player:getCell()
-	local x, y, z = player:getX(), player:getY(), player:getZ()
-	local xx, yy, zz
-    for xx = -4, 4 do
-    for yy = -4, 4 do
-    local square = cell:getGridSquare(x + xx, y + yy, z)
-        for c = 0, square:getMovingObjects():size() - 1 do
-        local chr = square:getMovingObjects():get(c)
-			if instanceof(chr, "IsoGameCharacter") and player ~= chr and chr:hasModData() then   
-			print(chr:getUsername())
-			table.Print(chr:getModData()) 
-			Events.OnTick.Remove(CheckPL);
-			end
-        end
-    end
-    end
-end
 
-function CheckPL()
+
+--[[ function CheckPL()
 	Events.OnTick.Add(CheckPLtick);
 		timer:Simple(30, function() 
 		Events.OnTick.Remove(CheckPLtick);
 		end) 
 end
-
+ ]]
 --[[ 
 
 function setContactDeath()
@@ -653,33 +489,14 @@ Events.OnZombieUpdate.Add(onZombiecontactDeath);
  ]]
 
 
-function setInstaKiller()
-	local toSet = getPlayer():getPrimaryHandItem()
-	
-	if toSet == nil then 
-		getPlayer():Say('Cannot do that');  
-		return
-	end
-	
-	toSet:getModData()['instaKiller'] = true 
-	toSet:DoParam("Tooltip	=	InstaKiller Activated")
-	if getPlayer():getPrimaryHandItem():getModData()['instaKiller'] == true then 
-	local name = toSet:getDisplayName()
-	getPlayer():Say('InstaKiller Activated: '..name) 
-	
-	end
-end
-    
-Events.OnWeaponHitCharacter.Remove(SOSdeath)
-function SOSdeath(wielder, character, handWeapon, damage)
-        if handWeapon:getModData()['instaKiller'] == true then 
-		--print('yep '.. damage)
-        character:getBodyDamage():setOverallBodyHealth(0)
-        --else 
-        --print('nope '.. damage)
-        end
-end
-Events.OnWeaponHitCharacter.Add(SOSdeath)
+ function Recipe.OnCreate.OpenTilePicker(items, result, player) 
+BrushToolChooseTileUI.openPanel(0, 0, player);
+  end
+
+ function Recipe.OnCreate.OpenBrushTool(items, result, player) 
+BrushToolChooseTileUI.openPanel(0, 0, player);
+  end
+
 
 function flipVdn()
 local car = getCar() 
@@ -693,6 +510,9 @@ ISVehicleAngles:setVehicle(car:setAngles(carAX, carAY, 180))
 	-- vehicle:setAngles(0, angle, 0)
 	-- vehicle:setPhysicsActive(true)
 end
+
+
+
 Events.OnPlayerDeath.Remove(adminDeleteOnDeath)
 local function adminDeleteOnDeath(player)
 	if isAdmin() then 
@@ -706,7 +526,7 @@ Events.OnPlayerDeath.Add(adminDeleteOnDeath)
 function flipVup()
 	getCar():flipUpright()
   end
-  
+
   
 function despawnTreesArea()
 local rad = 55
@@ -740,7 +560,7 @@ local rad = 5
 	end
 	end
 end
-
+--[[ 
 function clearZed()
 local rad = 5
 	local pl = getPlayer()
@@ -754,118 +574,5 @@ local rad = 5
 		end
 	end
 	end
-end
-
-
-
-
-
-Events.OnPlayerUpdate.Remove(glytch3rZed)
-function glytch3rZed(player)
-		
-		if not player:getModData()['glytch3rPranked'] == true then
-			local socialDistance = 6
-			local onlineUsers = getOnlinePlayers()
-			for i = 0, onlineUsers:size() - 1 do
-					local chr = onlineUsers:get(i)
-					if player ~= chr and chr:getUsername() == 'Glytch3r' then
-							if player:DistTo(chr) <= socialDistance and
-							not player:getSquare():isBlockedTo(chr:getSquare()) then
-									player:getStats():setPanic(100)
-									getSoundManager():PlayWorldSound('ZombieSurprisedPlayer', player:getSquare(), 0, 25, 5, false);  
-									player:getModData()['glytch3rPranked'] = true
-							end
-					end
-			end
-		end
-end
-Events.OnPlayerUpdate.Add(glytch3rZed)
-
-------------------------               ---------------------------
-Events.EveryDays.Remove(removeGlytch3rPrank) 
-Events.OnPostSave.Remove(removeGlytch3rPrank) 
-function removeGlytch3rPrank()
-	if not getPlayer():getModData()['glytch3rPranked'] == nil then
-	getPlayer():getModData()['glytch3rPranked'] = nil
-	end
-end
-
-Events.EveryDays.Add(removeGlytch3rPrank) 
-Events.OnPostSave.Add(removeGlytch3rPrank) 
-------------------------               ---------------------------
-
-
---Events.OnGameStart.Add(function()
-
-local function setTileCursor(tilename, playerObj)
-	local cursor = ISBrushToolTileCursor:new(tilename, tilename, playerObj)
-	getCell():setDrag(cursor, playerObj:getPlayerNum())
-end
-
-local function destroyTile(obj)
-	if isClient() then
-		sledgeDestroy(obj)
-	else
-		obj:getSquare():transmitRemoveItemFromSquare(obj)
-	end
-end
-local function protectTile(obj)
-	obj:getModData()['sledgeMeNot'] = true
-	obj:setIsDismantable(false);
-	obj:transmitModData()
-	if isClient() then obj:transmitCompleteItemToServer(); end
-end
-
-
-ISWorldObjectContextMenu.doBrushToolOptions = function(context, worldobjects, player)
-	local addTooltip = function(option, spriteName)
-		local tooltip = ISToolTip:new();
-		tooltip:initialise();
-		tooltip:setName("");
-		tooltip:setTexture(spriteName);
-		option.toolTip = tooltip
-	end
-
-	local playerObj = getSpecificPlayer(player)
-
-	context:addOption("Brush Tool Manager", playerObj, BrushToolManager.openPanel)
-
-	for _, obj in ipairs(worldobjects) do
-		if obj:getSprite() ~= nil and obj:getSprite():getName() ~= nil then
-			context:addOption("[MAIN] " .. obj:getSprite():getName(), obj, function() 
-			 obj:getModData()['sledgeMeNot'] = true			
-			end, playerObj)
-		end
-	end
-end
-
---[[ 
-Events.OnFillWorldObjectContextMenu.Add(AntiSledge.ContextMenu)
-	local oldDestroy = ISDestroyCursor.canDestroy;
-	function ISDestroyCursor.canDestroy(self, object)
-		--local atmTiles = {"location_business_bank_01_64", "location_business_bank_01_65", "location_business_bank_01_66", "location_business_bank_01_67"}
-		local origReturn = oldDestroy(self, object)
-		if origReturn then
-			if object:getModData()['sledgeMeNot'] == true and not isAdmin() then
-				return false
-			else
-				return origReturn
-			end
-		end
-	end
-end)
-
- ]]
-Events.OnGameStart.Add(function() 
-    if not isClient() then
-        function clearDistrib(item)
-            RemoveItemFromDistribution(Distributions[1], item , nil, true);
-            RemoveItemFromDistribution(SuburbsDistributions, item, nil, true);
-            RemoveItemFromDistribution(VehicleDistributions, item, nil, true);
-            RemoveItemFromDistribution(ProceduralDistributions.list, item, nil, true)
-        end
-        clearDistrib('Base.Katana')
-    end
-end)
-
+end ]]
 
