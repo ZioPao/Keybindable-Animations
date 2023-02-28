@@ -68,4 +68,7 @@ IGUI_EN = {
 	IGUI_Emote_Yawn = "Yawn",
 	IGUI_Emote_Vomit = "Vomit",
 	IGUI_Emote_??? = "???",
+	IGUI_Emote_ZEat = "Feast",
+	IGUI_Emote_ZLayIdle = "Lay Idle",
+	IGUI_Emote_ZLunge = "Lunge",
 }
