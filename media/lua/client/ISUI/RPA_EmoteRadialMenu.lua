@@ -8,50 +8,48 @@ function ISEmoteRadialMenu:init()
 
     og_ISEmoteRadialMenuInit(self)
 
-	ISEmoteRadialMenu.menu["AuthenticAnimations"] = {};
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].name = getText("IGUI_Emote_AuthenticAnimations")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"] = {};
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].name = getText("IGUI_Emote_RoleplayAnimations")
 
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu = {}
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Asleep"] = getText("IGUI_Emote_Asleep")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Awake"] = getText("IGUI_Emote_Awake")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Sit1"] = getText("IGUI_Emote_Sit")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Tired"] = getText("IGUI_Emote_Tired")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Scared"] = getText("IGUI_Emote_Spooked")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Pose"] = getText("IGUI_Emote_Pose")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["holdbridgenose"] = getText("IGUI_Emote_Facepalm")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Faint"] = getText("IGUI_Emote_Faint")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Smell"] = getText("IGUI_Emote_Smell")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Vomit"] = getText("IGUI_Emote_Vomit")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Crawl"] = getText("IGUI_Emote_Crawl")
-	ISEmoteRadialMenu.menu["AuthenticAnimations"].subMenu["Idle"] = getText("IGUI_Emote_Idle")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu = {}
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Asleep"] = getText("IGUI_Emote_Asleep")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Awake"] = getText("IGUI_Emote_Awake")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Sit1"] = getText("IGUI_Emote_Sit")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Tired"] = getText("IGUI_Emote_Tired")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Scared"] = getText("IGUI_Emote_Spooked")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Pose"] = getText("IGUI_Emote_Pose")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["holdbridgenose"] = getText("IGUI_Emote_Facepalm")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Faint"] = getText("IGUI_Emote_Faint")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Smell"] = getText("IGUI_Emote_Smell")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Vomit"] = getText("IGUI_Emote_Vomit")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Crawl"] = getText("IGUI_Emote_Crawl")
+	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Idle"] = getText("IGUI_Emote_Idle")
 
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"] = {}
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].name = getText("IGUI_Emote_AuthenticAnimationsExtra")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu = {}
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["AwakeToAsleep"] = getText("IGUI_Emote_AwakeToAsleep")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Passout"] = getText("IGUI_Emote_Passout")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["DragDown"] = getText("IGUI_Emote_DragDown")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Wash"] = getText("IGUI_Emote_Wash")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Duffelbag"] = getText("IGUI_Emote_Dufflebag")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Limp"] = getText("IGUI_Emote_Limp")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["LimpAssist"] = getText("IGUI_Emote_LimpAssist")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Bed"] = getText("IGUI_Emote_Bed")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Walk"] = getText("IGUI_Emote_???")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Z_Eat"]= getText("IGUI_Emote_ZEat")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Z_Lunge"] = getText("IGUI_Emote_ZLunge")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["Z_LayIdle"] = getText("IGUI_Emote_ZLayIdle")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["ScrambleFloorBack"] = getText("IGUI_Emote_ScrambleFloorBack")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["ScrambleFloorIdle"] = getText("IGUI_Emote_ScrambleFloorIdle")
-	ISEmoteRadialMenu.menu["AuthenticAnimationsExtra"].subMenu["ScrambleFloor"] = getText("IGUI_Emote_ScrambleFloor")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"] = {}
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].name = getText("IGUI_Emote_RoleplayAnimationsExtra")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu = {}
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["AwakeToAsleep"] = getText("IGUI_Emote_AwakeToAsleep")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Passout"] = getText("IGUI_Emote_Passout")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["DragDown"] = getText("IGUI_Emote_DragDown")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Wash"] = getText("IGUI_Emote_Wash")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Duffelbag"] = getText("IGUI_Emote_Dufflebag")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Limp"] = getText("IGUI_Emote_Limp")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["LimpAssist"] = getText("IGUI_Emote_LimpAssist")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Bed"] = getText("IGUI_Emote_Bed")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Walk"] = getText("IGUI_Emote_???")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_Eat"]= getText("IGUI_Emote_ZEat")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_Lunge"] = getText("IGUI_Emote_ZLunge")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_LayIdle"] = getText("IGUI_Emote_ZLayIdle")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloorBack"] = getText("IGUI_Emote_ScrambleFloorBack")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloorIdle"] = getText("IGUI_Emote_ScrambleFloorIdle")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloor"] = getText("IGUI_Emote_ScrambleFloor")
 
 
 	ISEmoteRadialMenu.menu["Fitness"] = {}
 	ISEmoteRadialMenu.menu["Fitness"].name = getText("IGUI_Emote_Fitness")
 	ISEmoteRadialMenu.menu["Fitness"].subMenu = {}
-	--ISEmoteRadialMenu.menu["Fitness"].subMenu["Barbell"] = getText("IGUI_Emote_Barbell");
 	ISEmoteRadialMenu.menu["Fitness"].subMenu["Burpees"] = getText("IGUI_Emote_Burpee")
-	--ISEmoteRadialMenu.menu["Fitness"].subMenu["Dumbbel1"] = getText("IGUI_Emote_Dumbbell");
 	ISEmoteRadialMenu.menu["Fitness"].subMenu["BicepCurl"] = getText("IGUI_Emote_BicepCurl")
 	ISEmoteRadialMenu.menu["Fitness"].subMenu["Pushup"] = getText("IGUI_Emote_Pushup")
 	ISEmoteRadialMenu.menu["Fitness"].subMenu["Situp"] = getText("IGUI_Emote_Situp")
@@ -82,7 +80,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants["Burpees"] = {"Burpees11", "Burpees12"}
 	ISEmoteRadialMenu.variants["BicepCurl"] = {"BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06"}
 	ISEmoteRadialMenu.variants["Crawl"] = {"Crawl"}
-	--ISEmoteRadialMenu.variants["Dumbbel1"] = {"Dumbbel101", "Dumbbel102", "Dumbbel103", "Dumbbel104"};		
 	ISEmoteRadialMenu.variants["Duffelbag"] = {"DuffelbagOn", "DuffelbagLoot", "DuffelbagOff"}
 	ISEmoteRadialMenu.variants["Idle"] = {"ShiftWeight", "Burp", "ChewNails"}
 	ISEmoteRadialMenu.variants["Faint"] = {"feelfeint", "Sway"}
@@ -107,8 +104,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["Pose"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Sit1"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["AuthenticAnimations"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["AuthenticAnimationsExtra"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["RoleplayAnimations"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["RoleplayAnimationsExtra"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["AwakeToAsleep"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["holdbridgenose"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Idle"] = getTexture("media/ui/emotes/test.png")
