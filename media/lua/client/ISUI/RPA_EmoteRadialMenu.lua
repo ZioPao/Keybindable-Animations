@@ -58,6 +58,7 @@ function ISEmoteRadialMenu:init()
 
 
 
+
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"] = {}
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].name = getText("IGUI_Emote_RoleplayAnimationsExtra")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu = {}
@@ -255,27 +256,24 @@ function ISEmoteRadialMenu:emote(emote)
 
 	local player = getPlayer()
 	local chosenValue
-	if not foundType then
 		
 
-		for key, value in pairs(specialEmotes) do
-			if key == emote then
-				chosenValue = value
-				foundType = true
+	for key, value in pairs(specialEmotes) do
+		if key == emote then
+			chosenValue = value
 
+		else
+			-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
+			if not isClient() and not isServer() then
+				player:setVariable(value, "false")
 			else
-				-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
-				if not isClient() and not isServer() then
-					player:setVariable(value, "false")
-				else
-					sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
-				end
+				sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
 			end
-
 		end
 
-
 	end
+
+
 
 	if chosenValue then
 
