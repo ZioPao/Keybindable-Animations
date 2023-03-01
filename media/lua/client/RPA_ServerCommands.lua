@@ -13,9 +13,7 @@ ServerCommands.ReceiveAnimVariable = function(args)
 
 end
 
-
-
-
+----------------------------------------------
 
 local function OnServerCommand(module, command, args)
     if module == 'RPA' then

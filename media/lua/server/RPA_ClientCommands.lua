@@ -15,7 +15,7 @@ ClientCommands.SendAnimVariable = function(player, args)
 
 end
 
-
+---------------------------------------------
 
 local function OnClientCommand(module, command, playerObj, args)
     if module == 'RPA' and ClientCommands[command] then

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="looped.xml">
+<animNode x_extends="default.xml">
 	<m_Name>TStretch</m_Name>
 	<m_AnimName>Bob_EmoteTiredStretch</m_AnimName>
 	<m_BlendTime>0.30</m_BlendTime>

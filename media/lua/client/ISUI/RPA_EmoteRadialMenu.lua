@@ -1,20 +1,11 @@
 -- Roleplay Animations --
 -- Radial Emote Menu modifications 
-
-
-
-
 require "ISUI/ISEmoteRadialMenu"
-
 
 local specialEmotes = {
 	Crawl = "isRPCrawling",
 
 }
-
-
-
-
 
 
 
@@ -190,7 +181,6 @@ function ISEmoteRadialMenu:init()
 end
 
 
-
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
@@ -216,7 +206,6 @@ function ISEmoteRadialMenu:emote(emote)
 
 
 	if chosenValue then
-
 
 		if not isClient() and not isServer() then
 			local previousCheck = player:getVariableBoolean(chosenValue)
