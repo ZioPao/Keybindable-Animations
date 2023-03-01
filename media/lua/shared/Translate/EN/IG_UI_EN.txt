@@ -7,6 +7,10 @@ IGUI_EN = {
 	IGUI_Emote_Faint = "Faint",
 	IGUI_Emote_Facepalm = "Facepalm",
     IGUI_Emote_RoleplayAnimations = "Roleplay Animations",
+	IGUI_Emote_RPInteractiveAnimations = "Interactive Animations",
+
+
+
 	IGUI_Emote_RoleplayAnimationsExtra = "Roleplay Animations Extra",
 	IGUI_Emote_AwakeToAsleep = "Awake To Asleep",
 	IGUI_Emote_Awake = "Awake",

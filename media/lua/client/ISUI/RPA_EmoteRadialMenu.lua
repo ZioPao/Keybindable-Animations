@@ -18,6 +18,9 @@ function ISEmoteRadialMenu:init()
 
     og_ISEmoteRadialMenuInit(self)
 
+
+
+
 	ISEmoteRadialMenu.menu["RoleplayAnimations"] = {};
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].name = getText("IGUI_Emote_RoleplayAnimations")
 
@@ -33,8 +36,20 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Faint"] = getText("IGUI_Emote_Faint")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Smell"] = getText("IGUI_Emote_Smell")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Vomit"] = getText("IGUI_Emote_Vomit")
-	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Crawl"] = getText("IGUI_Emote_Crawl")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Idle"] = getText("IGUI_Emote_Idle")
+
+
+
+	ISEmoteRadialMenu.menu.InteractiveAnimations = {}
+	ISEmoteRadialMenu.menu.InteractiveAnimations.name = getText("IGUI_Emote_RPInteractiveAnimations")
+	
+	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu = {}
+	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.Crawl = getText("IGUI_Emote_Crawl")
+
+
+
+
+
 
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"] = {}
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].name = getText("IGUI_Emote_RoleplayAnimationsExtra")
@@ -173,6 +188,8 @@ end
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
+	-- TODO Should send notification to server for updated setVariable!!
+	-- TODO add a keybind to stop animation!
 
 	local chosenValue
 	local player = getPlayer()
