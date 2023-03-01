@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode x_extends="looped.xml">
-	<m_Name>Ext_PainHead</m_Name>
+	<m_Name>PainHead1</m_Name>
 	<m_AnimName>Bob_EmotePainHead</m_AnimName>
 	<m_BlendTime>0.30</m_BlendTime>	
 	<m_Conditions>

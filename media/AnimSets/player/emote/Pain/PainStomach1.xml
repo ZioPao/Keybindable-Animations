@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="looped.xml">
-	<m_Name>Ext_PainStomach</m_Name>
+<animNode x_extends="default.xml">
+	<m_Name>PainStomach1</m_Name>
 	<m_AnimName>Bob_EmotePainStomach</m_AnimName>
 	<m_Conditions>
 		<m_StringValue>PainStomach1</m_StringValue>

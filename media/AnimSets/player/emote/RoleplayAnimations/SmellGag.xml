@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="looped.xml">
-	<m_Name>Smell Gag</m_Name>
+<animNode x_extends="default.xml">
+	<m_Name>SmellGag</m_Name>
 	<m_AnimName>Bob_EmoteSmellGag</m_AnimName>
 	<m_BlendTime>0.30</m_BlendTime>
 	<m_Conditions>

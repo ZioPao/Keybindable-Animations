@@ -32,9 +32,9 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Scared"] = getText("IGUI_Emote_Spooked")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Pose"] = getText("IGUI_Emote_Pose")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["holdbridgenose"] = getText("IGUI_Emote_Facepalm")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Facepalm = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Faint"] = getText("IGUI_Emote_Faint")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Smell"] = getText("IGUI_Emote_Smell")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.SmellGroup = getText("IGUI_Emote_Smell")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Idle"] = getText("IGUI_Emote_Idle")
 
 
@@ -59,8 +59,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.FitnessAnimations = {}
 	ISEmoteRadialMenu.menu.FitnessAnimations.name = getText("IGUI_Emote_Fitness")
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu = {}
-	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Burpees = getText("IGUI_Emote_Burpee")
-	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.BicepCurl = getText("IGUI_Emote_BicepCurl")
+	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.BurpeesGroup = getText("IGUI_Emote_Burpee")
+	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.BicepCurlGroup = getText("IGUI_Emote_BicepCurl")
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Pushup = getText("IGUI_Emote_Pushup")
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Situp = getText("IGUI_Emote_Situp")
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Squat = getText("IGUI_Emote_Squat")
@@ -71,20 +71,19 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.PainAnimations = {}
 	ISEmoteRadialMenu.menu.PainAnimations.name = getText("IGUI_Emote_pain")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu = {}
-	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainHead"] = getText("IGUI_Emote_PainHead")
-	ISEmoteRadialMenu.menu.PainAnimations.subMenu["Cough"] = getText("IGUI_Emote_Cough")
-	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainArmL"] = getText("IGUI_Emote_PainArmL")
+	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainHeadGroup = getText("IGUI_Emote_PainHead")
+	ISEmoteRadialMenu.menu.PainAnimations.subMenu.Cough = getText("IGUI_Emote_Cough")
+	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainArmL = getText("IGUI_Emote_PainArmL")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainHandL"] = getText("IGUI_Emote_PainHandL")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainLegL"] = getText("IGUI_Emote_PainLegL")
-	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainStomach"] = getText("IGUI_Emote_Stomach")
+	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainStomachGroup = getText("IGUI_Emote_Stomach")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainTorso"] = getText("IGUI_Emote_Torso")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainLegR"] = getText("IGUI_Emote_PainLegR")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainHandR"] = getText("IGUI_Emote_PainHandR")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainArmR"] = getText("IGUI_Emote_PainArmR")
 
 
-
-
+	------------------------------------------------
 
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"] = {}
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].name = getText("IGUI_Emote_RoleplayAnimationsExtra")
@@ -117,8 +116,25 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["hostile"].subMenu["SmotheredOut"] = getText("IGUI_Emote_SmotheredOut")
 	ISEmoteRadialMenu.menu["signal"].subMenu["contactR90"] = getText("IGUI_Emote_MoveThere90")
 
-	ISEmoteRadialMenu.variants.Burpees = {"Burpees11", "Burpees12"}
-	ISEmoteRadialMenu.variants["BicepCurl"] = {"BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06"}
+	-----------------------------------------
+	-- VARIANTS
+
+
+	-- Fitness
+	ISEmoteRadialMenu.variants.BicepCurlGroup = {"BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06"}
+	ISEmoteRadialMenu.variants.BurpeesGroup = {"Burpees11", "Burpees12"}
+
+
+	-- Roleplay Anims
+	ISEmoteRadialMenu.variants.SmellGroup = {"SmellBad", "SmellGag"}
+
+	-- Pain
+	ISEmoteRadialMenu.variants.PainHeadGroup = {"PainHead1", "PainHead2"}
+	ISEmoteRadialMenu.variants.PainStomachGroup = {"PainStomach1", "PainStomach2"}
+
+
+
+
 	ISEmoteRadialMenu.variants["Crawl"] = {"Crawl"}
 	ISEmoteRadialMenu.variants["Duffelbag"] = {"DuffelbagOn", "DuffelbagLoot", "DuffelbagOff"}
 	ISEmoteRadialMenu.variants["Idle"] = {"ShiftWeight", "Burp", "ChewNails"}
@@ -127,13 +143,10 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants["Pose"] = {"Man1", "Man2", "Man3", "Man4", "Man5", "Man6"}
 	ISEmoteRadialMenu.variants["Pushup"] = {"Pushup02", "Pushup03"}	
 	ISEmoteRadialMenu.variants["salute"] = {"saluteformal", "salutecasual"}
-	ISEmoteRadialMenu.variants["Smell"] = {"SmellBad", "SmellGag"}
 	ISEmoteRadialMenu.variants["Scared"] = {"Spooked1", "Spooked2", "Shiver"}
 	ISEmoteRadialMenu.variants["Situp"] = {"SitUp2", "SitUp3"}
 	ISEmoteRadialMenu.variants["Squat"] = {"Squat03", "Squat04"}
 	ISEmoteRadialMenu.variants["Tired"] = {"Yawn", "TStretch"}
-	ISEmoteRadialMenu.variants["PainStomach"] = {"PainStomach1", "PainStomach2"}
-	ISEmoteRadialMenu.variants["PainHead"] = {"PainHead1", "PainHead2"}
 	ISEmoteRadialMenu.variants["Vomit"] = {"Vomit1", "Vomit2"}
 	ISEmoteRadialMenu.variants["Wash"] = {"Drinkfloor", "Washhands", "WashFace"}
 	ISEmoteRadialMenu.variants["Walk"] = {"Walk002", "Walk003", "Walk005"}
@@ -227,6 +240,7 @@ end
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
+
 	-- TODO add a keybind to stop animation!
 
 	-- Let's check looped emotes first
