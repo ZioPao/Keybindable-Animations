@@ -188,7 +188,6 @@ end
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
-	-- TODO Should send notification to server for updated setVariable!!
 	-- TODO add a keybind to stop animation!
 
 	local chosenValue
@@ -199,13 +198,22 @@ function ISEmoteRadialMenu:emote(emote)
 			chosenValue = value
 		end
 
-		player:setVariable(value, "false")
+		-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
+		if not isClient() and not isServer() then
+			player:setVariable(value, "false")
+		else
+			sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
+		end
 
 	end
 
 
 	if chosenValue then
-		getPlayer():setVariable(chosenValue, "true")
+		if not isClient() and not isServer() then
+			player:setVariable(chosenValue, "true")
+		else
+			sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = chosenValue, check = 'true'})
+		end
 
 	else
 		og_ISEmoteRadialMenuEmote(self, emote)
