@@ -32,7 +32,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["holdbridgenose"] = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Faint"] = getText("IGUI_Emote_Faint")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Smell"] = getText("IGUI_Emote_Smell")
-	--ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Vomit"] = getText("IGUI_Emote_Vomit")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Idle"] = getText("IGUI_Emote_Idle")
 
 
@@ -50,7 +49,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.LoopedAnimations.name = getText("IGUI_Emote_RPLoopedAnimations")
 
 	ISEmoteRadialMenu.menu.LoopedAnimations.subMenu = {}
-	ISEmoteRadialMenu.menu.LoopedAnimations.subMenu.VomitLoop = getText("IGUI_Emote_Vomit")
+	ISEmoteRadialMenu.menu.LoopedAnimations.subMenu.VomitStart = getText("IGUI_Emote_Vomit")
 
 
 
@@ -187,10 +186,65 @@ function ISEmoteRadialMenu:init()
 end
 
 
+
+-- TODO Test setting emotes in folders
+
+RPA_CurrentAnim = nil
+
+
+
+
+local function ManageLoopAnim()
+
+	local player = getPlayer()
+	if RPA_CurrentAnim ~= nil then
+		
+		local stageAnim = player:getVariableString("VomitStage")
+
+		if stageAnim == "loop" then
+			-- TODO SHould start the other part of the anim
+			print("Start other anim!!!!")
+			player:playEmote("VomitLoop")
+			Events.OnTick.Remove(ManageLoopAnim)
+
+		end
+
+
+	else
+
+		Events.OnTick.Remove(ManageLoopAnim)
+
+	end
+
+
+
+
+
+end
+
+
+
+
+
+
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
 	-- TODO add a keybind to stop animation!
+
+
+
+	-- TODO Manage loops 
+
+
+	if emote == "VomitDefault" then
+		RPA_CurrentAnim = emote
+		Events.OnTick.Add(ManageLoopAnim)
+	end
+
+
+
+
 
 	local chosenValue = nil
 	local player = getPlayer()
