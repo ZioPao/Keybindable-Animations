@@ -4,6 +4,13 @@ require "ISUI/ISEmoteRadialMenu"
 
 -- TODO Test setting emotes in folders
 
+
+-- TODO Stuff to implement
+--[[
+	1) Limp
+	1) 
+]]
+
 local specialEmotes = {
 	Crawl = "isRPCrawling",
 
@@ -225,7 +232,7 @@ local function ManageLoopAnim()
 		local stageAnim = player:getVariableString("AnimStage")
 		if stageAnim == "loop" then
 
-			local nextAnim = ISEmoteRadialMenu.RPA_CurrentAnim .. "Loop"
+			local nextAnim = string.gsub(ISEmoteRadialMenu.RPA_CurrentAnim, "Start", "") .. "Loop"
 
 			player:playEmote(nextAnim)
 			ISEmoteRadialMenu.RPA_CurrentAnim = nil
