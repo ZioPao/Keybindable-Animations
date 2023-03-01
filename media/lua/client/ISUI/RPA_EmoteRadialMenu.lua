@@ -32,7 +32,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["holdbridgenose"] = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Faint"] = getText("IGUI_Emote_Faint")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Smell"] = getText("IGUI_Emote_Smell")
-	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Vomit"] = getText("IGUI_Emote_Vomit")
+	--ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Vomit"] = getText("IGUI_Emote_Vomit")
 	ISEmoteRadialMenu.menu["RoleplayAnimations"].subMenu["Idle"] = getText("IGUI_Emote_Idle")
 
 
@@ -45,6 +45,12 @@ function ISEmoteRadialMenu:init()
 
 
 
+
+	ISEmoteRadialMenu.menu.LoopedAnimations = {}
+	ISEmoteRadialMenu.menu.LoopedAnimations.name = getText("IGUI_Emote_RPLoopedAnimations")
+
+	ISEmoteRadialMenu.menu.LoopedAnimations.subMenu = {}
+	ISEmoteRadialMenu.menu.LoopedAnimations.subMenu.VomitLoop = getText("IGUI_Emote_Vomit")
 
 
 

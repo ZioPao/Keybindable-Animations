@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode x_extends="looped.xml">
-	<m_Name>Vomit1</m_Name>
-	<m_AnimName>Bob_EmoteVomit</m_AnimName>
+	<m_Name>VomitLoop</m_Name>
+	<m_AnimName>Bob_EmoteVomitLoop</m_AnimName>
 	<m_BlendTime>0.30</m_BlendTime>
 	<m_Conditions>
-		<m_StringValue>Vomit1</m_StringValue>
+		<m_StringValue>VomitLoop</m_StringValue>
 	</m_Conditions>
 	<m_SubStateBoneWeights>
 		<boneName>Dummy01</boneName>
