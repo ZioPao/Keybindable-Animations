@@ -8,7 +8,7 @@ local specialEmotes = {
 }
 
 local loopedEmotes = {
-	"VomitStart",
+	"Vomit",
 	
 }
 
@@ -204,12 +204,13 @@ local function ManageLoopAnim()
 	local player = getPlayer()
 	if RPA_CurrentAnim ~= nil then
 		
-		local stageAnim = player:getVariableString("VomitStage")
+		local stageAnim = player:getVariableString("AnimStage")
 
 		if stageAnim == "loop" then
-			-- TODO SHould start the other part of the anim
-			print("Start other anim!!!!")
-			player:playEmote("VomitLoop")
+
+			local nextAnim = RPA_CurrentAnim .. "Loop"
+
+			player:playEmote(nextAnim)
 			RPA_CurrentAnim = nil
 			Events.OnTick.Remove(ManageLoopAnim)
 
@@ -240,7 +241,8 @@ function ISEmoteRadialMenu:emote(emote)
 
 	-- Let's check looped emotes first
 	for _, v in pairs(loopedEmotes) do
-		if emote == v then
+		local startAnim = v .. "Start"
+		if emote == startAnim then
 			RPA_CurrentAnim = emote
 			og_ISEmoteRadialMenuEmote(self, emote)
 			Events.OnTick.Add(ManageLoopAnim)
