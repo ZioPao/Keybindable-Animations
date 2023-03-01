@@ -1,6 +1,16 @@
 require "ISUI/ISEmoteRadialMenu"
 
 
+local specialEmotes = {
+	Crawl = "isRPCrawling",
+
+}
+
+
+
+
+
+
 
 local og_ISEmoteRadialMenuInit = ISEmoteRadialMenu.init
 
@@ -155,5 +165,39 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["Squat"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["DragDown"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/test.png")
+
+end
+
+
+
+
+local decorator = {}
+decorator.ISEmoteRadialMenu = {}
+decorator.ISEmoteRadialMenu.emote = ISEmoteRadialMenu.emote
+
+function ISEmoteRadialMenu:emote(emote)
+
+	local chosenKey
+	local chosenValue
+	local player = getPlayer()
+
+	for key, value in pairs(specialEmotes) do
+		if key == emote then
+			chosenKey = key
+			chosenValue = value
+		end
+
+		player:setVariable(value, "false")
+
+	end
+
+
+	if chosenValue then
+		getPlayer():setVariable(chosenValue, "true")
+
+	else
+		local o = decorator.ISEmoteRadialMenu.emote(self, emote)
+
+	end
 
 end

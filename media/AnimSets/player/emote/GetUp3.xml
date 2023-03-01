@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode >
+	<m_Name>GetUp3</m_Name>
+	<m_AnimName>Zombie_OnKnees_ToIdle</m_AnimName>
+	<m_BlendTime>0.40</m_BlendTime>
+	<m_Conditions>
+		<m_StringValue>GetUp3</m_StringValue>
+	</m_Conditions>
+	<m_SubStateBoneWeights>
+		<m_SpeedScale>0.56</m_SpeedScale>
+		<boneName>Dummy01</boneName>
+	</m_SubStateBoneWeights>
+	<m_SubStateBoneWeights>
+		<boneName>Translation_Data</boneName>
+	</m_SubStateBoneWeights>
+</animNode>
