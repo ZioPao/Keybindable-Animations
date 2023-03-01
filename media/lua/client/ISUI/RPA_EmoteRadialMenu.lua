@@ -1,3 +1,9 @@
+-- Roleplay Animations --
+-- Radial Emote Menu modifications 
+
+
+
+
 require "ISUI/ISEmoteRadialMenu"
 
 
@@ -190,28 +196,42 @@ local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 function ISEmoteRadialMenu:emote(emote)
 	-- TODO add a keybind to stop animation!
 
-	local chosenValue
+	local chosenValue = nil
 	local player = getPlayer()
 
 	for key, value in pairs(specialEmotes) do
 		if key == emote then
 			chosenValue = value
-		end
 
-		-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
-		if not isClient() and not isServer() then
-			player:setVariable(value, "false")
 		else
-			sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
+			-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
+			if not isClient() and not isServer() then
+				player:setVariable(value, "false")
+			else
+				sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
+			end
 		end
 
 	end
 
 
 	if chosenValue then
+
+
 		if not isClient() and not isServer() then
-			player:setVariable(chosenValue, "true")
+			local previousCheck = player:getVariableBoolean(chosenValue)
+			print(previousCheck)
+			local newCheck
+			if previousCheck then
+				newCheck = 'false'
+			else
+				newCheck = 'true'
+			end
+
+			player:setVariable(chosenValue, newCheck)
+
 		else
+			-- TODO Can we get getVariable from here for an online player?
 			sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = chosenValue, check = 'true'})
 		end
 

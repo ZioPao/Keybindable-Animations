@@ -1,3 +1,5 @@
+-- Roleplay Animations --
+
 local ClientCommands = {}
 
 ClientCommands.SendAnimVariable = function(player, args)
