@@ -170,20 +170,15 @@ end
 
 
 
-
-local decorator = {}
-decorator.ISEmoteRadialMenu = {}
-decorator.ISEmoteRadialMenu.emote = ISEmoteRadialMenu.emote
+local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
 
-	local chosenKey
 	local chosenValue
 	local player = getPlayer()
 
 	for key, value in pairs(specialEmotes) do
 		if key == emote then
-			chosenKey = key
 			chosenValue = value
 		end
 
@@ -196,8 +191,7 @@ function ISEmoteRadialMenu:emote(emote)
 		getPlayer():setVariable(chosenValue, "true")
 
 	else
-		local o = decorator.ISEmoteRadialMenu.emote(self, emote)
-
+		og_ISEmoteRadialMenuEmote(self, emote)
 	end
 
 end
