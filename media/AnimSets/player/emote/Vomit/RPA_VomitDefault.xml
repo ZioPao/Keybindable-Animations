@@ -9,13 +9,13 @@
 	<m_Events>
 		<m_EventName>SetVariable</m_EventName>
 		<m_Time>End</m_Time>
-		<m_ParameterValue>VomitStage=loop</m_ParameterValue>
+		<m_ParameterValue>AnimStage=loop</m_ParameterValue>
 	</m_Events>
 
 	<m_Events>
 		<m_EventName>SetVariable</m_EventName>
 		<m_Time>Start</m_Time>
-		<m_ParameterValue>VomitStage=start</m_ParameterValue>
+		<m_ParameterValue>AnimStage=start</m_ParameterValue>
 	</m_Events>
 
 

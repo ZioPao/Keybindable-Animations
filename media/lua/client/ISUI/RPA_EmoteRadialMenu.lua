@@ -7,6 +7,11 @@ local specialEmotes = {
 
 }
 
+local loopedEmotes = {
+	"VomitStart",
+	
+}
+
 
 
 local og_ISEmoteRadialMenuInit = ISEmoteRadialMenu.init
@@ -205,6 +210,7 @@ local function ManageLoopAnim()
 			-- TODO SHould start the other part of the anim
 			print("Start other anim!!!!")
 			player:playEmote("VomitLoop")
+			RPA_CurrentAnim = nil
 			Events.OnTick.Remove(ManageLoopAnim)
 
 		end
@@ -232,38 +238,42 @@ local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 function ISEmoteRadialMenu:emote(emote)
 	-- TODO add a keybind to stop animation!
 
-
-
-	-- TODO Manage loops 
-
-
-	if emote == "VomitDefault" then
-		RPA_CurrentAnim = emote
-		Events.OnTick.Add(ManageLoopAnim)
+	-- Let's check looped emotes first
+	for _, v in pairs(loopedEmotes) do
+		if emote == v then
+			RPA_CurrentAnim = emote
+			og_ISEmoteRadialMenuEmote(self, emote)
+			Events.OnTick.Add(ManageLoopAnim)
+			return
+		end
 	end
 
+	-- In case we passed the first loop, let's check special animations such as crawling
 
 
-
-
-	local chosenValue = nil
 	local player = getPlayer()
+	local chosenValue
+	if not foundType then
+		
 
-	for key, value in pairs(specialEmotes) do
-		if key == emote then
-			chosenValue = value
+		for key, value in pairs(specialEmotes) do
+			if key == emote then
+				chosenValue = value
+				foundType = true
 
-		else
-			-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
-			if not isClient() and not isServer() then
-				player:setVariable(value, "false")
 			else
-				sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
+				-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
+				if not isClient() and not isServer() then
+					player:setVariable(value, "false")
+				else
+					sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
+				end
 			end
+
 		end
 
-	end
 
+	end
 
 	if chosenValue then
 
