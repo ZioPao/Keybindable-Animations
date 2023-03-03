@@ -77,6 +77,12 @@ IGUI_EN = {
 	IGUI_Emote_ZLunge = "Lunge",
 
 
+	IGUI_Emote_ChewNails = "Chew Nails",
+	IGUI_Emote_Burp = "Burp",
+	IGUI_Emote_ShiftWeight = "Shift Weight",
+
+
+
 
 	
 }

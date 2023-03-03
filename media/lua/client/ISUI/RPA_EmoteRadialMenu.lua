@@ -42,7 +42,12 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Facepalm = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Faint"] = getText("IGUI_Emote_Faint")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.SmellGroup = getText("IGUI_Emote_Smell")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Idle"] = getText("IGUI_Emote_Idle")
+
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.ChewNails = getText("IGUI_Emote_ChewNails")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.ShiftWeight = getText("IGUI_Emote_ShiftWeight")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Burp = getText("IGUI_Emote_Burp")
+
+
 
 
 	------------------------------------------------
@@ -68,9 +73,9 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu = {}
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.BurpeesGroup = getText("IGUI_Emote_Burpee")
 	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.BicepCurlGroup = getText("IGUI_Emote_BicepCurl")
-	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Pushup = getText("IGUI_Emote_Pushup")
-	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Situp = getText("IGUI_Emote_Situp")
-	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.Squat = getText("IGUI_Emote_Squat")
+	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.PushupGroup = getText("IGUI_Emote_Pushup")
+	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.SitupGroup = getText("IGUI_Emote_Situp")
+	ISEmoteRadialMenu.menu.FitnessAnimations.subMenu.SquatGroup = getText("IGUI_Emote_Squat")
 
 
 	------------------------------------------------
@@ -98,7 +103,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["AwakeToAsleep"] = getText("IGUI_Emote_AwakeToAsleep")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Passout"] = getText("IGUI_Emote_Passout")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["DragDown"] = getText("IGUI_Emote_DragDown")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Wash"] = getText("IGUI_Emote_Wash")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.Wash = getText("IGUI_Emote_Wash")		-- TODO This contains Drink from floor for some reason
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Duffelbag"] = getText("IGUI_Emote_Dufflebag")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Limp"] = getText("IGUI_Emote_Limp")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["LimpAssist"] = getText("IGUI_Emote_LimpAssist")
@@ -130,6 +135,9 @@ function ISEmoteRadialMenu:init()
 	-- Fitness
 	ISEmoteRadialMenu.variants.BicepCurlGroup = {"BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06"}
 	ISEmoteRadialMenu.variants.BurpeesGroup = {"Burpees11", "Burpees12"}
+	ISEmoteRadialMenu.variants.PushupGroup = {"Pushup02", "Pushup03"}
+	ISEmoteRadialMenu.variants.SquatGroup = {"Squat03", "Squat04"}
+	ISEmoteRadialMenu.variants.SitupGroup = {"SitUp2", "SitUp3"}
 
 
 	-- Roleplay Anims
@@ -148,30 +156,56 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants["Faint"] = {"feelfeint", "Sway"}
 	ISEmoteRadialMenu.variants["Passout"] = {"passoutback", "passoutfront", "Fall"}
 	ISEmoteRadialMenu.variants["Pose"] = {"Man1", "Man2", "Man3", "Man4", "Man5", "Man6"}
-	ISEmoteRadialMenu.variants["Pushup"] = {"Pushup02", "Pushup03"}	
 	ISEmoteRadialMenu.variants["salute"] = {"saluteformal", "salutecasual"}
 	ISEmoteRadialMenu.variants["Scared"] = {"Spooked1", "Spooked2", "Shiver"}
-	ISEmoteRadialMenu.variants["Situp"] = {"SitUp2", "SitUp3"}
-	ISEmoteRadialMenu.variants["Squat"] = {"Squat03", "Squat04"}
 	ISEmoteRadialMenu.variants["Tired"] = {"Yawn", "TStretch"}
-	ISEmoteRadialMenu.variants["Vomit"] = {"Vomit1", "Vomit2"}
-	ISEmoteRadialMenu.variants["Wash"] = {"Drinkfloor", "Washhands", "WashFace"}
+	--ISEmoteRadialMenu.variants["Vomit"] = {"Vomit1", "Vomit2"}
+	ISEmoteRadialMenu.variants["Wash"] = {"Drinkfloor", "Washhands", "WashFace"}		-- TODO DrinkFloor is here
 	ISEmoteRadialMenu.variants["Walk"] = {"Walk002", "Walk003", "Walk005"}
 	ISEmoteRadialMenu.variants["Z_Eat"] = {"Z_Eat1", "Z_Eat2"}
 	ISEmoteRadialMenu.variants["Z_LayIdle"] = {"Z_LayIdle1", "Z_LayIdle2"}
 	ISEmoteRadialMenu.variants["Z_Lunge"] = {"Z_Lunge1", "Z_Lunge2", "Z_Lunge3"}
 
-	ISEmoteRadialMenu.icons["Pose"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Sit1"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/test.png")
+
+	-----------------
 	ISEmoteRadialMenu.icons.RoleplayAnimations = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["Idle"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.SmellGroup = getTexture("media/ui/emotes/smell_ico.png")
+	ISEmoteRadialMenu.icons.Faint = getTexture("media/ui/emotes/faint_ico.png")
+	ISEmoteRadialMenu.icons.Facepalm = getTexture('media/ui/emotes/facepalm_ico.png')
+	ISEmoteRadialMenu.icons.bentdouble = getTexture("media/ui/emotes/bentdouble_ico.png")		-- FIXME missing icon
+	ISEmoteRadialMenu.icons["Pose"] = getTexture("media/ui/emotes/pose_ico.png")
+	ISEmoteRadialMenu.icons["Scared"] = getTexture("media/ui/emotes/scared_ico.png")
+	ISEmoteRadialMenu.icons.Tired = getTexture("media/ui/emotes/tired_ico.png")
+	ISEmoteRadialMenu.icons["Sit1"] = getTexture("media/ui/emotes/sit_ico.png")
+	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.ChewNails = getTexture("media/ui/emotes/chewnails_ico.png")
+	ISEmoteRadialMenu.icons.ShiftWeight = getTexture("media/ui/emotes/pose_ico.png")		-- FIXME Make a dedicated icon
+	ISEmoteRadialMenu.icons.Burp = getTexture("media/ui/emotes/pose_ico.png")		-- FIXME Make a dedicated icon
+	
+	
+
+
 	ISEmoteRadialMenu.icons["RoleplayAnimationsExtra"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["AwakeToAsleep"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["holdbridgenose"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Idle"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["bentdouble"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons.PainAnimations = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Tired"] = getTexture("media/ui/emotes/test.png")
+
+
+	ISEmoteRadialMenu.icons.PainAnimations = getTexture("media/ui/emotes/sick_ico.png")
+	ISEmoteRadialMenu.icons.PainHeadGroup = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainHandR"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainHandL"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainArmL"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainArmR"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainLegL"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainLegR"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.PainStomachGroup = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.Cough = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons["PainTorso"] = getTexture("media/ui/emotes/test.png")
+
+
+
+
 	ISEmoteRadialMenu.icons["ScrambleFloorBack"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["ScrambleFloor"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["ScrambleFloorIdle"] = getTexture("media/ui/emotes/test.png")
@@ -180,40 +214,33 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["SmotheredLoop"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["SmotheredIn"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["SmotheredOut"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Smell"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.Smell = getTexture("media/ui/emotes/smell_ico.png")
 	ISEmoteRadialMenu.icons["Duffelbag"] = getTexture("media/ui/emotes/test.png")
+
+
+
 	ISEmoteRadialMenu.icons.FitnessAnimations = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainHead"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainHandR"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainHandL"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainArmL"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainArmR"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainLegL"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainLegR"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainStomach"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["PainTorso"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Passout"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Scared"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Vomit"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.PushupGroup = getTexture("media/ui/emotes/pushup_ico.png")
+	ISEmoteRadialMenu.icons.SitupGroup = getTexture("media/ui/emotes/situp_ico.png")
+	ISEmoteRadialMenu.icons.BicepCurlGroup = getTexture("media/ui/emotes/bicepcurl_ico.png")
+	ISEmoteRadialMenu.icons.BurpeesGroup = getTexture("media/ui/emotes/burpee_ico.png")
+	ISEmoteRadialMenu.icons.SquatGroup = getTexture("media/ui/emotes/squat_ico.png")
+
+
+	ISEmoteRadialMenu.icons["Passout"] = getTexture("media/ui/emotes/passout_ico.png")
+	ISEmoteRadialMenu.icons.VomitStart = getTexture("media/ui/emotes/vomit_ico.png")
 	ISEmoteRadialMenu.icons["Walk"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Z_Eat"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Z_LayIdle"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Z_Lunge"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Wash"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Crawl"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Cough"] = getTexture("media/ui/emotes/test.png")
+	ISEmoteRadialMenu.icons.Wash = getTexture("media/ui/emotes/wash_ico.png")
+	ISEmoteRadialMenu.icons.Crawl = getTexture("media/ui/emotes/crawl_ico.png")
 	ISEmoteRadialMenu.icons["Bed"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Faint"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Smell"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Awake"] = getTexture("media/ui/emotes/test.png")
+
 	ISEmoteRadialMenu.icons["Limp"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["LimpAssist"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Pushup"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Situp"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["BicepCurl"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons.Burpees = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["Squat"] = getTexture("media/ui/emotes/test.png")
-	ISEmoteRadialMenu.icons["DragDown"] = getTexture("media/ui/emotes/test.png")
+
+	ISEmoteRadialMenu.icons["DragDown"] = getTexture("media/ui/emotes/dragdown_ico.png")
 	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/test.png")
 
 end
