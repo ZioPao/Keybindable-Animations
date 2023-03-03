@@ -1,5 +1,5 @@
 -- Roleplay Animations --
--- Radial Emote Menu modifications 
+-- Radial Emote Menu modifications
 require "ISUI/ISEmoteRadialMenu"
 
 -- TODO Test setting emotes in folders
@@ -8,20 +8,20 @@ require "ISUI/ISEmoteRadialMenu"
 -- TODO Stuff to implement
 --[[
 	1) Limp
-	1) 
+	1)
 ]]
-
 local specialEmotes = {
 	Crawl = "isRPCrawling",
 }
 
 local loopedEmotes = {
 	"Vomit",
-	
+
 }
 
+-- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this horrendeous workaround
 local staticEmotes = {
-	"DrinkFloor"
+	DrinkFloor = 5
 }
 
 
@@ -29,8 +29,7 @@ local staticEmotes = {
 local og_ISEmoteRadialMenuInit = ISEmoteRadialMenu.init
 
 function ISEmoteRadialMenu:init()
-
-    og_ISEmoteRadialMenuInit(self)
+	og_ISEmoteRadialMenuInit(self)
 
 	ISEmoteRadialMenu.menu.RoleplayAnimations = {};
 	ISEmoteRadialMenu.menu.RoleplayAnimations.name = getText("IGUI_Emote_RoleplayAnimations")
@@ -41,7 +40,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Tired"] = getText("IGUI_Emote_Tired")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Scared"] = getText("IGUI_Emote_Spooked")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Pose"] = getText("IGUI_Emote_Pose")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble")		-- FIXME we're missing the icon
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble") -- FIXME we're missing the icon
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Facepalm = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Faint"] = getText("IGUI_Emote_Faint")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.SmellGroup = getText("IGUI_Emote_Smell")
@@ -106,17 +105,19 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["AwakeToAsleep"] = getText("IGUI_Emote_AwakeToAsleep")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Passout"] = getText("IGUI_Emote_Passout")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["DragDown"] = getText("IGUI_Emote_DragDown")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.Wash = getText("IGUI_Emote_Wash")		-- TODO This contains Drink from floor for some reason
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.Wash = getText("IGUI_Emote_Wash") -- TODO This contains Drink from floor for some reason
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Duffelbag"] = getText("IGUI_Emote_Dufflebag")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Limp"] = getText("IGUI_Emote_Limp")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["LimpAssist"] = getText("IGUI_Emote_LimpAssist")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Bed"] = getText("IGUI_Emote_Bed")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Walk"] = getText("IGUI_Emote_???")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_Eat"]= getText("IGUI_Emote_ZEat")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_Eat"] = getText("IGUI_Emote_ZEat")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_Lunge"] = getText("IGUI_Emote_ZLunge")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Z_LayIdle"] = getText("IGUI_Emote_ZLayIdle")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloorBack"] = getText("IGUI_Emote_ScrambleFloorBack")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloorIdle"] = getText("IGUI_Emote_ScrambleFloorIdle")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloorBack"] = getText(
+	"IGUI_Emote_ScrambleFloorBack")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloorIdle"] = getText(
+	"IGUI_Emote_ScrambleFloorIdle")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["ScrambleFloor"] = getText("IGUI_Emote_ScrambleFloor")
 
 
@@ -136,40 +137,41 @@ function ISEmoteRadialMenu:init()
 
 
 	-- Fitness
-	ISEmoteRadialMenu.variants.BicepCurlGroup = {"BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06"}
-	ISEmoteRadialMenu.variants.BurpeesGroup = {"Burpees11", "Burpees12"}
-	ISEmoteRadialMenu.variants.PushupGroup = {"Pushup02", "Pushup03"}
-	ISEmoteRadialMenu.variants.SquatGroup = {"Squat03", "Squat04"}
-	ISEmoteRadialMenu.variants.SitupGroup = {"SitUp2", "SitUp3"}
+	ISEmoteRadialMenu.variants.BicepCurlGroup = { "BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04",
+		"BicepCurl05", "BicepCurl06" }
+	ISEmoteRadialMenu.variants.BurpeesGroup = { "Burpees11", "Burpees12" }
+	ISEmoteRadialMenu.variants.PushupGroup = { "Pushup02", "Pushup03" }
+	ISEmoteRadialMenu.variants.SquatGroup = { "Squat03", "Squat04" }
+	ISEmoteRadialMenu.variants.SitupGroup = { "SitUp2", "SitUp3" }
 
 
 	-- Roleplay Anims
-	ISEmoteRadialMenu.variants.SmellGroup = {"SmellBad", "SmellGag"}
-	ISEmoteRadialMenu.variants.DrinkFloor = {"DrinkFloor"}
+	ISEmoteRadialMenu.variants.SmellGroup = { "SmellBad", "SmellGag" }
+	ISEmoteRadialMenu.variants.DrinkFloor = { "DrinkFloor" }
 
 	-- Pain
-	ISEmoteRadialMenu.variants.PainHeadGroup = {"PainHead1", "PainHead2"}
-	ISEmoteRadialMenu.variants.PainStomachGroup = {"PainStomach1", "PainStomach2"}
+	ISEmoteRadialMenu.variants.PainHeadGroup = { "PainHead1", "PainHead2" }
+	ISEmoteRadialMenu.variants.PainStomachGroup = { "PainStomach1", "PainStomach2" }
 
 
 
 
-	ISEmoteRadialMenu.variants["Crawl"] = {"Crawl"}
-	ISEmoteRadialMenu.variants["Duffelbag"] = {"DuffelbagOn", "DuffelbagLoot", "DuffelbagOff"}
-	ISEmoteRadialMenu.variants["Idle"] = {"ShiftWeight", "Burp", "ChewNails"}
-	ISEmoteRadialMenu.variants["Faint"] = {"feelfeint", "Sway"}
-	ISEmoteRadialMenu.variants["Passout"] = {"passoutback", "passoutfront", "Fall"}
-	ISEmoteRadialMenu.variants["Pose"] = {"Man1", "Man2", "Man3", "Man4", "Man5", "Man6"}
-	ISEmoteRadialMenu.variants["salute"] = {"saluteformal", "salutecasual"}
-	ISEmoteRadialMenu.variants["Scared"] = {"Spooked1", "Spooked2", "Shiver"}
-	ISEmoteRadialMenu.variants["Tired"] = {"Yawn", "TStretch"}
+	ISEmoteRadialMenu.variants["Crawl"] = { "Crawl" }
+	ISEmoteRadialMenu.variants["Duffelbag"] = { "DuffelbagOn", "DuffelbagLoot", "DuffelbagOff" }
+	ISEmoteRadialMenu.variants["Idle"] = { "ShiftWeight", "Burp", "ChewNails" }
+	ISEmoteRadialMenu.variants["Faint"] = { "feelfeint", "Sway" }
+	ISEmoteRadialMenu.variants["Passout"] = { "passoutback", "passoutfront", "Fall" }
+	ISEmoteRadialMenu.variants["Pose"] = { "Man1", "Man2", "Man3", "Man4", "Man5", "Man6" }
+	ISEmoteRadialMenu.variants["salute"] = { "saluteformal", "salutecasual" }
+	ISEmoteRadialMenu.variants["Scared"] = { "Spooked1", "Spooked2", "Shiver" }
+	ISEmoteRadialMenu.variants["Tired"] = { "Yawn", "TStretch" }
 	--ISEmoteRadialMenu.variants["Vomit"] = {"Vomit1", "Vomit2"}
-	ISEmoteRadialMenu.variants["Wash"] = {"Washhands", "WashFace"}		-- TODO DrinkFloor is here
+	ISEmoteRadialMenu.variants["Wash"] = { "Washhands", "WashFace" } -- TODO DrinkFloor is here
 
-	ISEmoteRadialMenu.variants["Walk"] = {"Walk002", "Walk003", "Walk005"}
-	ISEmoteRadialMenu.variants["Z_Eat"] = {"Z_Eat1", "Z_Eat2"}
-	ISEmoteRadialMenu.variants["Z_LayIdle"] = {"Z_LayIdle1", "Z_LayIdle2"}
-	ISEmoteRadialMenu.variants["Z_Lunge"] = {"Z_Lunge1", "Z_Lunge2", "Z_Lunge3"}
+	ISEmoteRadialMenu.variants["Walk"] = { "Walk002", "Walk003", "Walk005" }
+	ISEmoteRadialMenu.variants["Z_Eat"] = { "Z_Eat1", "Z_Eat2" }
+	ISEmoteRadialMenu.variants["Z_LayIdle"] = { "Z_LayIdle1", "Z_LayIdle2" }
+	ISEmoteRadialMenu.variants["Z_Lunge"] = { "Z_Lunge1", "Z_Lunge2", "Z_Lunge3" }
 
 
 	-----------------
@@ -178,7 +180,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.SmellGroup = getTexture("media/ui/emotes/smell_ico.png")
 	ISEmoteRadialMenu.icons.Faint = getTexture("media/ui/emotes/faint_ico.png")
 	ISEmoteRadialMenu.icons.Facepalm = getTexture('media/ui/emotes/facepalm_ico.png')
-	ISEmoteRadialMenu.icons.bentdouble = getTexture("media/ui/emotes/bentdouble_ico.png")		-- FIXME missing icon
+	ISEmoteRadialMenu.icons.bentdouble = getTexture("media/ui/emotes/bentdouble_ico.png") -- FIXME missing icon
 	ISEmoteRadialMenu.icons["Pose"] = getTexture("media/ui/emotes/pose_ico.png")
 	ISEmoteRadialMenu.icons["Scared"] = getTexture("media/ui/emotes/scared_ico.png")
 	ISEmoteRadialMenu.icons.Tired = getTexture("media/ui/emotes/tired_ico.png")
@@ -186,11 +188,11 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/test.png")
 	ISEmoteRadialMenu.icons.ChewNails = getTexture("media/ui/emotes/chewnails_ico.png")
-	ISEmoteRadialMenu.icons.ShiftWeight = getTexture("media/ui/emotes/pose_ico.png")		-- FIXME Make a dedicated icon
-	ISEmoteRadialMenu.icons.Burp = getTexture("media/ui/emotes/pose_ico.png")		-- FIXME Make a dedicated icon
+	ISEmoteRadialMenu.icons.ShiftWeight = getTexture("media/ui/emotes/pose_ico.png") -- FIXME Make a dedicated icon
+	ISEmoteRadialMenu.icons.Burp = getTexture("media/ui/emotes/pose_ico.png")     -- FIXME Make a dedicated icon
 	ISEmoteRadialMenu.icons.DrinkFloor = getTexture("media/ui/emotes/drinkonfloor_ico.png")
-	
-	
+
+
 
 
 	ISEmoteRadialMenu.icons["RoleplayAnimationsExtra"] = getTexture("media/ui/emotes/test.png")
@@ -248,29 +250,20 @@ function ISEmoteRadialMenu:init()
 
 	ISEmoteRadialMenu.icons["DragDown"] = getTexture("media/ui/emotes/dragdown_ico.png")
 	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/test.png")
-
 end
-
-
-
-
-
 
 ISEmoteRadialMenu.RPA_CurrentAnim = nil
 
 local function ManageLoopAnim()
-
 	local player = getPlayer()
 	if ISEmoteRadialMenu.RPA_CurrentAnim ~= nil then
 		local stageAnim = player:getVariableString("AnimStage")
 		if stageAnim == "loop" then
-
 			local nextAnim = string.gsub(ISEmoteRadialMenu.RPA_CurrentAnim, "Start", "") .. "Loop"
 
 			player:playEmote(nextAnim)
 			ISEmoteRadialMenu.RPA_CurrentAnim = nil
 			Events.OnTick.Remove(ManageLoopAnim)
-
 		end
 	else
 		Events.OnTick.Remove(ManageLoopAnim)
@@ -278,62 +271,43 @@ local function ManageLoopAnim()
 end
 
 local function ManageStaticAnim()
-
 	local player = getPlayer()
-	local staticAnimVarName = 'shouldRunStaticAnim'
-	player:clearVariable('Emote')
 
 	if ISEmoteRadialMenu.RPA_CurrentAnim ~= nil then
-	
-		local stageAnim = player:getVariableString("AnimStage")
+		local check = player:getVariableString('AnimStage')
 
-		if stageAnim == "end" then
-			print("Came to an end")
+		print(check)
+		if check == 'end' then
 			player:setBlockMovement(false)
-			if not isClient() and not isServer() then
-				player:clearVariable('Emote')
-			else
-				player:clearVariable('Emote')
-
-				--sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = staticAnimVarName, check = 'false'})
-			end
 			ISEmoteRadialMenu.RPA_CurrentAnim = nil
 			Events.OnTick.Remove(ManageStaticAnim)
-
 		else
 			player:setBlockMovement(true)
-
 		end
-
-
 	else
 		Events.OnTick.Remove(ManageStaticAnim)
-
 	end
-
 end
 
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
-
 	-- TODO add a keybind to stop animation!
 
 	local player = getPlayer()
 	local staticAnimVarName = 'shouldRunStaticAnim'
 
 	-------- STATIC EMOTES -------------
-	for _, v in pairs(staticEmotes) do
-		if emote == v then
+	for k, vTime in pairs(staticEmotes) do
+		if emote == k then
+			print(vTime)
 			ISEmoteRadialMenu.RPA_CurrentAnim = emote
-			if not isClient() and not isServer() then
-				player:setVariable("shouldRunStaticAnim", 'true')
-			else
-				sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = staticAnimVarName, check = 'true'})
-			end
-
 			og_ISEmoteRadialMenuEmote(self, emote)
-			Events.OnTick.Add(ManageStaticAnim)
+			player:setBlockMovement(true)
+
+			timer:Simple(vTime, function()
+				player:setBlockMovement(false)
+			end)
 			return
 		end
 	end
@@ -357,16 +331,15 @@ function ISEmoteRadialMenu:emote(emote)
 	for key, value in pairs(specialEmotes) do
 		if key == emote then
 			chosenValue = value
-
 		else
 			-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
 			if not isClient() and not isServer() then
 				player:setVariable(value, "false")
 			else
-				sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = value, check = 'false'})
+				sendClientCommand(player, 'RPA', 'SendAnimVariable',
+				{ playerID = player:getOnlineID(), variableName = value, check = 'false' })
 			end
 		end
-
 	end
 
 
@@ -383,12 +356,11 @@ function ISEmoteRadialMenu:emote(emote)
 			end
 
 			player:setVariable(chosenValue, newCheck)
-
 		else
 			-- TODO Can we get getVariable from here for an online player?
-			sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = chosenValue, check = 'true'})
+			sendClientCommand(player, 'RPA', 'SendAnimVariable',
+			{ playerID = player:getOnlineID(), variableName = chosenValue, check = 'true' })
 		end
-
 	else
 		og_ISEmoteRadialMenuEmote(self, emote)
 	end
