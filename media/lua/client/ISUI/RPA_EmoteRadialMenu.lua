@@ -38,14 +38,14 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Tired"] = getText("IGUI_Emote_Tired")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Scared"] = getText("IGUI_Emote_Spooked")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Pose"] = getText("IGUI_Emote_Pose")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["bentdouble"] = getText("IGUI_Emote_bentdouble")		-- FIXME we're missing the icon
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Facepalm = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Faint"] = getText("IGUI_Emote_Faint")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.SmellGroup = getText("IGUI_Emote_Smell")
-
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.ChewNails = getText("IGUI_Emote_ChewNails")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.ShiftWeight = getText("IGUI_Emote_ShiftWeight")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Burp = getText("IGUI_Emote_Burp")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.DrinkFloor = getText("IGUI_Emote_DrinkFloor")
 
 
 
@@ -142,6 +142,7 @@ function ISEmoteRadialMenu:init()
 
 	-- Roleplay Anims
 	ISEmoteRadialMenu.variants.SmellGroup = {"SmellBad", "SmellGag"}
+	ISEmoteRadialMenu.variants.DrinkFloor = {"DrinkFloor"}
 
 	-- Pain
 	ISEmoteRadialMenu.variants.PainHeadGroup = {"PainHead1", "PainHead2"}
@@ -160,7 +161,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants["Scared"] = {"Spooked1", "Spooked2", "Shiver"}
 	ISEmoteRadialMenu.variants["Tired"] = {"Yawn", "TStretch"}
 	--ISEmoteRadialMenu.variants["Vomit"] = {"Vomit1", "Vomit2"}
-	ISEmoteRadialMenu.variants["Wash"] = {"Drinkfloor", "Washhands", "WashFace"}		-- TODO DrinkFloor is here
+	ISEmoteRadialMenu.variants["Wash"] = {"Washhands", "WashFace"}		-- TODO DrinkFloor is here
+
 	ISEmoteRadialMenu.variants["Walk"] = {"Walk002", "Walk003", "Walk005"}
 	ISEmoteRadialMenu.variants["Z_Eat"] = {"Z_Eat1", "Z_Eat2"}
 	ISEmoteRadialMenu.variants["Z_LayIdle"] = {"Z_LayIdle1", "Z_LayIdle2"}
@@ -183,6 +185,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.ChewNails = getTexture("media/ui/emotes/chewnails_ico.png")
 	ISEmoteRadialMenu.icons.ShiftWeight = getTexture("media/ui/emotes/pose_ico.png")		-- FIXME Make a dedicated icon
 	ISEmoteRadialMenu.icons.Burp = getTexture("media/ui/emotes/pose_ico.png")		-- FIXME Make a dedicated icon
+	ISEmoteRadialMenu.icons.DrinkFloor = getTexture("media/ui/emotes/drinkonfloor_ico.png")
 	
 	
 
