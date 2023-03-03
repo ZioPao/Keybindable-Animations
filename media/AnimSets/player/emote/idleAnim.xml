@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Bob_idle</m_Name>
-	<m_AnimName>Bob_idle</m_AnimName>
+	<m_Name>Bob_Idle</m_Name>
+	<m_AnimName>Bob_Idle</m_AnimName>
 	<m_SpeedScale>0.24</m_SpeedScale>
 	<m_Looped>true</m_Looped>
 	<m_UpperOnly>false</m_UpperOnly>

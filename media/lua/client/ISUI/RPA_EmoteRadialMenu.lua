@@ -13,12 +13,15 @@ require "ISUI/ISEmoteRadialMenu"
 
 local specialEmotes = {
 	Crawl = "isRPCrawling",
-
 }
 
 local loopedEmotes = {
 	"Vomit",
 	
+}
+
+local staticEmotes = {
+	"DrinkFloor"
 }
 
 
@@ -274,11 +277,68 @@ local function ManageLoopAnim()
 	end
 end
 
+local function ManageStaticAnim()
+
+	local player = getPlayer()
+	local staticAnimVarName = 'shouldRunStaticAnim'
+	player:clearVariable('Emote')
+
+	if ISEmoteRadialMenu.RPA_CurrentAnim ~= nil then
+	
+		local stageAnim = player:getVariableString("AnimStage")
+
+		if stageAnim == "end" then
+			print("Came to an end")
+			player:setBlockMovement(false)
+			if not isClient() and not isServer() then
+				player:clearVariable('Emote')
+			else
+				player:clearVariable('Emote')
+
+				--sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = staticAnimVarName, check = 'false'})
+			end
+			ISEmoteRadialMenu.RPA_CurrentAnim = nil
+			Events.OnTick.Remove(ManageStaticAnim)
+
+		else
+			player:setBlockMovement(true)
+
+		end
+
+
+	else
+		Events.OnTick.Remove(ManageStaticAnim)
+
+	end
+
+end
+
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
 
 	-- TODO add a keybind to stop animation!
+
+	local player = getPlayer()
+	local staticAnimVarName = 'shouldRunStaticAnim'
+
+	-------- STATIC EMOTES -------------
+	for _, v in pairs(staticEmotes) do
+		if emote == v then
+			ISEmoteRadialMenu.RPA_CurrentAnim = emote
+			if not isClient() and not isServer() then
+				player:setVariable("shouldRunStaticAnim", 'true')
+			else
+				sendClientCommand(player, 'RPA', 'SendAnimVariable', {playerID = player:getOnlineID(), variableName = staticAnimVarName, check = 'true'})
+			end
+
+			og_ISEmoteRadialMenuEmote(self, emote)
+			Events.OnTick.Add(ManageStaticAnim)
+			return
+		end
+	end
+
+
 
 	-- Let's check looped emotes first
 	for _, v in pairs(loopedEmotes) do
@@ -292,9 +352,8 @@ function ISEmoteRadialMenu:emote(emote)
 	end
 
 	-- In case we passed the first loop, let's check special animations such as crawling
-	local player = getPlayer()
 	local chosenValue
-		
+
 	for key, value in pairs(specialEmotes) do
 		if key == emote then
 			chosenValue = value

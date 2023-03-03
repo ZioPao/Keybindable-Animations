@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="DrinkBase.xml">
+<animNode x_extends="default.xml">
 	<m_Name>DrinkFloor</m_Name>
 	<m_AnimName>Bob_DrinkFromFloor</m_AnimName>
 	<m_BlendTime>0.40</m_BlendTime>
@@ -7,6 +7,27 @@
 	<m_Conditions>
 		<m_StringValue>DrinkFloor</m_StringValue>
 	</m_Conditions>
+
+	<m_Conditions>
+		<m_Name>shouldRunStaticAnim</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+
+
+
+	<m_Events>
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>End</m_Time>
+		<m_ParameterValue>AnimStage=end</m_ParameterValue>
+	</m_Events>
+
+	<m_Events>
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>Start</m_Time>
+		<m_ParameterValue>AnimStage=start</m_ParameterValue>
+	</m_Events>
+
 	<m_SubStateBoneWeights>
 		<boneName>Dummy01</boneName>
 	</m_SubStateBoneWeights>
