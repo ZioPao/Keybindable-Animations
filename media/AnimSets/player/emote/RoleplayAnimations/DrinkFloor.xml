@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="default.xml">
-	<m_Name>Drinkfloor</m_Name>
+<animNode x_extends="DrinkBase.xml">
+	<m_Name>DrinkFloor</m_Name>
 	<m_AnimName>Bob_DrinkFromFloor</m_AnimName>
 	<m_BlendTime>0.40</m_BlendTime>
+	
 	<m_Conditions>
-		<m_StringValue>Drinkfloor</m_StringValue>
+		<m_StringValue>DrinkFloor</m_StringValue>
 	</m_Conditions>
 	<m_SubStateBoneWeights>
 		<boneName>Dummy01</boneName>
