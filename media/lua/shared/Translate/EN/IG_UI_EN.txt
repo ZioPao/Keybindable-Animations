@@ -1,19 +1,25 @@
 IGUI_EN = {
+
+    IGUI_Emote_RoleplayAnimations = "Roleplay Animations",
+	IGUI_Emote_AwakeToAsleep = "Awake To Asleep",
+	IGUI_Emote_Awake = "Awake",
+	IGUI_Emote_Facepalm = "Facepalm",
+	IGUI_Emote_FeelFaint = "Feel Faint",
+
+
+
+
+
     IGUI_Emote_Cube = "Cube",
     IGUI_Emote_Build = "Build",
 	IGUI_Emote_bentdouble = "Bent Double",
     IGUI_Emote_Chop_Tree = "Chop Tree",
-	IGUI_Emote_FeelFeint = "Feel Feint",
-	IGUI_Emote_Faint = "Faint",
-	IGUI_Emote_Facepalm = "Facepalm",
-    IGUI_Emote_RoleplayAnimations = "Roleplay Animations",
 	IGUI_Emote_RPInteractiveAnimations = "Interactive Animations",
 	IGUI_Emote_RPLoopedAnimations = "Looped Animations",
 
 
 	IGUI_Emote_RoleplayAnimationsExtra = "Roleplay Animations Extra",
-	IGUI_Emote_AwakeToAsleep = "Awake To Asleep",
-	IGUI_Emote_Awake = "Awake",
+	
 	IGUI_Emote_Barbell = "Barbell",
 	IGUI_Emote_Bed = "Bed",	
     IGUI_Emote_BicepCurl = "Bicep Curl",
@@ -25,15 +31,15 @@ IGUI_EN = {
 	IGUI_Emote_Dufflebag = "Dufflebag",
 	IGUI_Emote_Dumbbell = "Dumbbell"
 	IGUI_Emote_Emoter = "Emoter",
-	IGUI_Emote_Fitness = "Fitness",	
+	IGUI_Emote_Fitness = "Fitness Animations",	
 	IGUI_Emote_idleLoop = "Idle",
 	IGUI_Emote_Limp = "Limp",
 	IGUI_Emote_LimpAssist = "Limp Assist",
 	IGUI_Emote_MoveThere90 = "Move There 90°",
-	IGUI_Emote_Naruto =  "Naruto Run", 
 	IGUI_Emote_passoutfront = "Pass out front",
 	IGUI_Emote_passoutback = "Pass out back",
-	IGUI_Emote_pain = "Pain",
+
+	IGUI_Emote_pain = "Pain Animations",
 	IGUI_Emote_PainHead = "Pain Head",
 	IGUI_Emote_PainArmL = "Pain Left Arm",
 	IGUI_Emote_PainArmR = "Pain Right Arm",
@@ -43,6 +49,10 @@ IGUI_EN = {
 	IGUI_Emote_PainLegL =  "Pain Left Leg",
 	IGUI_Emote_Stomach = "Pain Stomach",
 	IGUI_Emote_Torso = "Pain Torso",
+
+
+
+	
 	IGUI_Emote_Prop = "Prop",
 	IGUI_Emote_Pushup = "Pushup",
 	IGUI_Emote_Group = "Group",
@@ -68,10 +78,8 @@ IGUI_EN = {
 	IGUI_Emote_SmotheredLoop = "Smothered Loop"	
 	IGUI_Emote_Spooked = "Scared"
 	IGUI_Emote_Tired = "Tired",
-	IGUI_Emote_Wash = "Wash",
 	IGUI_Emote_Yawn = "Yawn",
 	IGUI_Emote_Vomit = "Vomit",
-	IGUI_Emote_??? = "???",
 	IGUI_Emote_ZEat = "Feast",
 	IGUI_Emote_ZLayIdle = "Lay Idle",
 	IGUI_Emote_ZLunge = "Lunge",
@@ -81,6 +89,9 @@ IGUI_EN = {
 	IGUI_Emote_Burp = "Burp",
 	IGUI_Emote_ShiftWeight = "Shift Weight",
 	IGUI_Emote_DrinkFloor = "Drink from Floor",
+
+	IGUI_Emote_WashFace = "Wash Face",
+	IGUI_Emote_WashHands = "Wash Hands",
 
 
 

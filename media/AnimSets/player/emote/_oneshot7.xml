@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="default.xml">
-	<m_Name>_oneshot7</m_Name>
-	<m_AnimName>Bob_EmotePainRightArm</m_AnimName>	
-	<m_Conditions>
-	<m_StringValue>_oneshot7</m_StringValue>
-	</m_Conditions>
-</animNode>
