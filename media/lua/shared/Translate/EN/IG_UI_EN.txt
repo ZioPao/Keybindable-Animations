@@ -5,8 +5,20 @@ IGUI_EN = {
 	IGUI_Emote_Awake = "Awake",
 	IGUI_Emote_Facepalm = "Facepalm",
 	IGUI_Emote_FeelFaint = "Feel Faint",
+	IGUI_Emote_Pose = "Pose",
+	IGUI_Emote_Pose1 = "Pose 1",
+	IGUI_Emote_Pose2 = "Pose 2",
+	IGUI_Emote_Pose3 = "Pose 3",
+	IGUI_Emote_Smell = "Smell"
+	IGUI_Emote_ChewNails = "Chew Nails",
+	IGUI_Emote_Burp = "Burp",
+	IGUI_Emote_ShiftWeight = "Shift Weight",
+	IGUI_Emote_DrinkFloor = "Drink from Floor",
+	IGUI_Emote_WashFace = "Wash Face",
+	IGUI_Emote_WashHands = "Wash Hands",
 
-
+	IGUI_Emote_RPInteractiveAnimations = "Interactive Animations",
+	IGUI_Emote_Crawl = "Crawl",
 
 
 
@@ -14,24 +26,27 @@ IGUI_EN = {
     IGUI_Emote_Build = "Build",
 	IGUI_Emote_bentdouble = "Bent Double",
     IGUI_Emote_Chop_Tree = "Chop Tree",
-	IGUI_Emote_RPInteractiveAnimations = "Interactive Animations",
 	IGUI_Emote_RPLoopedAnimations = "Looped Animations",
 
 
 	IGUI_Emote_RoleplayAnimationsExtra = "Roleplay Animations Extra",
 	
-	IGUI_Emote_Barbell = "Barbell",
+
+	IGUI_Emote_Emoter = "Emoter",
 	IGUI_Emote_Bed = "Bed",	
+
+
+	IGUI_Emote_Fitness = "Fitness Animations",	
+	IGUI_Emote_Barbell = "Barbell",
     IGUI_Emote_BicepCurl = "Bicep Curl",
 	IGUI_Emote_Burpee = "Burpee",	
-	IGUI_Emote_Cough = "Cough",	
-	IGUI_Emote_Crawl = "Crawl",
 	IGUI_Emote_DragDown = "Drag Down",	
     IGUI_Emote_Dig_Shovel = "Dig Shovel",
 	IGUI_Emote_Dufflebag = "Dufflebag",
 	IGUI_Emote_Dumbbell = "Dumbbell"
-	IGUI_Emote_Emoter = "Emoter",
-	IGUI_Emote_Fitness = "Fitness Animations",	
+
+
+
 	IGUI_Emote_idleLoop = "Idle",
 	IGUI_Emote_Limp = "Limp",
 	IGUI_Emote_LimpAssist = "Limp Assist",
@@ -40,6 +55,7 @@ IGUI_EN = {
 	IGUI_Emote_passoutback = "Pass out back",
 
 	IGUI_Emote_pain = "Pain Animations",
+	IGUI_Emote_Cough = "Cough",	
 	IGUI_Emote_PainHead = "Pain Head",
 	IGUI_Emote_PainArmL = "Pain Left Arm",
 	IGUI_Emote_PainArmR = "Pain Right Arm",
@@ -52,7 +68,7 @@ IGUI_EN = {
 
 
 
-	
+
 	IGUI_Emote_Prop = "Prop",
 	IGUI_Emote_Pushup = "Pushup",
 	IGUI_Emote_Group = "Group",
@@ -60,11 +76,7 @@ IGUI_EN = {
 	IGUI_Emote_Asleep = "Asleep",
 	IGUI_Emote_Awake = "Awake",
 	IGUI_Emote_Passout = "Pass out",
-	IGUI_Emote_Pose = "Pose",
-	IGUI_Emote_Pose1 = "Pose 1",
-	IGUI_Emote_Pose2 = "Pose 2",
-	IGUI_Emote_Pose3 = "Pose 3",
-	IGUI_Emote_Smell = "Smell"
+
 	IGUI_Emote_ScrambleFloorBack = "Scramble Floor Back"
 	IGUI_Emote_ScrambleFloorIdle = "Scramble Floor Idle"	
 	IGUI_Emote_ScrambleFloor = "Scramble Floor"
@@ -79,20 +91,14 @@ IGUI_EN = {
 	IGUI_Emote_Spooked = "Scared"
 	IGUI_Emote_Tired = "Tired",
 	IGUI_Emote_Yawn = "Yawn",
-	IGUI_Emote_Vomit = "Vomit",
 	IGUI_Emote_ZEat = "Feast",
 	IGUI_Emote_ZLayIdle = "Lay Idle",
 	IGUI_Emote_ZLunge = "Lunge",
 
 
-	IGUI_Emote_ChewNails = "Chew Nails",
-	IGUI_Emote_Burp = "Burp",
-	IGUI_Emote_ShiftWeight = "Shift Weight",
-	IGUI_Emote_DrinkFloor = "Drink from Floor",
 
-	IGUI_Emote_WashFace = "Wash Face",
-	IGUI_Emote_WashHands = "Wash Hands",
 
+	IGUI_Emote_Vomit = "Vomit",
 
 
 

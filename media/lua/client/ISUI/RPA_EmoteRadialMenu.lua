@@ -10,19 +10,6 @@ require "ISUI/ISEmoteRadialMenu"
 	1) Limp
 	1)
 ]]
-local specialEmotes = {
-	Crawl = "isRPCrawling",
-}
-
-local loopedEmotes = {
-	"Vomit",
-
-}
-
--- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this horrendeous workaround
-local staticEmotes = {
-	DrinkFloor = 5
-}
 
 
 
@@ -44,7 +31,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Facepalm = getText("IGUI_Emote_Facepalm")
 
 
-	--ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["FeelFaint"] = getText("IGUI_Emote_FeelFaint")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.FeelFaint = getText("IGUI_Emote_FeelFaint")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Sway = getText("IGUI_Emote_Sway")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.SmellGroup = getText("IGUI_Emote_Smell")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.ChewNails = getText("IGUI_Emote_ChewNails")
@@ -93,7 +80,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainHeadGroup = getText("IGUI_Emote_PainHead")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu.Cough = getText("IGUI_Emote_Cough")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainArmL = getText("IGUI_Emote_PainArmL")
-	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainHandL"] = getText("IGUI_Emote_PainHandL")
+	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainHandL = getText("IGUI_Emote_PainHandL")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainLegL"] = getText("IGUI_Emote_PainLegL")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu.PainStomachGroup = getText("IGUI_Emote_Stomach")
 	ISEmoteRadialMenu.menu.PainAnimations.subMenu["PainTorso"] = getText("IGUI_Emote_Torso")
@@ -110,7 +97,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["AwakeToAsleep"] = getText("IGUI_Emote_AwakeToAsleep")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Passout"] = getText("IGUI_Emote_Passout")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["DragDown"] = getText("IGUI_Emote_DragDown")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.Wash = getText("IGUI_Emote_Wash") -- TODO This contains Drink from floor for some reason
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Duffelbag"] = getText("IGUI_Emote_Dufflebag")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Limp"] = getText("IGUI_Emote_Limp")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["LimpAssist"] = getText("IGUI_Emote_LimpAssist")
@@ -260,98 +246,13 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/test.png")
 end
 
-ISEmoteRadialMenu.RPA_CurrentAnim = nil
-
-local function ManageLoopAnim()
-	local player = getPlayer()
-	if ISEmoteRadialMenu.RPA_CurrentAnim ~= nil then
-		local stageAnim = player:getVariableString("AnimStage")
-		if stageAnim == "loop" then
-			local nextAnim = string.gsub(ISEmoteRadialMenu.RPA_CurrentAnim, "Start", "") .. "Loop"
-
-			player:playEmote(nextAnim)
-			ISEmoteRadialMenu.RPA_CurrentAnim = nil
-			Events.OnTick.Remove(ManageLoopAnim)
-		end
-	else
-		Events.OnTick.Remove(ManageLoopAnim)
-	end
-end
 
 
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
-	-- TODO add a keybind to stop animation!
-
-	local player = getPlayer()
-	local staticAnimVarName = 'shouldRunStaticAnim'
-
-	-------- STATIC EMOTES -------------
-	for k, vTime in pairs(staticEmotes) do
-		if emote == k then
-			print(vTime)
-			ISEmoteRadialMenu.RPA_CurrentAnim = emote
-			og_ISEmoteRadialMenuEmote(self, emote)
-			player:setBlockMovement(true)
-
-			timer:Simple(vTime, function()
-				player:setBlockMovement(false)
-			end)
-			return
-		end
-	end
-
-
-
-	-- Let's check looped emotes first
-	for _, v in pairs(loopedEmotes) do
-		local startAnim = v .. "Start"
-		if emote == startAnim then
-			ISEmoteRadialMenu.RPA_CurrentAnim = emote
-			og_ISEmoteRadialMenuEmote(self, emote)
-			Events.OnTick.Add(ManageLoopAnim)
-			return
-		end
-	end
-
-	-- In case we passed the first loop, let's check special animations such as crawling
-	local chosenValue
-
-	for key, value in pairs(specialEmotes) do
-		if key == emote then
-			chosenValue = value
-		else
-			-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
-			if not isClient() and not isServer() then
-				player:setVariable(value, "false")
-			else
-				sendClientCommand(player, 'RPA', 'SendAnimVariable',
-				{ playerID = player:getOnlineID(), variableName = value, check = 'false' })
-			end
-		end
-	end
-
-
-
-	if chosenValue then
-		if not isClient() and not isServer() then
-			local previousCheck = player:getVariableBoolean(chosenValue)
-			print(previousCheck)
-			local newCheck
-			if previousCheck then
-				newCheck = 'false'
-			else
-				newCheck = 'true'
-			end
-
-			player:setVariable(chosenValue, newCheck)
-		else
-			-- TODO Can we get getVariable from here for an online player?
-			sendClientCommand(player, 'RPA', 'SendAnimVariable',
-			{ playerID = player:getOnlineID(), variableName = chosenValue, check = 'true' })
-		end
-	else
+	if not RPA_Handler.CheckEmote(emote) then
 		og_ISEmoteRadialMenuEmote(self, emote)
 	end
+
 end
