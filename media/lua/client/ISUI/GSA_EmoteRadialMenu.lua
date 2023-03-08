@@ -1,15 +1,7 @@
--- Roleplay Animations --
--- Radial Emote Menu modifications
+-- Glytch3r's Streaming Animations --
+
+
 require "ISUI/ISEmoteRadialMenu"
-
--- TODO Test setting emotes in folders
-
-
--- TODO Stuff to implement
---[[
-	1) Limp
-	1)
-]]
 
 
 

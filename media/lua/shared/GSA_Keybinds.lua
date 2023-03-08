@@ -7,7 +7,7 @@
 
 RPA_Bindings = {
     {
-        name = '[Roleplay Animations]'
+        name = '[StreamingAnimations]'
     },
     {
         value = 'RPA_Modifier_1',

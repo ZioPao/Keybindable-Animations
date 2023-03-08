@@ -1,0 +1,23 @@
+UI_EN = {
+    UI_optionscreen_binding_StreamingAnimations = "Streaming Animations",
+    UI_optionscreen_binding_RPA_Modifier_1 = "Modifier 1",
+    UI_optionscreen_binding_RPA_Modifier_2 = "Modifier 2",
+    
+    UI_optionscreen_binding_RPA_Emote_1 = "Emote 1",
+    UI_optionscreen_binding_RPA_Emote_2 = "Emote 2",
+    UI_optionscreen_binding_RPA_Emote_3 = "Emote 3",
+    UI_optionscreen_binding_RPA_Emote_4 = "Emote 4",
+    UI_optionscreen_binding_RPA_Emote_5 = "Emote 5",
+    UI_optionscreen_binding_RPA_Emote_6 = "Emote 6",
+    UI_optionscreen_binding_RPA_Emote_7 = "Emote 7",
+    UI_optionscreen_binding_RPA_Emote_8 = "Emote 8",
+    UI_optionscreen_binding_RPA_Emote_9 = "Emote 9",
+    UI_optionscreen_binding_RPA_Emote_10 = "Emote 10",
+    UI_optionscreen_binding_RPA_Emote_11 = "Emote 11",
+    UI_optionscreen_binding_RPA_Emote_12 = "Emote 12",
+    UI_optionscreen_binding_RPA_Emote_13 = "Emote 13",
+    UI_optionscreen_binding_RPA_Emote_14 = "Emote 14",
+    UI_optionscreen_binding_RPA_Emote_15 = "Emote 15",
+    UI_optionscreen_binding_RPA_Emote_16 = "Emote 16",
+
+}

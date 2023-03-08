@@ -1,3 +1,5 @@
+-- Glytch3r's Streaming Animations --
+
 local specialEmotes = {
 	Crawl = "isRPCrawling",
 }

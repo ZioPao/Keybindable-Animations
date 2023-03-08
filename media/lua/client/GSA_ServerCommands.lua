@@ -1,4 +1,4 @@
--- Roleplay Animations --
+-- Glytch3r's Streaming Animations --
 
 local ServerCommands = {}
 
