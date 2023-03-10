@@ -15,18 +15,18 @@ local staticEmotes = {
 }
 
 
-RPA_Handler = {}
-RPA_Handler.currentAnimation = nil
+GSA_Handler = {}
+GSA_Handler.currentAnimation = nil
 
 local function ManageLoopAnim()
 	local player = getPlayer()
-	if ISEmoteRadialMenu.RPA_CurrentAnim ~= nil then
+	if ISEmoteRadialMenu.GSA_CurrentAnim ~= nil then
 		local stageAnim = player:getVariableString("AnimStage")
 		if stageAnim == "loop" then
-			local nextAnim = string.gsub(ISEmoteRadialMenu.RPA_CurrentAnim, "Start", "") .. "Loop"
+			local nextAnim = string.gsub(ISEmoteRadialMenu.GSA_CurrentAnim, "Start", "") .. "Loop"
 
 			player:playEmote(nextAnim)
-			ISEmoteRadialMenu.RPA_CurrentAnim = nil
+			ISEmoteRadialMenu.GSA_CurrentAnim = nil
 			Events.OnTick.Remove(ManageLoopAnim)
 		end
 	else
@@ -35,7 +35,7 @@ local function ManageLoopAnim()
 end
 
 
-RPA_Handler.CheckEmote = function(emote)
+GSA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
 	local staticAnimVarName = 'shouldRunStaticAnim'
 
@@ -43,7 +43,7 @@ RPA_Handler.CheckEmote = function(emote)
 	for k, vTime in pairs(staticEmotes) do
 		if emote == k then
 			print(vTime)
-			RPA_Handler.currentAnimation = emote
+			GSA_Handler.currentAnimation = emote
 			player:playEmote(emote)
 			player:setBlockMovement(true)
 
@@ -60,7 +60,7 @@ RPA_Handler.CheckEmote = function(emote)
 	for _, v in pairs(loopedEmotes) do
 		local startAnim = v .. "Start"
 		if emote == startAnim then
-			RPA_Handler.currentAnimation = emote
+			GSA_Handler.currentAnimation = emote
 			player:playEmote(emote)
 			Events.OnTick.Add(ManageLoopAnim)
 			return true

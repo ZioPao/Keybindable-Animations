@@ -16,6 +16,11 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Asleep"] = getText("IGUI_Emote_Asleep")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Awake"] = getText("IGUI_Emote_Awake")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Sit1"] = getText("IGUI_Emote_Sit")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Yawn = getText("IGUI_Emote_Tired")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.TStretch = getText("IGUI_Emote_Tired")
+
+
+
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Tired"] = getText("IGUI_Emote_Tired")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Scared"] = getText("IGUI_Emote_Spooked")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Pose"] = getText("IGUI_Emote_Pose")
@@ -133,7 +138,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants.DrinkFloor = { "DrinkFloor" }
 
 	-- Pain
-	ISEmoteRadialMenu.variants.PainHeadGroup = { "PainHead1", "PainHead2" }
+	ISEmoteRadialMenu.variants.PainHeadGroup = { "PainHead1" }
 	ISEmoteRadialMenu.variants.PainStomachGroup = { "PainStomach1", "PainStomach2" }
 
 
@@ -243,7 +248,7 @@ end
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
-	if not RPA_Handler.CheckEmote(emote) then
+	if not GSA_Handler.CheckEmote(emote) then
 		og_ISEmoteRadialMenuEmote(self, emote)
 	end
 
