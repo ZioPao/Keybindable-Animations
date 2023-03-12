@@ -88,6 +88,8 @@ local GSA_EmotesBindedFirstSecondModifier = {
     ["GSA_Emote_4"] = "Z_Lunge1",
     ["GSA_Emote_5"] = "Z_Lunge2",
     ["GSA_Emote_6"] = "Z_Lunge3",
+    ['GSA_Emote_7'] = "Scarecrow",
+    ['GSA_Emote_8'] = "Skeleton",
 }
 
 
@@ -101,7 +103,15 @@ local function ManageKeys(key)
             if bind.value == "GSA_Exit" then
                 print("Trying to stop animation")
                 local player = getPlayer()
-                player:setVariable("EmotePlaying", false)
+
+                if not isClient() and not isServer() then
+                    player:setVariable("EmotePlaying", false)
+                else
+                    sendClientCommand(player, "GSA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
+
+                end
+
+
                 return
             end
 

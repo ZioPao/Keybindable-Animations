@@ -4,13 +4,14 @@ local ClientCommands = {}
 
 ClientCommands.SendAnimVariable = function(player, args)
 
+    print("SENDING ANIM VARIABLE")
     local playerID = args.playerID
 
     local variableName = args.variableName
     local check = args.check
 
 
-    sendServerCommand('RPA', 'ReceiveAnimVariable', {playerID = playerID, variableName = variableName, check = check})
+    sendServerCommand('GSA', 'ReceiveAnimVariable', {playerID = playerID, variableName = variableName, check = check})
 
 
 end
@@ -18,7 +19,7 @@ end
 ---------------------------------------------
 
 local function OnClientCommand(module, command, playerObj, args)
-    if module == 'RPA' and ClientCommands[command] then
+    if module == 'GSA' and ClientCommands[command] then
         ClientCommands[command](playerObj, args)
     end
 end

@@ -78,7 +78,7 @@ GSA_Handler.CheckEmote = function(emote)
 			if not isClient() and not isServer() then
 				player:setVariable(value, "false")
 			else
-				sendClientCommand(player, 'RPA', 'SendAnimVariable',
+				sendClientCommand(player, 'GSA', 'SendAnimVariable',
 				{ playerID = player:getOnlineID(), variableName = value, check = 'false' })
 			end
 		end
@@ -100,7 +100,7 @@ GSA_Handler.CheckEmote = function(emote)
 			player:setVariable(chosenValue, newCheck)
 		else
 			-- TODO Can we get getVariable from here for an online player?
-			sendClientCommand(player, 'RPA', 'SendAnimVariable',
+			sendClientCommand(player, 'GSA', 'SendAnimVariable',
 			{ playerID = player:getOnlineID(), variableName = chosenValue, check = 'true' })
 		end
 	else

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="default.xml">
-	<m_Name>_oneshot0</m_Name>
-	<m_AnimName>Bob_EmoteBurp</m_AnimName>	
-	<!-- <m_BlendTime>0.80</m_BlendTime> -->
-	<m_Conditions>
-	<m_StringValue>_oneshot0</m_StringValue>
-	</m_Conditions>
-</animNode>
