@@ -1,8 +1,8 @@
 GSA_KeyHandler = {}
 GSA_KeyHandler.isFirstModifier = false
 GSA_KeyHandler.isSecondModifier = false
+GSA_KeyHandler.isThirdModifier = false
 
--- TODO Make a python script to export this crap
 local GSA_EmotesBindedNoModifier = {
     ["GSA_Emote_1"] = "BicepCurl01",
     ["GSA_Emote_2"] = "BicepCurl02",
@@ -96,6 +96,17 @@ local function ManageKeys(key)
 
     for _,bind in ipairs(GSA_Bindings) do
         if key == getCore():getKey(bind.value) then
+
+
+            if bind.value == "GSA_Exit" then
+                print("Trying to stop animation")
+                local player = getPlayer()
+                player:setVariable("EmotePlaying", false)
+                return
+            end
+
+
+
             if bind.value == "GSA_Modifier_1" or bind.value == "GSA_Modifier_2" then
                 return
             end

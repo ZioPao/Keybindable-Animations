@@ -2,7 +2,10 @@ UI_EN = {
     UI_optionscreen_binding_StreamingAnimations = "Streaming Animations",
     UI_optionscreen_binding_GSA_Modifier_1 = "Modifier 1",
     UI_optionscreen_binding_GSA_Modifier_2 = "Modifier 2",
-    
+    UI_optionscreen_binding_GSA_Modifier_3 = "Modifier 3",
+
+    UI_optionscreen_binding_GSA_Exit = "Exit animation",
+
     UI_optionscreen_binding_GSA_Emote_1 = "Emote 1",
     UI_optionscreen_binding_GSA_Emote_2 = "Emote 2",
     UI_optionscreen_binding_GSA_Emote_3 = "Emote 3",

@@ -28,6 +28,12 @@ GSA_Bindings = {
 
     },
 
+
+    {
+        value = 'GSA_Exit',
+        key = Keyboard.KEY_DELETE,
+    },
+    
     {
         value = 'GSA_Emote_1',
         key = Keyboard.KEY_NUMPAD1,
