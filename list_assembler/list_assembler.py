@@ -34,7 +34,7 @@ anims = ["BicepCurl01",
 
         "WashFace", "WashHands",
         
-        "passoutback","passoutfront","Fall",
+        "PassoutBack","PassoutFront","Fall",
         
         "Man1", "Man2", "Man3", "Man4", "Man5", "Man6",
         

@@ -53,8 +53,8 @@ local KBA_EmotesBindedSecondModifier = {
     ["KBA_Emote_9"] = "bentdouble",
     ["KBA_Emote_10"] = "WashFace",
     ["KBA_Emote_11"] = "WashHands",
-    ["KBA_Emote_12"] = "passoutback",
-    ["KBA_Emote_13"] = "passoutfront",
+    ["KBA_Emote_12"] = "PassoutBack",
+    ["KBA_Emote_13"] = "PassoutFront",
     ["KBA_Emote_14"] = "Fall",
     ["KBA_Emote_15"] = "Man1",
     ["KBA_Emote_16"] = "Man2",
@@ -106,8 +106,16 @@ local function ManageKeys(key)
 
                 if not isClient() and not isServer() then
                     player:setVariable("EmotePlaying", false)
+
+                    player:setVariable("isRPCrawling", false)       -- TODO Hotfix, make this a bit better
+                    player:setVariable("isRPScrambling", false)
+                    player:setvariable("isRPLimping", false)
                 else
                     sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
+                    
+                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPCrawling", check = 'false' })
+                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPScrambling", check = 'false' })
+                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPLimping", check = 'false' })
 
                 end
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Crawl_Idle</m_Name>
-	<m_AnimName>Zombie_Idle_FloorOnFront</m_AnimName>
+	<m_AnimName>Bob_ScrambleFloorIdle</m_AnimName>
 	
 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>

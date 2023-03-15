@@ -47,6 +47,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.InteractiveAnimations.name = getText("IGUI_Emote_RPInteractiveAnimations")
 	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu = {}
 	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.Crawl = getText("IGUI_Emote_Crawl")
+	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.ScrambleInteractive = getText("IGUI_Emote_Scramble")
+	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.LimpInteractive = getText("IGUI_Emote_Limp")
 
 
 	------------------------------------------------
@@ -92,7 +94,15 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].name = getText("IGUI_Emote_RoleplayAnimationsExtra")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu = {}
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["AwakeToAsleep"] = getText("IGUI_Emote_AwakeToAsleep")
-	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Passout"] = getText("IGUI_Emote_Passout")
+
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.PassoutBack = getText("IGUI_Emote_PassoutBack")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.PassoutFront = getText("IGUI_Emote_PassoutFront")
+	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu.Fall = getText("IGUI_Emote_Fall")
+
+
+
+
+
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["DragDown"] = getText("IGUI_Emote_DragDown")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Duffelbag"] = getText("IGUI_Emote_Dufflebag")
 	ISEmoteRadialMenu.menu["RoleplayAnimationsExtra"].subMenu["Limp"] = getText("IGUI_Emote_Limp")
@@ -151,7 +161,7 @@ function ISEmoteRadialMenu:init()
 
 
 	ISEmoteRadialMenu.variants["Faint"] = { "feelfeint", "Sway" }
-	ISEmoteRadialMenu.variants["Passout"] = { "passoutback", "passoutfront", "Fall" }
+	--ISEmoteRadialMenu.variants["Passout"] = { "passoutback", "passoutfront", "Fall" }
 	ISEmoteRadialMenu.variants["Pose"] = { "Man1", "Man2", "Man3", "Man4", "Man5", "Man6" }
 	ISEmoteRadialMenu.variants["salute"] = { "saluteformal", "salutecasual" }
 	ISEmoteRadialMenu.variants["Scared"] = { "Spooked1", "Spooked2", "Shiver" }
@@ -233,7 +243,13 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.SquatGroup = getTexture("media/ui/emotes/squat_ico.png")
 
 
-	ISEmoteRadialMenu.icons["Passout"] = getTexture("media/ui/emotes/passout_ico.png")
+	ISEmoteRadialMenu.icons.PassoutFront = getTexture("media/ui/emotes/passout_ico.png")
+	ISEmoteRadialMenu.icons.PassoutBack = getTexture("media/ui/emotes/passout_ico.png")
+	ISEmoteRadialMenu.icons.Fall = getTexture("media/ui/emotes/passout_ico.png")
+
+
+
+
 	ISEmoteRadialMenu.icons.VomitStart = getTexture("media/ui/emotes/vomit_ico.png")
 	ISEmoteRadialMenu.icons["Walk"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons["Z_Eat"] = getTexture("media/ui/emotes/KBA_test_ico.png")

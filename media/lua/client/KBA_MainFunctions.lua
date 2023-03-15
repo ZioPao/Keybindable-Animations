@@ -2,6 +2,8 @@
 
 local specialEmotes = {
 	Crawl = "isRPCrawling",
+	ScrambleInteractive = "isRPScrambling",
+	LimpInteractive = "isRPLimping",
 }
 
 local loopedEmotes = {
@@ -103,9 +105,10 @@ KBA_Handler.CheckEmote = function(emote)
 			sendClientCommand(player, 'KBA', 'SendAnimVariable',
 			{ playerID = player:getOnlineID(), variableName = chosenValue, check = 'true' })
 		end
-	else
-		return false
+
+
+		return true
 	end
 
-
+	return false
 end

@@ -51,8 +51,13 @@ IGUI_EN = {
 	IGUI_Emote_Limp = "Limp",
 	IGUI_Emote_LimpAssist = "Limp Assist",
 	IGUI_Emote_MoveThere90 = "Move There 90°",
-	IGUI_Emote_passoutfront = "Pass out front",
-	IGUI_Emote_passoutback = "Pass out back",
+
+	IGUI_Emote_PassoutFront = "Pass out front",
+	IGUI_Emote_PassoutBack = "Pass out back",
+	IGUI_Emote_Fall = "Fall",
+
+
+
 
 	IGUI_Emote_pain = "Pain Animations",
 	IGUI_Emote_Cough = "Cough",	
