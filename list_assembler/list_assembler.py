@@ -48,14 +48,8 @@ anims = ["BicepCurl01",
         
         "Z_Eat1", "Z_Eat2", "Z_LayIdle1", "Z_LayIdle2", "Z_Lunge1", "Z_Lunge2", "Z_Lunge3",
         
+        "Skeleton", "Scarecrow"
         ]
-
-
-
-
-
-
-
 
 
 def gen_single_line(index, anim):

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Limp_WalkSneak</m_Name>
-	<m_AnimName>Bob_LimpAssist</m_AnimName>
+	<m_Name>Zombie_WalkSneak</m_Name>
+	<m_AnimName>Zombie_Crawl02</m_AnimName>
 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_Looped>true</m_Looped>
-	<m_SpeedScale>1.5</m_SpeedScale>
+	<m_SpeedScale>1</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
     <m_Conditions>
-		<m_Name>isRPLimping</m_Name>
+		<m_Name>isRPInjured</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
@@ -16,7 +16,6 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
-
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.15</m_TimePc>
