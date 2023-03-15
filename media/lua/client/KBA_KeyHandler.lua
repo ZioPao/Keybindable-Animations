@@ -109,13 +109,15 @@ local function ManageKeys(key)
 
                     player:setVariable("isRPCrawling", false)       -- TODO Hotfix, make this a bit better
                     player:setVariable("isRPZombie", false)
-                    player:setvariable("isRPLimping", false)
+                    player:setVariable("isRPLimping", false)
+                    player:setVariable("isRPInjured", false)
                 else
                     sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
                     
                     sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPCrawling", check = 'false' })
                     sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPZombie", check = 'false' })
                     sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPLimping", check = 'false' })
+                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPInjured", check = 'false' })
 
                 end
 

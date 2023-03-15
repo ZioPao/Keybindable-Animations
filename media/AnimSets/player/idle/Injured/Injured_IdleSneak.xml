@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Zombie_IdleSneak</m_Name>
-	<m_AnimName>Zombie_Idle_FloorOnFront</m_AnimName>
+	<m_Name>Injured_IdleSneak</m_Name>
+	<m_AnimName>Bob_EmotePainRightLeg</m_AnimName>
 	<m_Looped>true</m_Looped>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>

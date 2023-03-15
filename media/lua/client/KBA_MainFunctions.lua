@@ -4,6 +4,7 @@ local specialEmotes = {
 	Crawl = "isRPCrawling",
 	ZombieInteractive = "isRPZombie",
 	LimpInteractive = "isRPLimping",
+	InjuryInteractive = "isRPInjured"
 }
 
 local loopedEmotes = {
@@ -11,7 +12,7 @@ local loopedEmotes = {
 
 }
 
--- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this horrendeous workaround
+-- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this 	horrendeous workaround
 local staticEmotes = {
 	DrinkFloor = 5
 }

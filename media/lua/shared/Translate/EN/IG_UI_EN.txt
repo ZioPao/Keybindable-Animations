@@ -104,7 +104,7 @@ IGUI_EN = {
 
 
 	IGUI_Emote_Zombie = "Zombie",
-
+	IGUI_Emote_Injured = "Injured",
 
 	IGUI_Emote_Vomit = "Vomit",
 

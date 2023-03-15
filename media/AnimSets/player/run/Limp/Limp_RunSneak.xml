@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Limp_RunSneak</m_Name>
 	<m_AnimName>Bob_LimpAssist</m_AnimName>
@@ -17,7 +17,11 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
-
+	<m_Conditions>
+		<m_Name>inTrees</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>false</m_BoolValue>
+	</m_Conditions>
 	<m_2DBlends referenceID="1">
 		<m_AnimName>Bob_LimpAssist</m_AnimName>
 		<m_XPos>0.00</m_XPos>

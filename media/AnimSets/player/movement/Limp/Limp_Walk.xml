@@ -8,7 +8,7 @@
 	<m_SpeedScale>1</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
     <m_Conditions>
-		<m_Name>isRPCrawling</m_Name>
+		<m_Name>isRPLimping</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>

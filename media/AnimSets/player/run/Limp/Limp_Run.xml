@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Limp_Run</m_Name>
 	<m_AnimName>Bob_WalkHeavyLimpR</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>1.5</m_SpeedScale>
+	<m_SpeedScale>2.04</m_SpeedScale>
 	<m_BlendTime>0.35</m_BlendTime>
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>
@@ -30,7 +30,7 @@
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
-	<m_2DBlends Bob_WalkHeavyLimpR="4">
+	<m_2DBlends referenceID="4">
 		<m_AnimName>Bob_WalkHeavyLimpR</m_AnimName>
 		<m_XPos>0.00</m_XPos>
 		<m_YPos>1.00</m_YPos>

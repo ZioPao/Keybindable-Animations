@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="turn_idle.xml">
+<animNode x_extends="crawl_turn_idle.xml">
 	<m_Name>turn_idle_180</m_Name>
 	<m_Conditions />
 	<m_Conditions />

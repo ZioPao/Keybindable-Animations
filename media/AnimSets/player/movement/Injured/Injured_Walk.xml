@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Zombie_Walk</m_Name>
-	<m_AnimName>Zombie_Walk</m_AnimName>
+	<m_Name>Injured_Walk</m_Name>
+	<m_AnimName>Bob_EmotePainTorso</m_AnimName>
 <!-- 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName> -->
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>true</m_Looped>
