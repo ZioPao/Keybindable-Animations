@@ -8,7 +8,7 @@
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>
 	<m_Conditions>
-		<m_Name>isRPLimping</m_Name>
+		<m_Name>isRPInjured</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>

@@ -1,14 +1,14 @@
 IGUI_EN = {
 
 
-	IGUI_Emote_SitMenu - "Sit",
+	IGUI_Emote_SitMenu = "Sit",
 	IGUI_Emote_AwakeToAsleep = "Awake To Asleep",
 	IGUI_Emote_Bed = "Bed",	
 	IGUI_Emote_Asleep = "Asleep",
 	IGUI_Emote_Awake = "Awake",
 	IGUI_Emote_Sit = "Sit",
 
-
+	IGUI_Emote_NegativeMenu = "Negative",
 	IGUI_Emote_PassoutFront = "Pass out front",
 	IGUI_Emote_PassoutBack = "Pass out back",
 	IGUI_Emote_Fall = "Fall",
@@ -73,42 +73,31 @@ IGUI_EN = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 	IGUI_Emote_Pose1 = "Pose 1",
 	IGUI_Emote_Pose2 = "Pose 2",
 	IGUI_Emote_Pose3 = "Pose 3",
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
 	IGUI_Emote_idleLoop = "Idle",
 	IGUI_Emote_LimpAssist = "Limp Assist",
 	IGUI_Emote_MoveThere90 = "Move There 90°",
-
-
-
-
-
-
-
-
 	IGUI_Emote_Prop = "Prop",
 	IGUI_Emote_Pushup = "Pushup",
 	IGUI_Emote_Group = "Group",
 	IGUI_Emote_Signal = "Signal",
 	IGUI_Emote_Awake = "Awake",
 	IGUI_Emote_Passout = "Pass out",
-
 	IGUI_Emote_ScrambleFloorBack = "Scramble Floor Back"
 	IGUI_Emote_ScrambleFloorIdle = "Scramble Floor Idle"	
 	IGUI_Emote_ScrambleFloor = "Scramble Floor"
@@ -119,16 +108,8 @@ IGUI_EN = {
 	IGUI_Emote_SmotheredIn = "Smothered In"
 	IGUI_Emote_SmotheredOut = "Smothered Out"	
 	IGUI_Emote_SmotheredLoop = "Smothered Loop"	
-
 	IGUI_Emote_TStretch = "Stretch",
 	IGUI_Emote_Yawn = "Yawn",
-
-
-
 	IGUI_Emote_Injured = "Injured",
-
 	IGUI_Emote_Vomit = "Vomit",
-
-
-	
 }

@@ -15,7 +15,7 @@ local staticEmotes = {
 
 KBA_Handler = {}
 KBA_Handler.currentAnimation = nil
-
+KBA_Handler.chosenValue = nil
 
 KBA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
@@ -38,11 +38,11 @@ KBA_Handler.CheckEmote = function(emote)
 
 
 	-- In case we passed the first loop, let's check special animations such as crawling
-	local chosenValue
+	KBA_Handler.chosenValue = nil
 
 	for key, value in pairs(specialEmotes) do
 		if key == emote then
-			chosenValue = value
+			KBA_Handler.chosenValue = value
 		else
 			-- TODO We should resert everything all at once instead of relying on a loop to prevent potential issues
 			if not isClient() and not isServer() then
@@ -56,9 +56,9 @@ KBA_Handler.CheckEmote = function(emote)
 
 
 
-	if chosenValue then
+	if KBA_Handler.chosenValue then
 		if not isClient() and not isServer() then
-			local previousCheck = player:getVariableBoolean(chosenValue)
+			local previousCheck = player:getVariableBoolean(KBA_Handler.chosenValue)
 			print(previousCheck)
 			local newCheck
 			if previousCheck then
@@ -67,11 +67,11 @@ KBA_Handler.CheckEmote = function(emote)
 				newCheck = 'true'
 			end
 
-			player:setVariable(chosenValue, newCheck)
+			player:setVariable(KBA_Handler.chosenValue, newCheck)
 		else
 			-- TODO Can we get getVariable from here for an online player?
 			sendClientCommand(player, 'KBA', 'SendAnimVariable',
-			{ playerID = player:getOnlineID(), variableName = chosenValue, check = 'true' })
+			{ playerID = player:getOnlineID(), variableName = KBA_Handler.chosenValue, check = 'true' })
 		end
 
 

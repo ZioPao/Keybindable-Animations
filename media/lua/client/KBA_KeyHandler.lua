@@ -103,29 +103,24 @@ local function ManageKeys(key)
             if bind.value == "KBA_Exit" then
                 print("Trying to stop animation")
                 local player = getPlayer()
-
                 if not isClient() and not isServer() then
-                    player:setVariable("EmotePlaying", false)
-
-                    player:setVariable("isRPCrawling", false)       -- TODO Hotfix, make this a bit better
-                    player:setVariable("isRPZombie", false)
-                    player:setVariable("isRPLimping", false)
-                    player:setVariable("isRPInjured", false)
+                    if KBA_Handler.chosenValue then
+                        player:setVariable(KBA_Handler.chosenValue, false)
+                        KBA_Handler.chosenValue = nil
+                    else
+                        player:setVariable("EmotePlaying", false)
+                    end
                 else
-                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
-                    
-                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPCrawling", check = 'false' })
-                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPZombie", check = 'false' })
-                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPLimping", check = 'false' })
-                    sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "isRPInjured", check = 'false' })
-
+                    if KBA_Handler.chosenValue then
+                        sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = KBA_Handler.chosenValue, check = 'false' })
+                        KBA_Handler.chosenValue = nil
+                    else
+                        sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
+                    end
                 end
-
 
                 return
             end
-
-
 
             if bind.value == "KBA_Modifier_1" or bind.value == "KBA_Modifier_2" then
                 return
@@ -156,7 +151,7 @@ local function ManageKeys(key)
             end
 
             local emote = chosenBinds[emoteIndex]
-            print(emote)
+            --print(emote)
 
             if emote == nil then
                 return

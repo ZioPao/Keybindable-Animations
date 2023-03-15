@@ -30,25 +30,27 @@ function ISEmoteRadialMenu:init()
 
 
 	-------------------------------------------------------------------------------------------------
-	-- Negative is already declared
-	ISEmoteRadialMenu.menu.negative.subMenu.PassoutBack = getText("IGUI_Emote_PassoutBack")
-	ISEmoteRadialMenu.menu.negative.subMenu.PassoutFront = getText("IGUI_Emote_PassoutFront")
-	ISEmoteRadialMenu.menu.negative.subMenu.Fall = getText("IGUI_Emote_Fall")
-	ISEmoteRadialMenu.menu.negative.subMenu.DragDown = getText("IGUI_Emote_DragDown")
-	ISEmoteRadialMenu.menu.negative.subMenu.VomitStart = getText("IGUI_Emote_VomitStart")
-	ISEmoteRadialMenu.menu.negative.subMenu.VomitLoop = getText("IGUI_Emote_VomitLoop")
-	ISEmoteRadialMenu.menu.negative.subMenu.Tired = getText("IGUI_Emote_Tired")
-	ISEmoteRadialMenu.menu.negative.subMenu.ScaredGroup = getText("IGUI_Emote_Scared")
-	ISEmoteRadialMenu.menu.negative.subMenu.bentdouble = getText("IGUI_Emote_bentdouble") -- FIXME we're missing the icon
-	ISEmoteRadialMenu.menu.negative.subMenu.FeelFaint = getText("IGUI_Emote_FeelFaint")
-	ISEmoteRadialMenu.menu.negative.subMenu.Yawn = getText("IGUI_Emote_Yawn")
-	ISEmoteRadialMenu.menu.negative.subMenu.TStretch = getText("IGUI_Emote_TStretch")
+	ISEmoteRadialMenu.menu.negativeMenu = {}
+	ISEmoteRadialMenu.menu.negativeMenu.name = getText("IGUI_Emote_NegativeMenu")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu = {}
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.PassoutBack = getText("IGUI_Emote_PassoutBack")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.PassoutFront = getText("IGUI_Emote_PassoutFront")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Fall = getText("IGUI_Emote_Fall")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.DragDown = getText("IGUI_Emote_DragDown")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.VomitStart = getText("IGUI_Emote_VomitStart")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.VomitLoop = getText("IGUI_Emote_VomitLoop")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Tired = getText("IGUI_Emote_Tired")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.ScaredGroup = getText("IGUI_Emote_Scared")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.bentdouble = getText("IGUI_Emote_bentdouble") -- FIXME we're missing the icon
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.FeelFaint = getText("IGUI_Emote_FeelFaint")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Yawn = getText("IGUI_Emote_Yawn")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.TStretch = getText("IGUI_Emote_TStretch")
 
 
 	ISEmoteRadialMenu.variants.ScaredGroup = { "Spooked1", "Spooked2", "Shiver" }
 
 
-
+	ISEmoteRadialMenu.icons.negativeMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.PassoutBack = getTexture("media/ui/emotes/passout_ico.png")
 	ISEmoteRadialMenu.icons.PassoutFront = getTexture("media/ui/emotes/passout_ico.png")
 	ISEmoteRadialMenu.icons.Fall = getTexture("media/ui/emotes/falldown_ico.png")
@@ -74,7 +76,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants.Z_Eat = { "Z_Eat1", "Z_Eat2" }
 	ISEmoteRadialMenu.variants.Z_LayIdle = { "Z_LayIdle1", "Z_LayIdle2" }
 	ISEmoteRadialMenu.variants.Z_Lunge = { "Z_Lunge1", "Z_Lunge2", "Z_Lunge3" }
-
+	
+	ISEmoteRadialMenu.icons.zombieMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.Z_Eat = getTexture("media/ui/emotes/zedeat_ico.png")
 	ISEmoteRadialMenu.icons.Z_LayIdle = getTexture("media/ui/emotes/zedgroundidle_ico.png")
 	ISEmoteRadialMenu.icons.Z_Lunge = getTexture("media/ui/emotes/zedlunge_ico.png")
@@ -151,8 +154,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.interactive.subMenu.InjuryInteractive = getText("IGUI_Emote_InjuredInt")
 
 
-
-	ISEmoteRadialMenu.icons.Crawl = getTexture("media/ui/emotes/crawl_ico.png")
+	ISEmoteRadialMenu.icons.interactive = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.CrawlInteractive = getTexture("media/ui/emotes/crawl_ico.png")
 	ISEmoteRadialMenu.icons.LimpInteractive = getTexture("media/ui/emotes/limp_ico.png")
 	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.InjuryInteractive = getTexture("media/ui/emotes/KBA_test_ico.png")
@@ -175,7 +178,8 @@ function ISEmoteRadialMenu:init()
 
 	ISEmoteRadialMenu.variants.PoseGroup = { "Man1", "Man2", "Man3", "Man4", "Man5", "Man6" }
 	ISEmoteRadialMenu.variants.SmellGroup = { "SmellBad", "SmellGag" }
-
+	
+	ISEmoteRadialMenu.icons.generalMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.PoseGroup = getTexture("media/ui/emotes/pose_ico.png")
 	ISEmoteRadialMenu.icons.Facepalm = getTexture('media/ui/emotes/facepalm_ico.png')
 	ISEmoteRadialMenu.icons.Sway = getTexture("media/ui/emotes/sway_ico.png")
@@ -193,7 +197,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.environmentMenu.subMenu.WashFace = getText("IGUI_Emote_WashFace")
 	ISEmoteRadialMenu.menu.environmentMenu.subMenu.WashHands = getText("IGUI_Emote_WashHands")
 
-
+	ISEmoteRadialMenu.icons.environmentMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.DrinkFloor = getTexture("media/ui/emotes/drinkonfloor_ico.png")
 	ISEmoteRadialMenu.icons.WashFace = getTexture("media/ui/emotes/wash_ico.png")
 	ISEmoteRadialMenu.icons.WashHands = getTexture("media/ui/emotes/wash_ico.png")
