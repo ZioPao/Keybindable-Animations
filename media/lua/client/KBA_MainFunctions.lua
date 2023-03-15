@@ -1,15 +1,10 @@
 -- Glytch3r's Streaming Animations --
 
 local specialEmotes = {
-	Crawl = "isRPCrawling",
+	CrawlInteractive = "isRPCrawling",
 	ZombieInteractive = "isRPZombie",
 	LimpInteractive = "isRPLimping",
 	InjuryInteractive = "isRPInjured"
-}
-
-local loopedEmotes = {
-	"Vomit",
-
 }
 
 -- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this 	horrendeous workaround
@@ -20,22 +15,6 @@ local staticEmotes = {
 
 KBA_Handler = {}
 KBA_Handler.currentAnimation = nil
-
-local function ManageLoopAnim()
-	local player = getPlayer()
-	if ISEmoteRadialMenu.KBA_CurrentAnim ~= nil then
-		local stageAnim = player:getVariableString("AnimStage")
-		if stageAnim == "loop" then
-			local nextAnim = string.gsub(ISEmoteRadialMenu.KBA_CurrentAnim, "Start", "") .. "Loop"
-
-			player:playEmote(nextAnim)
-			ISEmoteRadialMenu.KBA_CurrentAnim = nil
-			Events.OnTick.Remove(ManageLoopAnim)
-		end
-	else
-		Events.OnTick.Remove(ManageLoopAnim)
-	end
-end
 
 
 KBA_Handler.CheckEmote = function(emote)
@@ -57,18 +36,6 @@ KBA_Handler.CheckEmote = function(emote)
 		end
 	end
 
-
-
-	-- Let's check looped emotes first
-	for _, v in pairs(loopedEmotes) do
-		local startAnim = v .. "Start"
-		if emote == startAnim then
-			KBA_Handler.currentAnimation = emote
-			player:playEmote(emote)
-			Events.OnTick.Add(ManageLoopAnim)
-			return true
-		end
-	end
 
 	-- In case we passed the first loop, let's check special animations such as crawling
 	local chosenValue
