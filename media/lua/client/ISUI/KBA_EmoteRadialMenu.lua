@@ -47,7 +47,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.InteractiveAnimations.name = getText("IGUI_Emote_RPInteractiveAnimations")
 	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu = {}
 	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.Crawl = getText("IGUI_Emote_Crawl")
-	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.ScrambleInteractive = getText("IGUI_Emote_Scramble")
+	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.ZombieInteractive = getText("IGUI_Emote_Zombie")
 	ISEmoteRadialMenu.menu.InteractiveAnimations.subMenu.LimpInteractive = getText("IGUI_Emote_Limp")
 
 
@@ -123,12 +123,12 @@ function ISEmoteRadialMenu:init()
 
 
 
-	ISEmoteRadialMenu.menu.RolePlayAnimationsExtra.subMenu["Smother"] = getText("IGUI_Emote_Smother")
-	ISEmoteRadialMenu.menu.RolePlayAnimationsExtra.subMenu["Smother2"] = getText("IGUI_Emote_SmotherLoop")
-	ISEmoteRadialMenu.menu.RolePlayAnimationsExtra.subMenu["SmotheredLoop"] = getText("IGUI_Emote_SmotheredLoop")
-	ISEmoteRadialMenu.menu.RolePlayAnimationsExtra.subMenu["SmotheredIn"] = getText("IGUI_Emote_SmotheredIn")
-	ISEmoteRadialMenu.menu.RolePlayAnimationsExtra.subMenu["SmotheredOut"] = getText("IGUI_Emote_SmotheredOut")
-	ISEmoteRadialMenu.menu.RolePlayAnimationsExtra.subMenu["contactR90"] = getText("IGUI_Emote_MoveThere90")
+	ISEmoteRadialMenu.menu.RoleplayAnimationsExtra.subMenu["Smother"] = getText("IGUI_Emote_Smother")
+	ISEmoteRadialMenu.menu.RoleplayAnimationsExtra.subMenu["Smother2"] = getText("IGUI_Emote_SmotherLoop")
+	ISEmoteRadialMenu.menu.RoleplayAnimationsExtra.subMenu["SmotheredLoop"] = getText("IGUI_Emote_SmotheredLoop")
+	ISEmoteRadialMenu.menu.RoleplayAnimationsExtra.subMenu["SmotheredIn"] = getText("IGUI_Emote_SmotheredIn")
+	ISEmoteRadialMenu.menu.RoleplayAnimationsExtra.subMenu["SmotheredOut"] = getText("IGUI_Emote_SmotheredOut")
+	ISEmoteRadialMenu.menu.RoleplayAnimationsExtra.subMenu["contactR90"] = getText("IGUI_Emote_MoveThere90")
 
 	-----------------------------------------
 	-- VARIANTS

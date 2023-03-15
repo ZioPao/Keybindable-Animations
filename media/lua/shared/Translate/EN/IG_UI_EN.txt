@@ -103,6 +103,8 @@ IGUI_EN = {
 	IGUI_Emote_Sway = "Sway",
 
 
+	IGUI_Emote_Zombie = "Zombie",
+
 
 	IGUI_Emote_Vomit = "Vomit",
 
