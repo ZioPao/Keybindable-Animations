@@ -16,8 +16,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Asleep"] = getText("IGUI_Emote_Asleep")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Awake"] = getText("IGUI_Emote_Awake")
 	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu["Sit1"] = getText("IGUI_Emote_Sit")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Yawn = getText("IGUI_Emote_Tired")
-	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.TStretch = getText("IGUI_Emote_Tired")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.Yawn = getText("IGUI_Emote_Yawn")
+	ISEmoteRadialMenu.menu.RoleplayAnimations.subMenu.TStretch = getText("IGUI_Emote_TSTretch")
 
 
 
@@ -175,6 +175,13 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["Pose"] = getTexture("media/ui/emotes/pose_ico.png")
 	ISEmoteRadialMenu.icons["Scared"] = getTexture("media/ui/emotes/scared_ico.png")
 	ISEmoteRadialMenu.icons.Tired = getTexture("media/ui/emotes/tired_ico.png")
+	ISEmoteRadialMenu.icons.TStretch = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.Yawn = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.FeelFaint = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.WashFace = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.WashHands = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.Sway = getTexture("media/ui/emotes/KBA_test_ico.png")
+
 	ISEmoteRadialMenu.icons["Sit1"] = getTexture("media/ui/emotes/sit_ico.png")
 	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/KBA_test_ico.png")
@@ -241,6 +248,14 @@ function ISEmoteRadialMenu:init()
 
 	ISEmoteRadialMenu.icons["DragDown"] = getTexture("media/ui/emotes/dragdown_ico.png")
 	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+
+
+
+	ISEmoteRadialMenu.icons.LoopedAnimations = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.InteractiveAnimations = getTexture("media/ui/emotes/KBA_test_ico.png")
+
+
+
 end
 
 

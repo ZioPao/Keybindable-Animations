@@ -90,16 +90,16 @@ IGUI_EN = {
 	IGUI_Emote_SmotheredLoop = "Smothered Loop"	
 	IGUI_Emote_Spooked = "Scared"
 	IGUI_Emote_Tired = "Tired",
+	IGUI_Emote_TStretch = "Stretch",
 	IGUI_Emote_Yawn = "Yawn",
 	IGUI_Emote_ZEat = "Feast",
 	IGUI_Emote_ZLayIdle = "Lay Idle",
 	IGUI_Emote_ZLunge = "Lunge",
-
+	IGUI_Emote_Sway = "Sway",
 
 
 
 	IGUI_Emote_Vomit = "Vomit",
-
 
 
 	
