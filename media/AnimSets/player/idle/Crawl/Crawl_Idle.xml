@@ -14,12 +14,7 @@
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
 	<m_Transitions>
-		<m_Target>turn_idle</m_Target>
+		<m_Target>crawl_turn_idle</m_Target>
 		<m_blendInTime>0</m_blendInTime>
-	</m_Transitions>
-	<m_Transitions>
-		<m_Target>Idle</m_Target>
-		<m_blendInTime>0.35</m_blendInTime>
-		<m_blendOutTime>0.35</m_blendOutTime>
 	</m_Transitions>
 </animNode>

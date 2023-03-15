@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="looped.xml">
-	<m_Name>SmotheredLoop</m_Name>
-	<m_AnimName>Kate_SmotheredLoop</m_AnimName>
+<animNode x_extends="default.xml">
+	<m_Name>SmotheredOut</m_Name>
+	<m_AnimName>Kate_SmotheredOut</m_AnimName>
 	<m_BlendTime>0.40</m_BlendTime>
 	<m_Conditions>
-		<m_StringValue>SmotheredLoop</m_StringValue>
+		<m_StringValue>SmotheredOut</m_StringValue>
 	</m_Conditions>
 	<m_SubStateBoneWeights>
 		<boneName>Dummy01</boneName>
