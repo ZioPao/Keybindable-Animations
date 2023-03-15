@@ -15,18 +15,18 @@ local staticEmotes = {
 }
 
 
-GSA_Handler = {}
-GSA_Handler.currentAnimation = nil
+KBA_Handler = {}
+KBA_Handler.currentAnimation = nil
 
 local function ManageLoopAnim()
 	local player = getPlayer()
-	if ISEmoteRadialMenu.GSA_CurrentAnim ~= nil then
+	if ISEmoteRadialMenu.KBA_CurrentAnim ~= nil then
 		local stageAnim = player:getVariableString("AnimStage")
 		if stageAnim == "loop" then
-			local nextAnim = string.gsub(ISEmoteRadialMenu.GSA_CurrentAnim, "Start", "") .. "Loop"
+			local nextAnim = string.gsub(ISEmoteRadialMenu.KBA_CurrentAnim, "Start", "") .. "Loop"
 
 			player:playEmote(nextAnim)
-			ISEmoteRadialMenu.GSA_CurrentAnim = nil
+			ISEmoteRadialMenu.KBA_CurrentAnim = nil
 			Events.OnTick.Remove(ManageLoopAnim)
 		end
 	else
@@ -35,7 +35,7 @@ local function ManageLoopAnim()
 end
 
 
-GSA_Handler.CheckEmote = function(emote)
+KBA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
 	local staticAnimVarName = 'shouldRunStaticAnim'
 
@@ -43,7 +43,7 @@ GSA_Handler.CheckEmote = function(emote)
 	for k, vTime in pairs(staticEmotes) do
 		if emote == k then
 			print(vTime)
-			GSA_Handler.currentAnimation = emote
+			KBA_Handler.currentAnimation = emote
 			player:playEmote(emote)
 			player:setBlockMovement(true)
 
@@ -60,7 +60,7 @@ GSA_Handler.CheckEmote = function(emote)
 	for _, v in pairs(loopedEmotes) do
 		local startAnim = v .. "Start"
 		if emote == startAnim then
-			GSA_Handler.currentAnimation = emote
+			KBA_Handler.currentAnimation = emote
 			player:playEmote(emote)
 			Events.OnTick.Add(ManageLoopAnim)
 			return true
@@ -78,7 +78,7 @@ GSA_Handler.CheckEmote = function(emote)
 			if not isClient() and not isServer() then
 				player:setVariable(value, "false")
 			else
-				sendClientCommand(player, 'GSA', 'SendAnimVariable',
+				sendClientCommand(player, 'KBA', 'SendAnimVariable',
 				{ playerID = player:getOnlineID(), variableName = value, check = 'false' })
 			end
 		end
@@ -100,7 +100,7 @@ GSA_Handler.CheckEmote = function(emote)
 			player:setVariable(chosenValue, newCheck)
 		else
 			-- TODO Can we get getVariable from here for an online player?
-			sendClientCommand(player, 'GSA', 'SendAnimVariable',
+			sendClientCommand(player, 'KBA', 'SendAnimVariable',
 			{ playerID = player:getOnlineID(), variableName = chosenValue, check = 'true' })
 		end
 	else

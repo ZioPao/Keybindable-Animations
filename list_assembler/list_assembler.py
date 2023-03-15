@@ -59,7 +59,7 @@ anims = ["BicepCurl01",
 
 
 def gen_single_line(index, anim):
-    base_string = f'["GSA_Emote_{index}"] = "{anim}",\n'
+    base_string = f'["KBA_Emote_{index}"] = "{anim}",\n'
     return base_string
 
 

@@ -1,4 +1,4 @@
--- Glytch3r's Streaming Animations --
+-- KeyBindable Animations --
 
 
 require "ISUI/ISEmoteRadialMenu"
@@ -166,8 +166,8 @@ function ISEmoteRadialMenu:init()
 
 
 	-----------------
-	ISEmoteRadialMenu.icons.RoleplayAnimations = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Idle"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons.RoleplayAnimations = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Idle"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.SmellGroup = getTexture("media/ui/emotes/smell_ico.png")
 	ISEmoteRadialMenu.icons.Faint = getTexture("media/ui/emotes/faint_ico.png")
 	ISEmoteRadialMenu.icons.Facepalm = getTexture('media/ui/emotes/facepalm_ico.png')
@@ -176,8 +176,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["Scared"] = getTexture("media/ui/emotes/scared_ico.png")
 	ISEmoteRadialMenu.icons.Tired = getTexture("media/ui/emotes/tired_ico.png")
 	ISEmoteRadialMenu.icons["Sit1"] = getTexture("media/ui/emotes/sit_ico.png")
-	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Asleep"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.ChewNails = getTexture("media/ui/emotes/chewnails_ico.png")
 	ISEmoteRadialMenu.icons.ShiftWeight = getTexture("media/ui/emotes/pose_ico.png") -- FIXME Make a dedicated icon
 	ISEmoteRadialMenu.icons.Burp = getTexture("media/ui/emotes/pose_ico.png")     -- FIXME Make a dedicated icon
@@ -186,39 +186,39 @@ function ISEmoteRadialMenu:init()
 
 
 
-	ISEmoteRadialMenu.icons["RoleplayAnimationsExtra"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["AwakeToAsleep"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["RoleplayAnimationsExtra"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["AwakeToAsleep"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 
 
 	ISEmoteRadialMenu.icons.PainAnimations = getTexture("media/ui/emotes/sick_ico.png")
-	ISEmoteRadialMenu.icons.PainHeadGroup = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainHandR"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainHandL"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainArmL"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainArmR"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainLegL"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainLegR"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons.PainStomachGroup = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons.Cough = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["PainTorso"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons.PainHeadGroup = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainHandR"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainHandL"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainArmL"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainArmR"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainLegL"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainLegR"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.PainStomachGroup = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.Cough = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["PainTorso"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 
 
 
 
-	ISEmoteRadialMenu.icons["ScrambleFloorBack"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["ScrambleFloor"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["ScrambleFloorIdle"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Smother"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Smother2"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["SmotheredLoop"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["SmotheredIn"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["SmotheredOut"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["ScrambleFloorBack"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["ScrambleFloor"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["ScrambleFloorIdle"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Smother"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Smother2"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["SmotheredLoop"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["SmotheredIn"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["SmotheredOut"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.Smell = getTexture("media/ui/emotes/smell_ico.png")
-	ISEmoteRadialMenu.icons["Duffelbag"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["Duffelbag"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 
 
 
-	ISEmoteRadialMenu.icons.FitnessAnimations = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons.FitnessAnimations = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.PushupGroup = getTexture("media/ui/emotes/pushup_ico.png")
 	ISEmoteRadialMenu.icons.SitupGroup = getTexture("media/ui/emotes/situp_ico.png")
 	ISEmoteRadialMenu.icons.BicepCurlGroup = getTexture("media/ui/emotes/bicepcurl_ico.png")
@@ -228,19 +228,19 @@ function ISEmoteRadialMenu:init()
 
 	ISEmoteRadialMenu.icons["Passout"] = getTexture("media/ui/emotes/passout_ico.png")
 	ISEmoteRadialMenu.icons.VomitStart = getTexture("media/ui/emotes/vomit_ico.png")
-	ISEmoteRadialMenu.icons["Walk"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Z_Eat"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Z_LayIdle"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["Z_Lunge"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["Walk"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Z_Eat"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Z_LayIdle"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["Z_Lunge"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.Wash = getTexture("media/ui/emotes/wash_ico.png")
 	ISEmoteRadialMenu.icons.Crawl = getTexture("media/ui/emotes/crawl_ico.png")
-	ISEmoteRadialMenu.icons["Bed"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["Bed"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 
-	ISEmoteRadialMenu.icons["Limp"] = getTexture("media/ui/emotes/gsa_test_ico.png")
-	ISEmoteRadialMenu.icons["LimpAssist"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["Limp"] = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons["LimpAssist"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 
 	ISEmoteRadialMenu.icons["DragDown"] = getTexture("media/ui/emotes/dragdown_ico.png")
-	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/gsa_test_ico.png")
+	ISEmoteRadialMenu.icons["contactR90"] = getTexture("media/ui/emotes/KBA_test_ico.png")
 end
 
 
@@ -248,7 +248,7 @@ end
 local og_ISEmoteRadialMenuEmote = ISEmoteRadialMenu.emote
 
 function ISEmoteRadialMenu:emote(emote)
-	if not GSA_Handler.CheckEmote(emote) then
+	if not KBA_Handler.CheckEmote(emote) then
 		og_ISEmoteRadialMenuEmote(self, emote)
 	end
 

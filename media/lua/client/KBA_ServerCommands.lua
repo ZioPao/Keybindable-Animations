@@ -1,4 +1,4 @@
--- Glytch3r's Streaming Animations --
+-- KeyBindable Animations
 
 local ServerCommands = {}
 
@@ -18,7 +18,7 @@ end
 ----------------------------------------------
 
 local function OnServerCommand(module, command, args)
-    if module == 'GSA' then
+    if module == 'KBA' then
         if ServerCommands[command] then
             args = args or {}
             ServerCommands[command](args)
