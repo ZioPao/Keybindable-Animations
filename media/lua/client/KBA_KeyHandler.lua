@@ -88,10 +88,44 @@ local KBA_EmotesBindedFirstSecondModifier = {
     ["KBA_Emote_4"] = "Z_Lunge1",
     ["KBA_Emote_5"] = "Z_Lunge2",
     ["KBA_Emote_6"] = "Z_Lunge3",
-    ['KBA_Emote_7'] = "Scarecrow",
-    ['KBA_Emote_8'] = "Skeleton",
+    ["KBA_Emote_7"] = "Skeleton",
+    ["KBA_Emote_8"] = "Scarecrow",
+    ["KBA_Emote_9"] = "wavehi",
+    ["KBA_Emote_10"] = "wavehi02",
+    ["KBA_Emote_11"] = "wavebye",
+    ["KBA_Emote_12"] = "clap",
+    ["KBA_Emote_13"] = "clap02",
+    ["KBA_Emote_14"] = "thumbsup",
+    ["KBA_Emote_15"] = "thankyou",
+    ["KBA_Emote_16"] = "insult",
 }
 
+local KBA_EmotesBindedFirstThirdModifier = {
+    ["KBA_Emote_1"] = "stop",
+    ["KBA_Emote_2"] = "stop02",
+    ["KBA_Emote_3"] = "surrender",
+    ["KBA_Emote_4"] = "thumbsdown",
+    ["KBA_Emote_5"] = "followme",
+    ["KBA_Emote_6"] = "comehere",
+    ["KBA_Emote_7"] = "comehere02",
+    ["KBA_Emote_8"] = "yes",
+    ["KBA_Emote_9"] = "no",
+    ["KBA_Emote_10"] = "shrug",
+    ["KBA_Emote_11"] = "undecided",
+    ["KBA_Emote_12"] = "ceasefire",
+    ["KBA_Emote_13"] = "signalok",
+    ["KBA_Emote_14"] = "moveout",
+    ["KBA_Emote_15"] = "freeze",
+    ["KBA_Emote_16"] = "followbehind",
+
+}
+
+local KBA_EmotesBindedSecondThirdModifier = {
+    ["KBA_Emote_1"] = "signalfire",
+    ["KBA_Emote_2"] = "comefront",
+    ["KBA_Emote_3"] = "saluteformal",
+    ["KBA_Emote_4"] = "salutecasual",
+}
 
 local function ManageKeys(key)
 
@@ -122,19 +156,24 @@ local function ManageKeys(key)
                 return
             end
 
-            if bind.value == "KBA_Modifier_1" or bind.value == "KBA_Modifier_2" then
+            if bind.value == "KBA_Modifier_1" or bind.value == "KBA_Modifier_2" or bind_value == "KBA_Modifier_3" then
                 return
             end
 
             local emoteIndex = bind.value
             local chosenBinds
 
-            
-            -- First combos
 
+            -- First combos
             if KBA_KeyHandler.isFirstModifier and KBA_KeyHandler.isSecondModifier then
                 print("Combo 1 and 2")
                 chosenBinds = KBA_EmotesBindedFirstSecondModifier
+            elseif KBA_KeyHandler.isFirstModifier and KBA_KeyHandler.isThirdModifier then
+                print("Combo 1 and 3")
+                chosenBinds = KBA_EmotesBindedFirstThirdModifier
+            elseif KBA_KeyHandler.isSecondModifier and KBA_KeyHandler.isThirdModifier then
+                print("Combo 2 and 3")
+                chosenBinds = KBA_EmotesBindedSecondThirdModifier
             elseif KBA_KeyHandler.isFirstModifier then
                 chosenBinds = KBA_EmotesBindedFirstModifier
                 print("First modifier")

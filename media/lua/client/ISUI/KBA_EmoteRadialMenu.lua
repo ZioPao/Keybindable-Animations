@@ -14,37 +14,38 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.sitMenu = {}
 	ISEmoteRadialMenu.menu.sitMenu.name = getText("IGUI_Emote_SitMenu")
 	ISEmoteRadialMenu.menu.sitMenu.subMenu = {}
-	ISEmoteRadialMenu.menu.sitMenu.subMenu.AwakeToAsleep = getText("IGUI_Emote_AwakeToAsleep")		-- FIXME Broken!
-	ISEmoteRadialMenu.menu.sitMenu.subMenu.Bed = getText("IGUI_Emote_Bed")							-- FIXME Broken!
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.Asleep = getText("IGUI_Emote_Asleep")			-- TODO Slow down anim
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.Awake = getText("IGUI_Emote_Awake")				-- TODO Slow down anim
+	ISEmoteRadialMenu.menu.sitMenu.subMenu.AwakeToAsleep = getText("IGUI_Emote_AwakeToAsleep")		-- FIXME Broken!
+	ISEmoteRadialMenu.menu.sitMenu.subMenu.Bed = getText("IGUI_Emote_Bed")							-- FIXME Broken!
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.Sit1 = getText("IGUI_Emote_Sit")					-- TODO Slow down anim
+	ISEmoteRadialMenu.menu.sitMenu.subMenu.TStretch = getText("IGUI_Emote_TStretch")
 
 
 	ISEmoteRadialMenu.icons.sitMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
+	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/awake_ico.png")
 	ISEmoteRadialMenu.icons.AwakeToAsleep = getTexture("media/ui/emotes/awaketosleep_ico.png")
 	ISEmoteRadialMenu.icons.Bed = getTexture("media/ui/emotes/bed_ico.png")
 	ISEmoteRadialMenu.icons.Asleep = getTexture("media/ui/emotes/bed_ico.png")
-	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/awake_ico.png")
 	ISEmoteRadialMenu.icons.Sit1 = getTexture("media/ui/emotes/sit_ico.png")
+	ISEmoteRadialMenu.icons.TStretch = getTexture("media/ui/emotes/stretch_ico.png")
 
 
 	-------------------------------------------------------------------------------------------------
 	ISEmoteRadialMenu.menu.negativeMenu = {}
 	ISEmoteRadialMenu.menu.negativeMenu.name = getText("IGUI_Emote_NegativeMenu")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu = {}
-	ISEmoteRadialMenu.menu.negativeMenu.subMenu.PassoutBack = getText("IGUI_Emote_PassoutBack")
-	ISEmoteRadialMenu.menu.negativeMenu.subMenu.PassoutFront = getText("IGUI_Emote_PassoutFront")
-	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Fall = getText("IGUI_Emote_Fall")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.bentdouble = getText("IGUI_Emote_bentdouble")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.DragDown = getText("IGUI_Emote_DragDown")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Fall = getText("IGUI_Emote_Fall")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.FeelFaint = getText("IGUI_Emote_FeelFaint")
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.PassoutBack = getText("IGUI_Emote_PassoutBack")		--FIXME This is broken
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.PassoutFront = getText("IGUI_Emote_PassoutFront")	-- FIXME This is broken
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.VomitStart = getText("IGUI_Emote_VomitStart")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.VomitLoop = getText("IGUI_Emote_VomitLoop")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Tired = getText("IGUI_Emote_Tired")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.ScaredGroup = getText("IGUI_Emote_Scared")
-	ISEmoteRadialMenu.menu.negativeMenu.subMenu.bentdouble = getText("IGUI_Emote_bentdouble") -- FIXME we're missing the icon
-	ISEmoteRadialMenu.menu.negativeMenu.subMenu.FeelFaint = getText("IGUI_Emote_FeelFaint")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Yawn = getText("IGUI_Emote_Yawn")
-	ISEmoteRadialMenu.menu.negativeMenu.subMenu.TStretch = getText("IGUI_Emote_TStretch")
 
 
 	ISEmoteRadialMenu.variants.ScaredGroup = { "Spooked1", "Spooked2", "Shiver" }
@@ -61,7 +62,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.ScaredGroup = getTexture("media/ui/emotes/scared_ico.png")
 	ISEmoteRadialMenu.icons.bentdouble = getTexture("media/ui/emotes/bentover_ico.png")
 	ISEmoteRadialMenu.icons.FeelFaint = getTexture("media/ui/emotes/faint_ico.png")
-	ISEmoteRadialMenu.icons.TStretch = getTexture("media/ui/emotes/stretch_ico.png")
 	ISEmoteRadialMenu.icons.Yawn = getTexture("media/ui/emotes/yawn_ico.png")
 
 
@@ -169,7 +169,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.generalMenu.subMenu.PoseGroup = getText("IGUI_Emote_Pose")
 	ISEmoteRadialMenu.menu.generalMenu.subMenu.Facepalm = getText("IGUI_Emote_Facepalm")
 	ISEmoteRadialMenu.menu.generalMenu.subMenu.Sway = getText("IGUI_Emote_Sway")
-	ISEmoteRadialMenu.menu.generalMenu.subMenu.SmellGroup = getText("IGUI_Emote_Smell")
+	ISEmoteRadialMenu.menu.generalMenu.subMenu.SmellGroup = getText("IGUI_Emote_Smell")		-- FIXME Broken
 	ISEmoteRadialMenu.menu.generalMenu.subMenu.ChewNails = getText("IGUI_Emote_ChewNails")
 	ISEmoteRadialMenu.menu.generalMenu.subMenu.ShiftWeight = getText("IGUI_Emote_ShiftWeight")
 	ISEmoteRadialMenu.menu.generalMenu.subMenu.Burp = getText("IGUI_Emote_Burp")

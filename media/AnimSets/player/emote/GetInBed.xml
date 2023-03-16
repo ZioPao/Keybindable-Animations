@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode x_extends="looped.xml">
-	<m_Name>GetInBed</m_Name>
+	<m_Name>Bed</m_Name>
 	<m_AnimName>Bob_GetInBed</m_AnimName>
 	<m_BlendTime>0.40</m_BlendTime>
 	<m_Conditions>

@@ -6,10 +6,4 @@
 	<m_Conditions>
 		<m_StringValue>SmellGag</m_StringValue>
 	</m_Conditions>
-	<m_SubStateBoneWeights>
-		<boneName>Dummy01</boneName>
-	</m_SubStateBoneWeights>
-	<m_SubStateBoneWeights>
-		<boneName>Translation_Data</boneName>
-	</m_SubStateBoneWeights>
 </animNode>

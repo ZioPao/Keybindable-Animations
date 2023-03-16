@@ -48,7 +48,13 @@ anims = ["BicepCurl01",
         
         "Z_Eat1", "Z_Eat2", "Z_LayIdle1", "Z_LayIdle2", "Z_Lunge1", "Z_Lunge2", "Z_Lunge3",
         
-        "Skeleton", "Scarecrow"
+        "Skeleton", "Scarecrow",
+
+        "wavehi", "wavehi02", "wavebye", "clap", "clap02", "thumbsup", "thankyou",
+        "insult", "stop", "stop02", "surrender", "thumbsdown",
+        "followme", "comehere", "comehere02", "yes", "no", "shrug", "undecided",
+        "ceasefire", "signalok", "moveout", "freeze", "followbehind", "signalfire", "comefront", "saluteformal", "salutecasual"
+
         ]
 
 
