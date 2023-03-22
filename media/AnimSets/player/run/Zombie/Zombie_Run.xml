@@ -3,7 +3,7 @@
 	<m_Name>Zombie_Run</m_Name>
 	<m_AnimName>Zombie_Walk4</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>1.04</m_SpeedScale>
+	<m_SpeedScale>0.8</m_SpeedScale>
 	<m_BlendTime>0.35</m_BlendTime>
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>

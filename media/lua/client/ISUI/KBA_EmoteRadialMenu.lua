@@ -46,7 +46,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Tired = getText("IGUI_Emote_Tired")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.ScaredGroup = getText("IGUI_Emote_Scared")
 	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Yawn = getText("IGUI_Emote_Yawn")
-
+	ISEmoteRadialMenu.menu.negativeMenu.subMenu.Cough = getText("IGUI_Emote_Cough")
 
 	ISEmoteRadialMenu.variants.ScaredGroup = { "Spooked1", "Spooked2", "Shiver" }
 
@@ -63,6 +63,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.bentdouble = getTexture("media/ui/emotes/bentover_ico.png")
 	ISEmoteRadialMenu.icons.FeelFaint = getTexture("media/ui/emotes/faint_ico.png")
 	ISEmoteRadialMenu.icons.Yawn = getTexture("media/ui/emotes/yawn_ico.png")
+	ISEmoteRadialMenu.icons.Cough = getTexture("media/ui/emotes/cough_ico.png")
 
 
 	--------------------------------------------------------------------------------------------------
@@ -95,7 +96,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.painMenu.subMenu.PainTorso = getText("IGUI_Emote_Torso")
 	ISEmoteRadialMenu.menu.painMenu.subMenu.PainStomachGroup = getText("IGUI_Emote_Stomach")
 	ISEmoteRadialMenu.menu.painMenu.subMenu.PainHeadGroup = getText("IGUI_Emote_PainHead")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.Cough = getText("IGUI_Emote_Cough")
+
 
 
 
@@ -111,7 +112,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.PainLegL = getTexture("media/ui/emotes/painLleg_ico.png")
 	ISEmoteRadialMenu.icons.PainLegR = getTexture("media/ui/emotes/painRleg_ico.png")
 	ISEmoteRadialMenu.icons.PainStomachGroup = getTexture("media/ui/emotes/KBA_test_ico.png")
-	ISEmoteRadialMenu.icons.Cough = getTexture("media/ui/emotes/cough_ico.png")
 	ISEmoteRadialMenu.icons.PainTorso = getTexture("media/ui/emotes/KBA_test_ico.png")
 
 
