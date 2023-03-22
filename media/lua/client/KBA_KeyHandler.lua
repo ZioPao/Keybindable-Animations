@@ -199,11 +199,13 @@ local function ManageKeys(key)
 
             if not KBA_Handler.CheckEmote(chosenBinds[emoteIndex]) then
                 local player = getPlayer()
+                local chosenEmote = chosenBinds[emoteIndex]
                 player:setVariable("EmotePlaying", true)
-                player:playEmote(chosenBinds[emoteIndex])
+                player:playEmote(chosenEmote)
+                print("KBA: playing emote from keybinds => " .. chosenEmote)
             end
-
             break
+            
         end
     end
 
