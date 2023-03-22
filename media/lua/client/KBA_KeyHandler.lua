@@ -156,7 +156,7 @@ local function ManageKeys(key)
                 return
             end
 
-            if bind.value == "KBA_Modifier_1" or bind.value == "KBA_Modifier_2" or bind_value == "KBA_Modifier_3" then
+            if bind.value == "KBA_Modifier_1" or bind.value == "KBA_Modifier_2" or bind.value == "KBA_Modifier_3" then
                 return
             end
 
@@ -198,7 +198,9 @@ local function ManageKeys(key)
             end
 
             if not KBA_Handler.CheckEmote(chosenBinds[emoteIndex]) then
-                getPlayer():playEmote(chosenBinds[emoteIndex])
+                local player = getPlayer()
+                player:setVariable("EmotePlaying", true)
+                player:playEmote(chosenBinds[emoteIndex])
             end
 
             break

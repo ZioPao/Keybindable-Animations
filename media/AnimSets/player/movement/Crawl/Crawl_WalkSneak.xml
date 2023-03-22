@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Crawl_WalkSneak</m_Name>
-	<m_AnimName>Bob_ScrambleFloor</m_AnimName>
+	<m_AnimName>Bob_ScrambleFloorBack</m_AnimName>
 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_Looped>true</m_Looped>
 	<m_SpeedScale>1</m_SpeedScale>

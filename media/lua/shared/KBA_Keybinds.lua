@@ -1,8 +1,4 @@
--- TODO add a keybind to stop animation!
 -- TODO Add french stuff translation
-
-
-
 
 
 KBA_Bindings = {
