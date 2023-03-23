@@ -63,6 +63,8 @@ KBA_Handler.chosenValue = nil
 
 KBA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
+	getPlayer():setVariable("EmotePlaying", true)
+
 
 	-------- STATIC EMOTES -------------
 	for k, vStatic in pairs(staticEmotes) do

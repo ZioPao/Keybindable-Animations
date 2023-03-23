@@ -1,5 +1,10 @@
 
-anims = ["BicepCurl01",
+anims = [
+    
+        "CrawlInteractive", "ScrambleBackInteractive", 
+        "LimpInteractive", "InjuryInteractive",
+
+        "BicepCurl01",
         "BicepCurl02",
         "BicepCurl03",
         "BicepCurl04",
@@ -54,6 +59,9 @@ anims = ["BicepCurl01",
         "insult", "stop", "stop02", "surrender", "thumbsdown",
         "followme", "comehere", "comehere02", "yes", "no", "shrug", "undecided",
         "ceasefire", "signalok", "moveout", "freeze", "followbehind", "signalfire", "comefront", "saluteformal", "salutecasual"
+
+
+
 
         ]
 
