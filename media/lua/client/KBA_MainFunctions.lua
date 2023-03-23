@@ -62,7 +62,7 @@ KBA_Handler.CheckEmote = function(emote)
 
 		if not isClient() and not isServer() then
 			local previousCheck = player:getVariableBoolean(KBA_Handler.chosenValue)
-			print(previousCheck)
+			--print(previousCheck)
 			local newCheck
 			if previousCheck then
 				newCheck = 'false'
