@@ -10,6 +10,7 @@ local og_ISEmoteRadialMenuInit = ISEmoteRadialMenu.init
 function ISEmoteRadialMenu:init()
 	og_ISEmoteRadialMenuInit(self)
 
+	-- TODO add Stop emote in the base menu
 
 	ISEmoteRadialMenu.menu.sitMenu = {}
 	ISEmoteRadialMenu.menu.sitMenu.name = getText("IGUI_Emote_SitMenu")
@@ -17,7 +18,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.Asleep = getText("IGUI_Emote_Asleep")			-- TODO Slow down anim
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.Awake = getText("IGUI_Emote_Awake")				-- TODO Slow down anim
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.AwakeToAsleep = getText("IGUI_Emote_AwakeToAsleep")		-- FIXME Broken!
-	ISEmoteRadialMenu.menu.sitMenu.subMenu.Bed = getText("IGUI_Emote_Bed")							-- FIXME Broken!
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.Sit1 = getText("IGUI_Emote_Sit")					-- TODO Slow down anim
 	ISEmoteRadialMenu.menu.sitMenu.subMenu.TStretch = getText("IGUI_Emote_TStretch")
 
@@ -25,7 +25,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.sitMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.Awake = getTexture("media/ui/emotes/awake_ico.png")
 	ISEmoteRadialMenu.icons.AwakeToAsleep = getTexture("media/ui/emotes/awaketosleep_ico.png")
-	ISEmoteRadialMenu.icons.Bed = getTexture("media/ui/emotes/bed_ico.png")
 	ISEmoteRadialMenu.icons.Asleep = getTexture("media/ui/emotes/bed_ico.png")
 	ISEmoteRadialMenu.icons.Sit1 = getTexture("media/ui/emotes/sit_ico.png")
 	ISEmoteRadialMenu.icons.TStretch = getTexture("media/ui/emotes/stretch_ico.png")
@@ -73,6 +72,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Eat = getText("IGUI_Emote_ZEat")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Lunge = getText("IGUI_Emote_ZLunge")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_LayIdle = getText("IGUI_Emote_ZLayIdle")
+	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieInteractive = getText("IGUI_Emote_ZombieInt")
+
 
 	ISEmoteRadialMenu.variants.Z_Eat = { "Z_Eat1", "Z_Eat2" }
 	ISEmoteRadialMenu.variants.Z_LayIdle = { "Z_LayIdle1", "Z_LayIdle2" }
@@ -82,6 +83,8 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.Z_Eat = getTexture("media/ui/emotes/zedeat_ico.png")
 	ISEmoteRadialMenu.icons.Z_LayIdle = getTexture("media/ui/emotes/zedgroundidle_ico.png")
 	ISEmoteRadialMenu.icons.Z_Lunge = getTexture("media/ui/emotes/zedlunge_ico.png")
+	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/KBA_test_ico.png")
+
 	----------------------------------------------------------------------------------------------------
 
 	ISEmoteRadialMenu.menu.painMenu = {}
@@ -149,7 +152,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.interactive.name = getText("IGUI_Emote_InteractiveMenu")
 	ISEmoteRadialMenu.menu.interactive.subMenu = {}
 	ISEmoteRadialMenu.menu.interactive.subMenu.CrawlInteractive = getText("IGUI_Emote_CrawlInt")
-	ISEmoteRadialMenu.menu.interactive.subMenu.ZombieInteractive = getText("IGUI_Emote_ZombieInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.LimpInteractive = getText("IGUI_Emote_LimpInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.InjuryInteractive = getText("IGUI_Emote_InjuredInt")
 
@@ -157,7 +159,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.interactive = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.CrawlInteractive = getTexture("media/ui/emotes/crawl_ico.png")
 	ISEmoteRadialMenu.icons.LimpInteractive = getTexture("media/ui/emotes/limp_ico.png")
-	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.InjuryInteractive = getTexture("media/ui/emotes/KBA_test_ico.png")
 
 
@@ -203,6 +204,17 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.WashHands = getTexture("media/ui/emotes/wash_ico.png")
 
 	-----------------
+
+	ISEmoteRadialMenu.defaultMenu.stop = getText("IGUI_Emote_Stop")
+
+
+
+
+	----------------------------------
+
+
+
+
 	-- OLD
 
 

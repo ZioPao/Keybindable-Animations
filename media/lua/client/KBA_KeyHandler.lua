@@ -216,8 +216,6 @@ end
 
 
 local function CheckModifierKey(key, modifierEnum)
-
-
     if modifierEnum > 3 then
         return false
     end

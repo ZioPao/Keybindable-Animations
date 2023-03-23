@@ -3,7 +3,7 @@
 	<m_Name>Limp_RunSneak</m_Name>
 	<m_AnimName>Bob_LimpAssist</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>1.8</m_SpeedScale>
+	<m_SpeedScale>0.7</m_SpeedScale>
 	<m_BlendTime>0.50</m_BlendTime>
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>

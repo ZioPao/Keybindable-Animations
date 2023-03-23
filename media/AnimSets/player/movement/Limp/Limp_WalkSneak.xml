@@ -4,8 +4,8 @@
 	<m_AnimName>Bob_LimpAssist</m_AnimName>
 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_Looped>true</m_Looped>
-	<m_SpeedScale>0.8</m_SpeedScale>
-	<m_BlendTime>0.20</m_BlendTime>
+	<m_SpeedScale>0.55</m_SpeedScale>
+	<m_BlendTime>0.50</m_BlendTime>
     <m_Conditions>
 		<m_Name>isRPLimping</m_Name>
 		<m_Type>BOOL</m_Type>
