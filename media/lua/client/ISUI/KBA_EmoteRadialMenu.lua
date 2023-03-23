@@ -71,6 +71,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu = {}
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Eat = getText("IGUI_Emote_ZEat")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_LayIdle = getText("IGUI_Emote_ZLayIdle")
+	--ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Lunge = getText("IGUI_Emote_ZombieLungeInt")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieInteractive = getText("IGUI_Emote_ZombieInt")
 
 
