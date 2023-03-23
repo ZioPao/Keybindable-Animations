@@ -152,6 +152,7 @@ local function ManageKeys(key)
                         sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
                     end
                 end
+                player:setBlockMovement(false)
 
                 return
             end

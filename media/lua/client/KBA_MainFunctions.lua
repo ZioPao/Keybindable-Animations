@@ -10,7 +10,15 @@ local specialEmotes = {
 
 -- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this 	horrendeous workaround
 local staticEmotes = {
-	DrinkFloor = 5
+	DrinkFloor = 5,
+	DragDown = {
+		time = 4,
+		firstPhaseBlock = true,
+		secondPhaseBlock = true,
+		secondPhaseAnim = "DeadBody",
+
+	}
+
 }
 
 
@@ -18,25 +26,41 @@ KBA_Handler = {}
 KBA_Handler.currentAnimation = nil
 KBA_Handler.chosenValue = nil
 
+
+
 KBA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
-	local staticAnimVarName = 'shouldRunStaticAnim'
 
 	-------- STATIC EMOTES -------------
-	for k, vTime in pairs(staticEmotes) do
+	for k, vStatic in pairs(staticEmotes) do
 		if emote == k then
-			print(vTime)
+
+			local time = vStatic.time
+			local shouldBlockFirstPhase = vStatic.firstPhaseBlock
+			local shouldBlockSecondPhase = vStatic.secondPhaseBlock
+			local secondEmote = vStatic.secondPhaseAnim
+
+
+
+			print(time)
 			KBA_Handler.currentAnimation = emote
 			player:playEmote(emote)
-			player:setBlockMovement(true)
+			player:setBlockMovement(shouldBlockFirstPhase)
 
-			timer:Simple(vTime, function()
-				player:setBlockMovement(false)
+			timer:Simple(time, function()
+				player:setBlockMovement(shouldBlockSecondPhase)
+
+				if secondEmote then
+					print("KBA: starting second emote")
+					player:playEmote(secondEmote)
+				end
+
 			end)
 			return true
 		end
 	end
 
+	------------------------------------------------------
 
 	-- In case we passed the first loop, let's check special animations such as crawling
 	KBA_Handler.chosenValue = nil
