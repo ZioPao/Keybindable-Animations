@@ -70,14 +70,15 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.zombieMenu.name = getText("IGUI_Emote_ZombieMenu")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu = {}
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Eat = getText("IGUI_Emote_ZEat")
-	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Lunge = getText("IGUI_Emote_ZLunge")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_LayIdle = getText("IGUI_Emote_ZLayIdle")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieInteractive = getText("IGUI_Emote_ZombieInt")
+	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieLungeInteractive = getText("IGUI_Emote_ZLunge")
+
 
 
 	ISEmoteRadialMenu.variants.Z_Eat = { "Z_Eat1", "Z_Eat2" }
 	ISEmoteRadialMenu.variants.Z_LayIdle = { "Z_LayIdle1", "Z_LayIdle2" }
-	ISEmoteRadialMenu.variants.Z_Lunge = { "Z_Lunge1", "Z_Lunge2", "Z_Lunge3" }
+	--ISEmoteRadialMenu.variants.Z_Lunge = { "Z_Lunge1", "Z_Lunge2", "Z_Lunge3" }
 	
 	ISEmoteRadialMenu.icons.zombieMenu = getTexture("media/ui/emotes/KBA_test_ico.png")
 	ISEmoteRadialMenu.icons.Z_Eat = getTexture("media/ui/emotes/zedeat_ico.png")
@@ -90,15 +91,20 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.painMenu = {}
 	ISEmoteRadialMenu.menu.painMenu.name = getText("IGUI_Emote_PainMenu")
 	ISEmoteRadialMenu.menu.painMenu.subMenu = {}
+	ISEmoteRadialMenu.menu.painMenu.subMenu.PainHeadGroup = getText("IGUI_Emote_PainHead")
+
+	ISEmoteRadialMenu.menu.painMenu.subMenu.PainArmR = getText("IGUI_Emote_PainArmR")
+	ISEmoteRadialMenu.menu.painMenu.subMenu.PainHandR = getText("IGUI_Emote_PainHandR")
+	ISEmoteRadialMenu.menu.painMenu.subMenu.PainLegR = getText("IGUI_Emote_PainLegR")
+
+	ISEmoteRadialMenu.menu.painMenu.subMenu.PainTorso = getText("IGUI_Emote_Torso")
+	ISEmoteRadialMenu.menu.painMenu.subMenu.PainStomachGroup = getText("IGUI_Emote_Stomach")
+
 	ISEmoteRadialMenu.menu.painMenu.subMenu.PainArmL = getText("IGUI_Emote_PainArmL")
 	ISEmoteRadialMenu.menu.painMenu.subMenu.PainHandL = getText("IGUI_Emote_PainHandL")
 	ISEmoteRadialMenu.menu.painMenu.subMenu.PainLegL = getText("IGUI_Emote_PainLegL")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.PainLegR = getText("IGUI_Emote_PainLegR")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.PainHandR = getText("IGUI_Emote_PainHandR")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.PainArmR = getText("IGUI_Emote_PainArmR")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.PainTorso = getText("IGUI_Emote_Torso")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.PainStomachGroup = getText("IGUI_Emote_Stomach")
-	ISEmoteRadialMenu.menu.painMenu.subMenu.PainHeadGroup = getText("IGUI_Emote_PainHead")
+
+
 
 
 
@@ -111,7 +117,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.PainHandR = getTexture("media/ui/emotes/painRhand_ico.png")
 	ISEmoteRadialMenu.icons.PainHandL = getTexture("media/ui/emotes/painLhand_ico.png")
 	ISEmoteRadialMenu.icons.PainArmL = getTexture("media/ui/emotes/painLarm_ico.png")
-	ISEmoteRadialMenu.icons.PainArmR = getTexture("media/ui/emotes/painRarm.png")
+	ISEmoteRadialMenu.icons.PainArmR = getTexture("media/ui/emotes/painRarm_ico.png")
 	ISEmoteRadialMenu.icons.PainLegL = getTexture("media/ui/emotes/painLleg_ico.png")
 	ISEmoteRadialMenu.icons.PainLegR = getTexture("media/ui/emotes/painRleg_ico.png")
 	ISEmoteRadialMenu.icons.PainStomachGroup = getTexture("media/ui/emotes/KBA_test_ico.png")
@@ -152,6 +158,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.interactive.name = getText("IGUI_Emote_InteractiveMenu")
 	ISEmoteRadialMenu.menu.interactive.subMenu = {}
 	ISEmoteRadialMenu.menu.interactive.subMenu.CrawlInteractive = getText("IGUI_Emote_CrawlInt")
+	ISEmoteRadialMenu.menu.interactive.subMenu.ScrambleBackInteractive = getText("IGUI_Emote_ScrambleBackInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.LimpInteractive = getText("IGUI_Emote_LimpInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.InjuryInteractive = getText("IGUI_Emote_InjuredInt")
 

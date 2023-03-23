@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Zombie_Walk</m_Name>
-	<m_AnimName>Zombie_Walk</m_AnimName>
-<!-- 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName> -->
-	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_AnimName>Zombie_Walk5</m_AnimName>
+	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_Looped>true</m_Looped>
 	<m_SpeedScale>0.5</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>

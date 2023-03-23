@@ -16,6 +16,7 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
+
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.15</m_TimePc>

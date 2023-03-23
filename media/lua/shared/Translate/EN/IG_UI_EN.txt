@@ -50,7 +50,10 @@ IGUI_EN = {
 
 	IGUI_Emote_InteractiveMenu = "Interactive",
 	IGUI_Emote_CrawlInt = "Crawl",
+	IGUI_Emote_ScrambleBackInt = "Scramble Back",
 	IGUI_Emote_ZombieInt = "Zombie",
+	IGUI_Emote_ZombieLungeInt = "Zombie Lunge",
+
 	IGUI_Emote_LimpInt = "Limping",
 	IGUI_Emote_InjuredInt = "Injured",
 
