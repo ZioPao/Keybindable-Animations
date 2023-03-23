@@ -128,7 +128,12 @@ local KBA_EmotesBindedSecondThirdModifier = {
 }
 
 local function ManageKeys(key)
-
+    local player = getPlayer()
+    -- if key == 1 then
+    --     -- Workaround to prevent problems
+    --     -- FIXME: not working!
+    --     player:setBlockMovement(false)
+    -- end
 
     for _,bind in ipairs(KBA_Bindings) do
         if key == getCore():getKey(bind.value) then
@@ -136,7 +141,6 @@ local function ManageKeys(key)
 
             if bind.value == "KBA_Exit" then
                 print("Trying to stop animation")
-                local player = getPlayer()
                 if not isClient() and not isServer() then
                     if KBA_Handler.chosenValue then
                         player:setVariable(KBA_Handler.chosenValue, false)

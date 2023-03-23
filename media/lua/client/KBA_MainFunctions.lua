@@ -10,14 +10,45 @@ local specialEmotes = {
 
 -- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this 	horrendeous workaround
 local staticEmotes = {
-	DrinkFloor = 5,
+	DrinkFloor = {
+		time = 5,
+		firstPhaseBlock = true,
+		secondPhaseBlock = false
+
+	},
 	DragDown = {
 		time = 4,
 		firstPhaseBlock = true,
 		secondPhaseBlock = true,
 		secondPhaseAnim = "DeadBody",
 
+	},
+	PassoutFront = {
+		time = 2.1,
+		firstPhaseBlock = true,
+		secondPhaseBlock = true,
+		secondPhaseAnim = "DeadBodyOnFront",		-- TODO This is wrong
+	},
+
+	PassoutBack = {
+		time = 3,
+		firstPhaseBlock = true,
+		secondPhaseBlock = true,
+		secondPhaseAnim = "DeadBody",
+	},
+	Fall = {
+		time = 1.3,
+		firstPhaseBlock = true,
+		secondPhaseBlock = true,
+		secondPhaseAnim = "DeadBodyOnFront",
+	},
+	AwakeToAsleep = {
+		time = 1,
+		firstPhaseBlock = true,
+		secondPhaseBlock = true,
+		secondPhaseAnim = "Asleep"
 	}
+
 
 }
 

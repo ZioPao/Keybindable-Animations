@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Crawl_RunSneak</m_Name>
-	<m_AnimName>Bob_Crawl</m_AnimName>
+	<m_Name>ScrambleBack_RunSneak</m_Name>
+	<m_AnimName>Bob_ScrambleFloorBack</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SpeedScale>1.3</m_SpeedScale>
 	<m_BlendTime>0.50</m_BlendTime>
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>
 	<m_Conditions>
-		<m_Name>isRPCrawling</m_Name>
+		<m_Name>isRPScrambling</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
@@ -16,11 +16,6 @@
 		<m_Name>sneaking</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
-	</m_Conditions>
-	<m_Conditions>
-		<m_Name>inTrees</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>false</m_BoolValue>
 	</m_Conditions>
 	<m_2DBlends referenceID="1">
 		<m_AnimName>Bob_ScrambleFloorBack</m_AnimName>

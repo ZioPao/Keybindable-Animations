@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Crawl_IdleSneak</m_Name>
-	<m_AnimName>Bob_ScrambleFloorIdle</m_AnimName>
+	<m_Name>ScrambleBack_IdleSneak</m_Name>
+	<m_AnimName>Bob_ScrambleFloorBackIdle</m_AnimName>
 	<m_Looped>true</m_Looped>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
@@ -9,7 +9,7 @@
 	<m_SpeedScale>0.8</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
     <m_Conditions>
-		<m_Name>isRPCrawling</m_Name>
+		<m_Name>isRPScrambling</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
