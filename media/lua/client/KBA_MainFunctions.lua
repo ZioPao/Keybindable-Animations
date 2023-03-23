@@ -4,7 +4,8 @@ local specialEmotes = {
 	CrawlInteractive = "isRPCrawling",
 	ZombieInteractive = "isRPZombie",
 	LimpInteractive = "isRPLimping",
-	InjuryInteractive = "isRPInjured"
+	--InjuryInteractive = "isRPInjured"
+	-- Injury is a special case, again. We're just gonna have a looped emote
 }
 
 -- Since I'm a goddamn idiot and I really don't wanna make a BaseTimedAction, let's use this 	horrendeous workaround
@@ -57,6 +58,8 @@ KBA_Handler.CheckEmote = function(emote)
 
 
 	if KBA_Handler.chosenValue then
+		print("KBA: found special emote => " .. KBA_Handler.chosenValue)
+
 		if not isClient() and not isServer() then
 			local previousCheck = player:getVariableBoolean(KBA_Handler.chosenValue)
 			print(previousCheck)
