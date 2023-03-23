@@ -1,69 +1,41 @@
 
 anims = [
-    
-        "CrawlInteractive", "ScrambleBackInteractive", 
-        "LimpInteractive", "InjuryInteractive",
 
-        "BicepCurl01",
-        "BicepCurl02",
-        "BicepCurl03",
-        "BicepCurl04",
-        "BicepCurl05",
-        "BicepCurl06",
-        
-        "Burpees11","Burpees12",
-        
-        "Pushup02","Pushup03",
-        
-        "Squat03","Squat04",
-        
-        "SitUp2", "SitUp3",
-        
-        "SmellBad", "SmellGag",
+    # SIT
+    "Asleep", "Awake", "AwakeToAsleep", "Sit1",
 
-        "VomitStart", "VomitLoop",
-        
-        "DrinkFloor",
-        
-        "PainHead1",
-        
-        "PainStomach1", "PainStomach2",
+    # NEGATIVE
+    "bentdouble", "DragDown", "Fall", "FeelFaint", "PassoutBack", "PassoutFront", "VomitStart", "VomitLoop", "Spooked1", "Spooked2", "Shiver", "TStretch", "Yawn", "Cough",
 
-        "Cough", "PainArmL", "PainHandL", "PainLegL", "PainTorso", "PainLegR", "PainHandR", "PainArmR",
-        
-        "Crawl", "DuffelbagOn", "DuffelbagLoot", "DuffelbagOff",
-        
-        "ShiftWeight", "Burp", "ChewNails",
-        
-        "FeelFaint", "Sway", "Facepalm", "bentdouble",
+    # ZOMBIE
+    "Z_Eat1", "Z_Eat2", "Z_LayIdle1", "Z_LayIdle2", "Z_Lunge1" "ZombieInteractive",
 
-        "WashFace", "WashHands",
-        
-        "PassoutBack","PassoutFront","Fall",
-        
-        "Man1", "Man2", "Man3", "Man4", "Man5", "Man6",
-        
-        "saluteformal", "salutecasual",
-        
-        "Yawn", "TStretch",
+    # PAIN
+    "PainHead1", "PainStomach1", "PainStomach2", "PainArmR", "PainHandR", "PainTorso", "PainLegL", "PainHandL", "PainArmL",
 
-        "AwakeToAlsleep", "DragDown", "Limp", "LimpAssist",
-        
-        "Walk002", "Walk003", "Walk005",
-        
-        "Z_Eat1", "Z_Eat2", "Z_LayIdle1", "Z_LayIdle2", "Z_Lunge1", "Z_Lunge2", "Z_Lunge3",
-        
-        "Skeleton", "Scarecrow",
+    # SPORT
+    "BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06", "Burpees11","Burpees12", "Pushup02","Pushup03", "Squat03","Squat04", "SitUp2", "SitUp3",
 
-        "wavehi", "wavehi02", "wavebye", "clap", "clap02", "thumbsup", "thankyou",
-        "insult", "stop", "stop02", "surrender", "thumbsdown",
-        "followme", "comehere", "comehere02", "yes", "no", "shrug", "undecided",
-        "ceasefire", "signalok", "moveout", "freeze", "followbehind", "signalfire", "comefront", "saluteformal", "salutecasual"
+    # INTERACTIVE
+    "CrawlInteractive", "ScrambleBackInteractive", "LimpInteractive", "InjuryInteractive",
+
+    # GENERAL
+    "Man1", "Man2", "Man3", "Man4", "Man5", "Man6", "Facepalm", "Sway", "SmellBad", "SmellGag", "ChewNails", "ShiftWeight", "Burp",
+
+    # ENVIRONMENT
+    "DrinkFloor", "WashFace", "WashHands", "DuffelbagOn", "DuffelbagLoot", "DuffelbagOff",
+
+    # VANILLA STUFF
+    "Skeleton", "Scarecrow", "wavehi", "wavehi02", "wavebye", "clap", "clap02", "thumbsup", "thankyou",
+    "insult", "stop", "stop02", "surrender", "thumbsdown",
+    "followme", "comehere", "comehere02", "yes", "no", "shrug", "undecided",
+    "ceasefire", "signalok", "moveout", "freeze", "followbehind", "signalfire", "comefront", "saluteformal", "salutecasual"
 
 
 
 
-        ]
+
+]
 
 
 def gen_single_line(index, anim):

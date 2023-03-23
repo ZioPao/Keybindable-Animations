@@ -72,6 +72,9 @@ IGUI_EN = {
 	IGUI_Emote_DrinkFloor = "Drink from Floor",
 	IGUI_Emote_WashFace = "Wash Face",
 	IGUI_Emote_WashHands = "Wash Hands",
+	IGUI_Emote_DuffelbagOn = "Duffelbag On",
+	IGUI_Emote_DuffelbagOff= "Duffelbag Off",
+	IGUI_Emote_DuffelbagLoot = "Duffelbag Loot",
 
 
 

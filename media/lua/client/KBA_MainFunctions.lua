@@ -59,7 +59,24 @@ KBA_Handler = {}
 KBA_Handler.currentAnimation = nil
 KBA_Handler.chosenValue = nil
 
-
+KBA_Handler.StopAnimation = function(player)
+	if not isClient() and not isServer() then
+		if KBA_Handler.chosenValue then
+			player:setVariable(KBA_Handler.chosenValue, false)
+			KBA_Handler.chosenValue = nil
+		else
+			player:setVariable("EmotePlaying", false)
+		end
+	else
+		if KBA_Handler.chosenValue then
+			sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = KBA_Handler.chosenValue, check = 'false' })
+			KBA_Handler.chosenValue = nil
+		else
+			sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
+		end
+	end
+	player:setBlockMovement(false)
+end
 
 KBA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
