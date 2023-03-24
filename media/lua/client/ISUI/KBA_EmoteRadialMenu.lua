@@ -49,8 +49,8 @@ function ISEmoteRadialMenu:init()
 
 
 	ISEmoteRadialMenu.icons.negativeMenu = getTexture("media/ui/emotes/negative/negativeMenu_ico.png")
-	ISEmoteRadialMenu.icons.PassoutBack = getTexture("media/ui/emotes/negative/negative/passout_ico.png")
-	ISEmoteRadialMenu.icons.PassoutFront = getTexture("media/ui/emotes/negative/passout_ico.png")
+	ISEmoteRadialMenu.icons.PassoutBack = getTexture("media/ui/emotes/negative/passoutFront_ico.png")
+	ISEmoteRadialMenu.icons.PassoutFront = getTexture("media/ui/emotes/negative/passoutBack_ico.png")
 	ISEmoteRadialMenu.icons.Fall = getTexture("media/ui/emotes/negative/falldown_ico.png")
 	ISEmoteRadialMenu.icons.DragDown = getTexture("media/ui/emotes/negative/dragdown_ico.png")
 	ISEmoteRadialMenu.icons.VomitStart = getTexture("media/ui/emotes/negative/vomit_ico.png")
@@ -82,7 +82,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.Z_Eat = getTexture("media/ui/emotes/zombie/zedeat_ico.png")
 	ISEmoteRadialMenu.icons.Z_LayIdle = getTexture("media/ui/emotes/zombie/zedgroundidle_ico.png")
 	ISEmoteRadialMenu.icons.Z_Lunge = getTexture("media/ui/emotes/zombie/zedlunge_ico.png")
-	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/zombie/zombieIntereactive_ico.png")
+	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/zombie/zombieInteractive_ico.png")
 
 	----------------------------------------------------------------------------------------------------
 
@@ -203,15 +203,18 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DrinkFloor = getText("IGUI_Emote_DrinkFloor")
 	ISEmoteRadialMenu.menu.environmentMenu.subMenu.WashFace = getText("IGUI_Emote_WashFace")
 	ISEmoteRadialMenu.menu.environmentMenu.subMenu.WashHands = getText("IGUI_Emote_WashHands")
-	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DuffelbagOn = getText("IGUI_Emote_DufflebagOn")
-	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DuffelbagOff = getText("IGUI_Emote_DufflebagOff")
-	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DuffelbagLoot = getText("IGUI_Emote_DufflebagLoot")
+	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DuffelbagOn = getText("IGUI_Emote_DuffelbagOn")
+	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DuffelbagOff = getText("IGUI_Emote_DuffelbagOff")
+	ISEmoteRadialMenu.menu.environmentMenu.subMenu.DuffelbagLoot = getText("IGUI_Emote_DuffelbagLoot")
 
 
 	ISEmoteRadialMenu.icons.environmentMenu = getTexture("media/ui/emotes/environment/environmentMenu_ico.png")
 	ISEmoteRadialMenu.icons.DrinkFloor = getTexture("media/ui/emotes/environment/drinkonfloor_ico.png")
 	ISEmoteRadialMenu.icons.WashFace = getTexture("media/ui/emotes/environment/washFace_ico.png")
 	ISEmoteRadialMenu.icons.WashHands = getTexture("media/ui/emotes/environment/washHands_ico.png")
+	ISEmoteRadialMenu.icons.DuffelbagOn = getTexture("media/ui/emotes/environment/duffelbagOn_ico.png")
+	ISEmoteRadialMenu.icons.DuffelbagOff = getTexture("media/ui/emotes/environment/duffelbagOff_ico.png")
+	ISEmoteRadialMenu.icons.DuffelbagLoot = getTexture("media/ui/emotes/environment/duffelbagLoot_ico.png")
 
 	-----------------
 

@@ -239,6 +239,11 @@ local function DisableModifier(key)
     end
 end
 
-Events.OnKeyPressed.Add(ManageKeys)
-Events.OnKeyKeepPressed.Add(ManageModifier)
-Events.OnCustomUIKeyReleased.Add(DisableModifier)
+
+Events.OnGameStart.Add(function()
+
+    Events.OnKeyPressed.Add(ManageKeys)
+    Events.OnKeyKeepPressed.Add(ManageModifier)
+    Events.OnCustomUIKeyReleased.Add(DisableModifier)
+end)
+
