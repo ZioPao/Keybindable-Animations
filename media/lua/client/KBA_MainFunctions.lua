@@ -136,6 +136,14 @@ KBA_Handler.CheckEmote = function(emote)
 	if KBA_Handler.chosenValue then
 		print("KBA: found special emote => " .. KBA_Handler.chosenValue)
 
+		
+		if KBA_Handler.chosenValue == "isRPCrawling" or KBA_Handler.chosenValue == "isRPScrambling" then
+			getPlayer():setSneaking(true)
+		end
+
+
+
+
 		if not isClient() and not isServer() then
 			local previousCheck = player:getVariableBoolean(KBA_Handler.chosenValue)
 			--print(previousCheck)
