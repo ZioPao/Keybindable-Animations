@@ -62,7 +62,7 @@ local KBA_EmotesBindedSecondModifier = {
 
 local KBA_EmotesBindedThirdModifier = {
     ["KBA_Emote_1"] = "LimpInteractive",
-    ["KBA_Emote_2"] = "InjuryInteractive",
+    ["KBA_Emote_2"] = "ScrambleInteractive",
     ["KBA_Emote_3"] = "Man1",
     ["KBA_Emote_4"] = "Man2",
     ["KBA_Emote_5"] = "Man3",

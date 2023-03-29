@@ -69,7 +69,6 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu = {}
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Eat = getText("IGUI_Emote_ZEat")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_LayIdle = getText("IGUI_Emote_ZLayIdle")
-	--ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Lunge = getText("IGUI_Emote_ZombieLungeInt")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieInteractive = getText("IGUI_Emote_ZombieInt")
 
 
@@ -157,15 +156,16 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.interactive.subMenu = {}
 	ISEmoteRadialMenu.menu.interactive.subMenu.CrawlInteractive = getText("IGUI_Emote_CrawlInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.ScrambleBackInteractive = getText("IGUI_Emote_ScrambleBackInt")
+	ISEmoteRadialMenu.menu.interactive.subMenu.ScrambleInteractive = getText("IGUI_Emote_ScrambleBackInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.LimpInteractive = getText("IGUI_Emote_LimpInt")
-	ISEmoteRadialMenu.menu.interactive.subMenu.InjuryInteractive = getText("IGUI_Emote_InjuredInt")
 
 
 	ISEmoteRadialMenu.icons.interactive = getTexture("media/ui/emotes/interactive/interactiveMenu_ico.png")
 	ISEmoteRadialMenu.icons.CrawlInteractive = getTexture("media/ui/emotes/interactive/crawl_ico.png")
-	ISEmoteRadialMenu.icons.ScrambleBackInteractive = getTexture("media/ui/emotes/interactive/scramble_ico.png")
+	ISEmoteRadialMenu.icons.ScrambleBackInteractive = getTexture("media/ui/emotes/interactive/scrambleBack_ico.png")
+	ISEmoteRadialMenu.icons.ScrambleInteractive = getTexture("media/ui/emotes/interactive/scramble_ico.png")
+
 	ISEmoteRadialMenu.icons.LimpInteractive = getTexture("media/ui/emotes/interactive/limp_ico.png")
-	ISEmoteRadialMenu.icons.InjuryInteractive = getTexture("media/ui/emotes/interactive/injured_ico.png")
 
 
 	--------------------------------------------------------------------

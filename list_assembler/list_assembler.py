@@ -17,7 +17,7 @@ anims = [
     "BicepCurl01", "BicepCurl02", "BicepCurl03", "BicepCurl04", "BicepCurl05", "BicepCurl06", "Burpees11","Burpees12", "Pushup02","Pushup03", "Squat03","Squat04", "SitUp2", "SitUp3",
 
     # INTERACTIVE
-    "CrawlInteractive", "ScrambleBackInteractive", "LimpInteractive", "InjuryInteractive",
+    "CrawlInteractive", "ScrambleBackInteractive", "LimpInteractive", "ScrambleInteractive",
 
     # GENERAL
     "Man1", "Man2", "Man3", "Man4", "Man5", "Man6", "Facepalm", "Sway", "SmellBad", "SmellGag", "ChewNails", "ShiftWeight", "Burp",
