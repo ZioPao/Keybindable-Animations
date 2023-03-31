@@ -83,7 +83,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.Z_LayIdle = getTexture("media/ui/emotes/zombie/zedgroundidle_ico.png")
 	ISEmoteRadialMenu.icons.Z_Lunge = getTexture("media/ui/emotes/zombie/zedlunge_ico.png")
 	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/zombie/zombieInteractive_ico.png")
-	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/zombie/zombieFloorInteractive_ico.png")
+	ISEmoteRadialMenu.icons.ZombieFloorInteractive = getTexture("media/ui/emotes/zombie/zombieFloorInteractive_ico.png")
 
 	----------------------------------------------------------------------------------------------------
 
