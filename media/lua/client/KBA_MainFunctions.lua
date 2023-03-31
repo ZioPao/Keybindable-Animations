@@ -4,7 +4,7 @@ local specialEmotes = {
 	CrawlInteractive = "isRPCrawling",
 	ScrambleBackInteractive = "isRPScramblingBack",
 	ZombieInteractive = "isRPZombie",
-	ScrambleInteractive = "isRpScrambling",
+	ScrambleInteractive = "isRPScrambling",
 	LimpInteractive = "isRPLimping",
 	--InjuryInteractive = "isRPInjured"
 	-- Injury is a special case, again. We're just gonna have a looped emote
@@ -137,7 +137,7 @@ KBA_Handler.CheckEmote = function(emote)
 		print("KBA: found special emote => " .. KBA_Handler.chosenValue)
 
 		
-		if KBA_Handler.chosenValue == "isRPCrawling" or KBA_Handler.chosenValue == "isRPScrambling" then
+		if KBA_Handler.chosenValue == "isRPCrawling" or KBA_Handler.chosenValue == "isRPScrambling" or KBA_Handler.chosenValue == "isRPScramblingBack" then
 			getPlayer():setSneaking(true)
 		end
 
