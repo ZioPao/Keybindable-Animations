@@ -7,6 +7,8 @@ local specialEmotes = {
 	ZombieFloorInteractive = "isRPZombieFloor",
 	ScrambleInteractive = "isRPScrambling",
 	LimpInteractive = "isRPLimping",
+	LimpAssistInteractive = "isRPLimpAssist",
+	
 	--InjuryInteractive = "isRPInjured"
 	-- Injury is a special case, again. We're just gonna have a looped emote
 }

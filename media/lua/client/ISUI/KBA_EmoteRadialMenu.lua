@@ -160,6 +160,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.interactive.subMenu.ScrambleBackInteractive = getText("IGUI_Emote_ScrambleBackInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.ScrambleInteractive = getText("IGUI_Emote_ScrambleInt")
 	ISEmoteRadialMenu.menu.interactive.subMenu.LimpInteractive = getText("IGUI_Emote_LimpInt")
+	ISEmoteRadialMenu.menu.interactive.subMenu.LimpAssistInteractive = getText("IGUI_Emote_LimpAssistInt")
 
 
 	ISEmoteRadialMenu.icons.interactive = getTexture("media/ui/emotes/interactive/interactiveMenu_ico.png")
@@ -167,6 +168,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.ScrambleBackInteractive = getTexture("media/ui/emotes/interactive/scrambleBack_ico.png")
 	ISEmoteRadialMenu.icons.ScrambleInteractive = getTexture("media/ui/emotes/interactive/scramble_ico.png")
 	ISEmoteRadialMenu.icons.LimpInteractive = getTexture("media/ui/emotes/interactive/limp_ico.png")
+	ISEmoteRadialMenu.icons.LimpAssistInteractive = getTexture("media/ui/emotes/interactive/limpAssist_ico.png")
 
 
 	--------------------------------------------------------------------

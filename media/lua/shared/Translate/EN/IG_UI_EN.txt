@@ -58,8 +58,7 @@ IGUI_EN = {
 	IGUI_Emote_ZombieLungeInt = "Zombie Lunge",
 
 	IGUI_Emote_LimpInt = "Limping",
-	IGUI_Emote_InjuredInt = "Injured",
-
+	IGUI_Emote_LimpInt = "Limp Assist",
 
 	IGUI_Emote_GeneralMenu = "General",
 	IGUI_Emote_Pose = "Pose",
