@@ -70,6 +70,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_Eat = getText("IGUI_Emote_ZEat")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.Z_LayIdle = getText("IGUI_Emote_ZLayIdle")
 	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieInteractive = getText("IGUI_Emote_ZombieInt")
+	ISEmoteRadialMenu.menu.zombieMenu.subMenu.ZombieFloorInteractive = getText("IGUI_Emote_ZombieFloorInt")
 
 
 
@@ -82,6 +83,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons.Z_LayIdle = getTexture("media/ui/emotes/zombie/zedgroundidle_ico.png")
 	ISEmoteRadialMenu.icons.Z_Lunge = getTexture("media/ui/emotes/zombie/zedlunge_ico.png")
 	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/zombie/zombieInteractive_ico.png")
+	ISEmoteRadialMenu.icons.ZombieInteractive = getTexture("media/ui/emotes/zombie/zombieFloorInteractive_ico.png")
 
 	----------------------------------------------------------------------------------------------------
 

@@ -4,6 +4,7 @@ local specialEmotes = {
 	CrawlInteractive = "isRPCrawling",
 	ScrambleBackInteractive = "isRPScramblingBack",
 	ZombieInteractive = "isRPZombie",
+	ZombieFloorInteractive = "isRPZombieFloor",
 	ScrambleInteractive = "isRPScrambling",
 	LimpInteractive = "isRPLimping",
 	--InjuryInteractive = "isRPInjured"

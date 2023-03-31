@@ -8,7 +8,7 @@ anims = [
     "bentdouble", "DragDown", "Fall", "FeelFaint", "PassoutBack", "PassoutFront", "VomitStart", "VomitLoop", "Spooked1", "Spooked2", "Shiver", "TStretch", "Yawn", "Cough",
 
     # ZOMBIE
-    "Z_Eat1", "Z_Eat2", "Z_LayIdle1", "Z_LayIdle2", "Z_Lunge1" "ZombieInteractive",
+    "Z_Eat1", "Z_Eat2", "Z_LayIdle1", "Z_LayIdle2", "Z_Lunge1" "ZombieInteractive", "ZombieFloorInteractive",
 
     # PAIN
     "PainHead1", "PainStomach1", "PainStomach2", "PainArmR", "PainHandR", "PainTorso", "PainLegL", "PainHandL", "PainArmL",
