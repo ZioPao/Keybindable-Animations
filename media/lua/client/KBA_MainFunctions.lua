@@ -137,9 +137,9 @@ KBA_Handler.CheckEmote = function(emote)
 		print("KBA: found special emote => " .. KBA_Handler.chosenValue)
 
 		
-		if KBA_Handler.chosenValue == "isRPCrawling" or KBA_Handler.chosenValue == "isRPScrambling" or KBA_Handler.chosenValue == "isRPScramblingBack" then
-			getPlayer():setSneaking(true)
-		end
+		-- if KBA_Handler.chosenValue == "isRPCrawling" or KBA_Handler.chosenValue == "isRPScrambling" or KBA_Handler.chosenValue == "isRPScramblingBack" then
+		-- 	getPlayer():setSneaking(true)
+		-- end
 
 
 
