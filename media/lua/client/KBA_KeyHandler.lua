@@ -139,7 +139,6 @@ local function ManageKeys(key)
     for _,bind in ipairs(KBA_Bindings) do
         if key == getCore():getKey(bind.value) then
 
-
             if bind.value == "KBA_Exit" then
                 KBA_Handler.StopAnimation(player)
                 return

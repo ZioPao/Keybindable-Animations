@@ -11,7 +11,11 @@ ServerCommands.ReceiveAnimVariable = function(args)
 
     print("KBA: Received Anim Variable => " .. variableName .. "=" .. tostring(check))
 
-    player:setVariable(variableName, check)
+    if player then
+        player:setVariable(variableName, check)
+    else
+        print("KBA: player is not reachable")
+    end
 
 end
 
