@@ -72,10 +72,10 @@ KBA_Handler.StopAnimation = function(player)
 		end
 	else
 		if KBA_Handler.chosenValue then
-			sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = KBA_Handler.chosenValue, check = 'false' })
+			sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = KBA_Handler.chosenValue, check = false })
 			KBA_Handler.chosenValue = nil
 		else
-			sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'false' })
+			sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = false })
 		end
 	end
 	player:setBlockMovement(false)
@@ -87,7 +87,7 @@ KBA_Handler.CheckEmote = function(emote)
 	if not isClient() and not isServer() then
 		getPlayer():setVariable("EmotePlaying", true)
 	else
-		sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'true' })
+		sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = true })
 
 	end
 
@@ -106,7 +106,7 @@ KBA_Handler.CheckEmote = function(emote)
 
 
 
-			print(time)
+			--print(time)
 			KBA_Handler.currentAnimation = emote
 			player:playEmote(emote)
 			player:setBlockMovement(shouldBlockFirstPhase)
@@ -115,7 +115,7 @@ KBA_Handler.CheckEmote = function(emote)
 				player:setBlockMovement(shouldBlockSecondPhase)
 
 				if secondEmote then
-					print("KBA: starting second emote")
+					print("KBA: Starting second emote = " .. secondEmote)
 					player:playEmote(secondEmote)
 				end
 
@@ -146,8 +146,7 @@ KBA_Handler.CheckEmote = function(emote)
 
 
 	if KBA_Handler.chosenValue then
-		print("KBA: found special emote => " .. KBA_Handler.chosenValue)
-
+		print("KBA: Found special emote => " .. KBA_Handler.chosenValue)
 		
 		-- if KBA_Handler.chosenValue == "isRPCrawling" or KBA_Handler.chosenValue == "isRPScrambling" or KBA_Handler.chosenValue == "isRPScramblingBack" then
 		-- 	getPlayer():setSneaking(true)

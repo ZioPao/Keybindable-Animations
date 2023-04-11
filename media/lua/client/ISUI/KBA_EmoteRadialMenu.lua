@@ -296,7 +296,7 @@ function ISEmoteRadialMenu:emote(emote)
 
 
 	if not KBA_Handler.CheckEmote(emote) then
-		print("KBA: normal emote => " .. emote)
+		print("KBA: Normal emote => " .. emote)
 		og_ISEmoteRadialMenuEmote(self, emote)
 	end
 

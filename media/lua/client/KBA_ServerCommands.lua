@@ -3,13 +3,13 @@
 local ServerCommands = {}
 
 ServerCommands.ReceiveAnimVariable = function(args)
-    print("RECEIVE ANIM VARIABLE")
+    --print("RECEIVE ANIM VARIABLE")
     local player = getPlayerByOnlineID(args.playerID)
 
     local variableName = args.variableName
     local check = args.check
-    print(variableName)
-    print(check)
+
+    print("KBA: Received Anim Variable => " .. variableName .. "=" .. check)
 
     player:setVariable(variableName, check)
 

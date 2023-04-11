@@ -155,26 +155,26 @@ local function ManageKeys(key)
 
             -- First combos
             if KBA_KeyHandler.isFirstModifier and KBA_KeyHandler.isSecondModifier then
-                print("Combo 1 and 2")
+                --print("Combo 1 and 2")
                 chosenBinds = KBA_EmotesBindedFirstSecondModifier
             elseif KBA_KeyHandler.isFirstModifier and KBA_KeyHandler.isThirdModifier then
-                print("Combo 1 and 3")
+                --print("Combo 1 and 3")
                 chosenBinds = KBA_EmotesBindedFirstThirdModifier
             elseif KBA_KeyHandler.isSecondModifier and KBA_KeyHandler.isThirdModifier then
-                print("Combo 2 and 3")
+                --print("Combo 2 and 3")
                 chosenBinds = KBA_EmotesBindedSecondThirdModifier
             elseif KBA_KeyHandler.isFirstModifier then
                 chosenBinds = KBA_EmotesBindedFirstModifier
-                print("First modifier")
+                --print("First modifier")
             elseif KBA_KeyHandler.isSecondModifier then
                 chosenBinds = KBA_EmotesBindedSecondModifier
-                print("Second modifier")
+                --print("Second modifier")
             elseif KBA_KeyHandler.isThirdModifier then
                 chosenBinds = KBA_EmotesBindedThirdModifier
-                print("Third modifier")
+                --print("Third modifier")
             else
                 chosenBinds = KBA_EmotesBindedNoModifier
-                print("No modifier")
+                --print("No modifier")
 
             end
 
@@ -182,8 +182,8 @@ local function ManageKeys(key)
             --print(emote)
 
             if emote == nil then
+                print("KBA: Invalid emote")
                 return
-                print("Invalid emote")
             end
 
             if not KBA_Handler.CheckEmote(chosenBinds[emoteIndex]) then
@@ -191,7 +191,7 @@ local function ManageKeys(key)
                 local chosenEmote = chosenBinds[emoteIndex]
                 player:setVariable("EmotePlaying", true)
                 player:playEmote(chosenEmote)
-                print("KBA: playing emote from keybinds => " .. chosenEmote)
+                print("KBA: Playing emote from keybinds => " .. chosenEmote)
             end
             break
             
