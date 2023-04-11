@@ -9,7 +9,7 @@ ServerCommands.ReceiveAnimVariable = function(args)
     local variableName = args.variableName
     local check = args.check
 
-    print("KBA: Received Anim Variable => " .. variableName .. "=" .. check)
+    print("KBA: Received Anim Variable => " .. variableName .. "=" .. tostring(check))
 
     player:setVariable(variableName, check)
 

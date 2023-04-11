@@ -9,7 +9,7 @@ ClientCommands.SendAnimVariable = function(player, args)
     local variableName = args.variableName
     local check = args.check
 
-    print("KBA: Sending Anim Variable => " .. variableName .. "=" .. check)
+    print("KBA: Sending Anim Variable => " .. variableName .. "=" .. tostring(check))
 
     sendServerCommand('KBA', 'ReceiveAnimVariable', {playerID = playerID, variableName = variableName, check = check})
 
