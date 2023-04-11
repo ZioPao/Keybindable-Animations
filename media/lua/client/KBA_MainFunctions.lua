@@ -83,7 +83,16 @@ end
 
 KBA_Handler.CheckEmote = function(emote)
 	local player = getPlayer()
-	getPlayer():setVariable("EmotePlaying", true)
+
+	if not isClient() and not isServer() then
+		getPlayer():setVariable("EmotePlaying", true)
+	else
+		sendClientCommand(player, "KBA", "SendAnimVariable", { playerID = player:getOnlineID(), variableName = "EmotePlaying", check = 'true' })
+
+	end
+
+
+
 
 
 	-------- STATIC EMOTES -------------
